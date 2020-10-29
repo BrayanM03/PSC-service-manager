@@ -1,0 +1,71 @@
+#form-nueva-orden {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.card-nueva-orden {
+  border-radius: 10px;
+  width: 50rem;
+  background-color: skyblue;
+}
+
+.card-nueva-orden h4 {
+  margin: auto;
+  margin-bottom: 3vh;
+}
+
+.tituloNuevaOrden {
+  color: #008080;
+}
+
+#btn-cancelar-orden a {
+  text-decoration: none;
+  color: snow;
+}
+
+.lista-tiendas-busqueda {
+  list-style: none;
+}
+
+.estilos-li {
+  border-radius: 10px;
+  background-color: aliceblue;
+  width: 100%;
+  padding: 6px;
+  font-weight: normal;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#select-mostrar-tienda {
+  border-radius: 10px;
+}
+
+.estilos-li:hover {
+  background-color: green;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.estilos-li-keydown {
+  border-radius: 10px;
+  width: 100%;
+  padding: 6px;
+  font-weight: normal;
+  display: flex;
+  justify-content: flex-start;
+  background-color: green;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.search-cr-container {
+  margin-top: 10px;
+  margin-left: 15px;
+  height: 300px;
+  width: 360px;
+  overflow-y: auto;
+  scroll-snap-align: start end;
+  border-radius: 10px;
+}
