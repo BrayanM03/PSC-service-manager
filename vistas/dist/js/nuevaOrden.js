@@ -110,7 +110,7 @@ function MostrarNuevaOrden() {
             break;
 
           case 40: // down
-            //hijos=Array($("#select-mostrar-tienda > li"));
+           
             hijos = Array($("#select-mostrar-tienda").children());
 
             cantidad = hijos[0].length;
