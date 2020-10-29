@@ -40,6 +40,7 @@
 
 #select-mostrar-tienda {
   border-radius: 10px;
+  background-color: aliceblue;
 }
 
 .estilos-li:hover {
@@ -68,4 +69,27 @@
   overflow-y: auto;
   scroll-snap-align: start end;
   border-radius: 10px;
+  opacity: 1;
+  animation: aparecer .1s;
+  
+}
+
+@keyframes aparecer {
+  from {
+  visibility: hidden;
+  opacity: 0.5;
+  width: 0;
+  height: 0;
+}
+  to{
+  visibility: visible;
+  width: 360px;
+  height: 300px;
+  opacity: 1;
+}
+}
+
+.nice-select-group{
+  display: flex;
+  flex-direction: column;
 }

@@ -1,4 +1,6 @@
 function MostrarNuevaOrden() {
+
+
   $.ajax({
     type: "POST",
     url: "./vistas/modulos/formularios/nueva-orden.php",
@@ -88,7 +90,7 @@ function MostrarNuevaOrden() {
 
           error: function (error) {
             alert("malo");
-            $("#search-cr-container").removeClass(),
+            $("#search-cr-container").removeClass().fadeOut(),
               addClass("search-cr-container-hide");
             console.log(error);
           },
@@ -144,6 +146,9 @@ function MostrarNuevaOrden() {
         }
         e.preventDefault(); // prevent the default action (scroll / move caret)
       });
+
+      //Implementando nice select
+      $('select').niceSelect();
 
       //Creando subcategorias
       var subcategoriaCol1 = $("#col-1");

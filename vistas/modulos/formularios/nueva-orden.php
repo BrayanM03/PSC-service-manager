@@ -3,7 +3,7 @@
 if (isset($_POST)) {
     print_r('<div class="row">
     <div class="col" id="form-nueva-orden">
-        <div class="card-nueva-orden card p-4">
+        <div class="card-nueva-orden card p-4"> 
 
             <h4 class="tituloNuevaOrden" ><b>Nueva orden de servicio<b></h4>
 
@@ -37,10 +37,10 @@ if (isset($_POST)) {
                 </div>
                     </div>
 
-                    <div class="col-5">
-                    <div class="form-group">
+                    <div class="col-6">
+                    <div class="form-group nice-select-group">
                     <label><b>Estatus</b></label>
-                    <select class="form-control" name="status-new-orden">
+                    <select class="form-control mt-2" id="select-status" name="status-new-orden">
                     <option>Abierto</option>
                     <option>Cerrado</option>
                     </select>
@@ -58,7 +58,7 @@ if (isset($_POST)) {
                         </div>
                     </div>
                     <div class="col-7">
-                        <div class="form-group">
+                        <div class="form-group nice-select-group">
                             <label><b>Categoria</b></label>
                             <select class="form-control" name="" id="optionsNuevaOrden">
                                 <option id="optionComputer" value="Computadora">Computadora</option>

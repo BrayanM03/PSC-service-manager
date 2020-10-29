@@ -33,6 +33,7 @@ if (empty($_SESSION["userName"])) {
   <link rel="stylesheet" href="vistas/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="vistas/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <link rel="stylesheet" href="vistas/dist/css/nuevaOrden.css">
+  <link rel="stylesheet" href="vistas/plugins/nice-select/css/nice-select.css">
   
 
 </head>
@@ -527,6 +528,7 @@ if (empty($_SESSION["userName"])) {
   <script src="vistas/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
   <script src="vistas/plugins/datatables-buttons/js/buttons.print.min.js"></script>
   <script src="vistas/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+  <script src="vistas/plugins/nice-select/js/jquery.nice-select.js"></script>
 
   <!-- AdminLTE App -->
   <script src="vistas/dist/js/adminlte.min.js"></script>
