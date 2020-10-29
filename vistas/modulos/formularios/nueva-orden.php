@@ -40,7 +40,7 @@ if (isset($_POST)) {
                     <div class="col-6">
                     <div class="form-group nice-select-group">
                     <label><b>Estatus</b></label>
-                    <select class="form-control mt-2" id="select-status" name="status-new-orden">
+                    <select class="mt-2" id="select-status" name="status-new-orden">
                     <option>Abierto</option>
                     <option>Cerrado</option>
                     </select>
@@ -54,13 +54,13 @@ if (isset($_POST)) {
                     <div class="col-5">
                         <div class="form-group">
                             <label><b>Folio</b></label>
-                            <input class="form-control" placeholder="Escribe el folio">
+                            <input type="number" class="form-control" placeholder="Escribe el folio">
                         </div>
                     </div>
                     <div class="col-7">
                         <div class="form-group nice-select-group">
                             <label><b>Categoria</b></label>
-                            <select class="form-control" name="" id="optionsNuevaOrden">
+                            <select class="" name="" id="optionsNuevaOrden">
                                 <option id="optionComputer" value="Computadora">Computadora</option>
                                 <option id="optionVozyDat" value="Voz y Datos">Voz y datos</option>
                                 <option id="optionCCTV" value="CCTV">CCTV</option>

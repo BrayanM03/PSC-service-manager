@@ -44,6 +44,7 @@
 }
 
 .estilos-li:hover {
+  transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
   background-color: green;
   color: aliceblue;
   cursor: pointer;
@@ -71,6 +72,7 @@
   border-radius: 10px;
   opacity: 1;
   animation: aparecer .1s;
+  transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
   
 }
 
@@ -92,4 +94,8 @@
 .nice-select-group{
   display: flex;
   flex-direction: column;
+}
+
+input:active{
+  border: salmon 1px solid;
 }

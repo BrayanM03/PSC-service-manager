@@ -29,7 +29,7 @@
   .nice-select:hover {
     border-color: #dbdbdb; }
   .nice-select:active, .nice-select.open, .nice-select:focus {
-    border-color: #999; }
+    border-color: salmon; }
   .nice-select:after {
     border-bottom: 2px solid #999;
     border-right: 2px solid #999;
