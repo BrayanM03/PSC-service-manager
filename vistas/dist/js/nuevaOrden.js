@@ -95,7 +95,7 @@ function MostrarNuevaOrden() {
         });
       }); //Fin de la peticion
 
-    //Auto sugerencias de las tiendass
+    //Auto sugerencias de las tiendas
 
       i=0;
       $(document).keyup(function (e) {
