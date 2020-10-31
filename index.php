@@ -6,6 +6,6 @@ $incluirTemp = new template;
 $incluirTemp -> agregarTemplate();
 
 
-//El pancho
+//El pancho editado
 ?>
 
