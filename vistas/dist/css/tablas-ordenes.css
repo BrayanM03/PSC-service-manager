@@ -4,6 +4,14 @@
     align-items: center;
 }
 
+.celda-descripcion{
+    font-size: 11px;
+}
+
+#celda-descripcion{
+    font-size: 16px;
+}
+
 #ButtonEditar{
     
     margin-right: 8%;

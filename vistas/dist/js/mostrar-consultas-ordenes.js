@@ -34,10 +34,16 @@ function MostrarMtos() {
           },
           select: true,
           columns: [
+            { data: "id" },
             { data: "cr" },
             { data: "tienda" },
-            { data: "descripcion", width: "30%" },
-            { data: "fecha"},
+            { data: "fecha" },
+            { data: "folio" },
+            { data: "subcat" },
+            { data: "estatus" },
+            { data: "solucion", width: "30%", className: "celda-descripcion"},
+            { data: "mes"},
+            { data: "usuario" },
             {data: null,className: "celda-acciones" , 
             "render": function () {
               return '<button type="button" id="ButtonEditar" class="btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" id="ButtonBorrar" class="btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';

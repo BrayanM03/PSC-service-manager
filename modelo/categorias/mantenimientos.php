@@ -2,10 +2,11 @@
     if (isset($_POST)) {
         include "../../controladores/conexion.php";
         $con= $conectando->conexion();
-        $sqlMtos="SELECT * FROM mttos";
+        $sqlMtos="SELECT * FROM mantenimientocat";
         $result = mysqli_query($con, $sqlMtos);
         if(!$result){
             echo 'Error';
+            
         }else{
           
             while ($datas=mysqli_fetch_assoc($result)) {
@@ -17,7 +18,7 @@
            
         }
 
-        mysqli_free_result($result);
+        
         mysqli_close($con);
 
     }   
