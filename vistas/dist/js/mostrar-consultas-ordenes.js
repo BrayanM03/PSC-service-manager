@@ -12,6 +12,8 @@ function MostrarTiendas() {
   });
 }
 
+
+//Muestra las ordenes de los mantenimientos
 function MostrarMtos() {
   $.ajax({
     type: "POST",
@@ -30,15 +32,22 @@ function MostrarMtos() {
             method: "POST",
             url: "./modelo/categorias/mantenimientos.php",
           },
+          select: true,
           columns: [
             { data: "cr" },
             { data: "tienda" },
-            { data: "descripcion" },
-            { data: "fecha" },
+            { data: "descripcion", width: "30%" },
+            { data: "fecha"},
+            {data: null,className: "celda-acciones" , 
+            "render": function () {
+              return '<button type="button" id="ButtonEditar" class="btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" id="ButtonBorrar" class="btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+              }}, 
+              
           ],
           responsive: true,
           lengthChange: false,
           autoWidth: false,
+          dom: 'Bfrtip',
           buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
         })
         .buttons()

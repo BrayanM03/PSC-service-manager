@@ -1,0 +1,10 @@
+.celda-acciones{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#ButtonEditar{
+    
+    margin-right: 8%;
+}

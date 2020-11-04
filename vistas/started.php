@@ -33,6 +33,7 @@ if (empty($_SESSION["userName"])) {
   <link rel="stylesheet" href="vistas/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="vistas/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <link rel="stylesheet" href="vistas/dist/css/nuevaOrden.css">
+  <link rel="stylesheet" href="vistas/dist/css/tablas-ordenes.css">
   <link rel="stylesheet" href="vistas/plugins/nice-select/css/nice-select.css">
   
 
@@ -209,7 +210,7 @@ if (empty($_SESSION["userName"])) {
             </div>
           </div>
         </div>
-
+ 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" id="v-pills-tab" data-widget="treeview" role="menu" data-accordion="false">

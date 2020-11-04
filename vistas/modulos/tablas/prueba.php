@@ -7,12 +7,14 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="tabla-mantenimientos" class="table table-bordered table-striped">
+                <table id="tabla-mantenimientos" class="table table-bordered table-hover table-striped">
                 <thead>
                     <tr>
                     <th>CR</th>
                     <th>Tienda</th>
-                    <th>Datos</th>
+                    <th>Descripcion</th>
+                    <th>Fecha</th>
+                    <th>Accion</th>
                     </tr>
                     
                 </thead>');                  
