@@ -321,7 +321,7 @@ if (empty($_SESSION["userName"])) {
 
           <!-- Contenido dinamico traido con AJAX -->
 
-          <div id="contenido-panel" class="container" >
+          <div id="contenido-panel" class="container-fluid" style="width: 80vw;" >
             <div class="card">
               <div class="card-header text-center">
                 <h3 class="card-title ">Estadisticas</h3>
@@ -530,6 +530,7 @@ if (empty($_SESSION["userName"])) {
   <script src="vistas/plugins/datatables-buttons/js/buttons.print.min.js"></script>
   <script src="vistas/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
   <script src="vistas/plugins/nice-select/js/jquery.nice-select.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <!-- AdminLTE App -->
   <script src="vistas/dist/js/adminlte.min.js"></script>

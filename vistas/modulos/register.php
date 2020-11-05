@@ -118,7 +118,7 @@
 
                 success: function(response) {
 
-                    response = response.trim();
+                    response = response.trim(); 
 
                     if (response == 1) {
                         $('#form_register').trigger("reset");

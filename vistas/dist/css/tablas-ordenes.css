@@ -1,3 +1,7 @@
+.contenedor-card-tablas-ordenes{
+    width: auto;
+}
+
 .celda-acciones{
     display: flex;
     flex-direction: row;

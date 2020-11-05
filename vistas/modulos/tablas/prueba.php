@@ -1,7 +1,7 @@
 <?php
     
         print_r('
-        <div class="card">
+        <div class="card contenedor-card-tablas-ordenes">
             <div class="card-header">
                 <h3 class="card-title">Ordenes de: </h3>
             </div>

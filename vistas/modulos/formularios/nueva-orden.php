@@ -7,7 +7,7 @@ if (isset($_POST)) {
 
             <h4 class="tituloNuevaOrden" ><b>Nueva orden de servicio<b></h4>
 
-            <form class="">
+            <form class="" id="formulario-nueva-orden">
                 <div class="row">
                     <div class="col-6">
                     <div class="form-group">
@@ -33,7 +33,7 @@ if (isset($_POST)) {
                     <div class="col-12">
                     <div class="form-group">
                     <label><b>Cliente</b></label>
-                    <label class="tienda-span-modal-mto form-control" id="tienda-cliente" name="tienda-span-modal-mto"><strong class="text-center" id="tienda-span">Coloca el CR para mostrar</strong></label>
+                    <input type="text" class="tienda-span-modal-mto form-control" id="tienda-cliente" name="tienda-span-modal-mto" placeholder="Coloca el CR para mostrar">
                 </div>
                     </div>
 
@@ -41,8 +41,8 @@ if (isset($_POST)) {
                     <div class="form-group nice-select-group">
                     <label><b>Estatus</b></label>
                     <select class="mt-2" id="select-status" name="status-new-orden">
-                    <option>Abierto</option>
-                    <option>Cerrado</option>
+                    <option value="Abierto">Abierto</option>
+                    <option value="Cerrado">Cerrado</option>
                     </select>
                 </div>
                     </div>
@@ -54,13 +54,13 @@ if (isset($_POST)) {
                     <div class="col-5">
                         <div class="form-group">
                             <label><b>Folio</b></label>
-                            <input type="number" class="form-control" placeholder="Escribe el folio">
+                            <input type="number" class="form-control" name="folio-nueva-orden" placeholder="Escribe el folio">
                         </div>
                     </div>
                     <div class="col-7">
                         <div class="form-group nice-select-group">
                             <label><b>Categoria</b></label>
-                            <select class="" name="" id="optionsNuevaOrden">
+                            <select class="" name="select-cat-nueva-orden" id="optionsNuevaOrden">
                                 <option id="optionComputer" value="Computadora">Computadora</option>
                                 <option id="optionVozyDat" value="Voz y Datos">Voz y datos</option>
                                 <option id="optionCCTV" value="CCTV">CCTV</option>
@@ -84,7 +84,7 @@ if (isset($_POST)) {
                 <div class="row">
                 <div class="col-12">
                 <div class="form-group" id="area-solucion">
-                <textarea class="form-control" id="textareaNueva-orden" placeholder="Escriba la solución"></textarea>
+                <textarea class="form-control" name="solucion-nueva-orden" id="textareaNueva-orden" form="formulario-nueva-orden" placeholder="Escriba la solución"></textarea>
                 </div>
                 </div>
                 </div>
@@ -92,8 +92,8 @@ if (isset($_POST)) {
                 
                         <div class="row">
                             <div class="text-center col-12">
-                            <button type="submit" class="btn btn-success m-3">Registrar</button>
-                            <button type="" class="btn btn-danger m-3" id="btn-cancelar-orden"><a href="index.php">Cancelar</a></button>
+                            <div id="btn-insertar-orden-nueva" onclick="insertarNuevaOrden();" class="btn btn-success m-3">Registrar</div>
+                            <button type="buttom" class="btn btn-danger m-3" id="btn-cancelar-orden"><a href="index.php">Cancelar</a></button>
                             </div>
                         </div>
             </form>

@@ -36,7 +36,7 @@ function MostrarMtos() {
           columns: [
             { data: "id" },
             { data: "cr" },
-            { data: "tienda" },
+            { data: "tienda", width: "20%" },
             { data: "fecha" },
             { data: "folio" },
             { data: "subcat" },

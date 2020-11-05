@@ -79,7 +79,7 @@ function MostrarNuevaOrden() {
               ponerCR = $(this).attr("cr");
               ponerTienda = $(this).attr("tienda");
 
-              $("#tienda-cliente").text("OXXO " + ponerTienda);
+              $("#tienda-cliente").val("OXXO " + ponerTienda);
               $("#cr-input-modal").val(ponerCR);
               $("#select-mostrar-tienda").empty();
               $("#search-cr-container")
@@ -155,7 +155,7 @@ function MostrarNuevaOrden() {
       var subcategoriaCol2 = $("#col-2");
 
       var textareaNuevo =
-        "<textarea class='form-control' id='textareaNueva-orden' placeholder='Escriba la solución'></textarea>";
+        "<textarea class='form-control' name='solucion-nueva-orden' id='textareaNueva-orden' placeholder='Escriba la solución'></textarea>";
       var areaSoluc = $("#area-solucion");
 
       datos = [
@@ -254,7 +254,7 @@ function MostrarNuevaOrden() {
             $("#textareaNueva-orden").detach();
 
             var mt1 =
-              "<input type='checkbox' id='chboxMembrana' class='mr-2 ml-2'>Cambie membrana<br>";
+              "<input type='checkbox' id='chboxMembrana' name='chboxMembrana' value='m1' class='mr-2 ml-2'>Cambie membrana<br>";
             subcategoriaCol1.append(mt1);
 
             var chequeo = $("#chboxMembrana");
@@ -379,3 +379,34 @@ function MostrarNuevaOrden() {
     },
   });
 }
+
+//Esta funcion enviara la información del formulario por ajax a un php que procesara y hara la consulta a la base de datos.
+
+function insertarNuevaOrden() {
+  
+  
+
+  $.ajax({
+    method: "POST",
+    url: "./modelo/insertarNuevaOrden.php",
+    data: $('#formulario-nueva-orden').serialize(),
+
+    success: function(response) {
+
+        response = response.trim(); 
+
+        if (response == 1) {
+            $('#form_register').trigger("reset");
+            swal(":D", "¡Registrado correctamente!", "success");
+        } else if (response == 2) {
+            swal("D:", "¡Algo salio mal!", "warning");
+        } else {
+            swal("):", "¡Error!", "error");
+        }
+
+    },
+
+
+});
+};
+
