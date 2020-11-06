@@ -1,6 +1,4 @@
 function MostrarNuevaOrden() {
-
-
   $.ajax({
     type: "POST",
     url: "./vistas/modulos/formularios/nueva-orden.php",
@@ -97,9 +95,9 @@ function MostrarNuevaOrden() {
         });
       }); //Fin de la peticion
 
-    //Auto sugerencias de las tiendas
+      //Auto sugerencias de las tiendas
 
-      i=0;
+      i = 0;
       $(document).keyup(function (e) {
         switch (e.which) {
           case 37: // left
@@ -112,7 +110,6 @@ function MostrarNuevaOrden() {
             break;
 
           case 40: // down
-           
             hijos = Array($("#select-mostrar-tienda").children());
 
             cantidad = hijos[0].length;
@@ -120,19 +117,15 @@ function MostrarNuevaOrden() {
             total = cantidad - cantidad2;
 
             i++;
-           
-            
+
             console.log(i);
             $(".estilos-li").each(function (index) {
-
               switch (index) {
                 case 0:
                   $(this).addClass("estilos-li-keydown");
 
-                 
                   break;
 
-        
                 default:
                   break;
               }
@@ -148,7 +141,7 @@ function MostrarNuevaOrden() {
       });
 
       //Implementando nice select
-      $('select').niceSelect();
+      $("select").niceSelect();
 
       //Creando subcategorias
       var subcategoriaCol1 = $("#col-1");
@@ -254,10 +247,16 @@ function MostrarNuevaOrden() {
             $("#textareaNueva-orden").detach();
 
             var mt1 =
-              "<input type='checkbox' id='chboxMembrana' name='chboxMembrana' value='m1' class='mr-2 ml-2'>Cambie membrana<br>";
-            subcategoriaCol1.append(mt1);
+              "<input type='checkbox' id='chboxMembrana' name='chboxMembrana' value='membrana' class='mr-2 ml-2'>Se cambio membrana<br>";
+           // var mt2 =
+              //"<input type='checkbox' id='chboxMto' name='chboxMto' value='Mantenimiento POS' class='mr-2 ml-2'>Incluir mantenimiento a equipos<br>";
+            //var mt3 =
+            //  "<input type='checkbox' id='chboxCctv' name='chboxCctv' value='Mantenimiento CCTV' class='mr-2 ml-2'>Incluir mantenimiento a CCTV<br>";
 
-            var chequeo = $("#chboxMembrana");
+            subcategoriaCol1.append(mt1);
+            
+
+            /*var chequeo = $("#chboxMembrana");    //----Esta porcion de codigo solo activar cuando se decida incluir numero de membranas
             chequeo.change(function () {
               if ($("#numeroMembrana").length) {
                 $("#numeroMembrana").detach();
@@ -266,7 +265,7 @@ function MostrarNuevaOrden() {
                   "<input type='number' placeholder='Cuantas?' width='50' name='numeroMembrana' id='numeroMembrana' class='mr-2 mt-2 form-control ml-2'><br>";
                 subcategoriaCol1.append(pregunta);
               }
-            });
+            });*/
 
             break;
 
@@ -383,30 +382,24 @@ function MostrarNuevaOrden() {
 //Esta funcion enviara la información del formulario por ajax a un php que procesara y hara la consulta a la base de datos.
 
 function insertarNuevaOrden() {
-  
-  
-
   $.ajax({
     method: "POST",
     url: "./modelo/insertarNuevaOrden.php",
-    data: $('#formulario-nueva-orden').serialize(),
+    data: $("#formulario-nueva-orden").serialize(),
 
-    success: function(response) {
+    success: function (response) {
+      response = response.trim();
 
-        response = response.trim(); 
-
-        if (response == 1) {
-            $('#form_register').trigger("reset");
-            swal(":D", "¡Registrado correctamente!", "success");
-        } else if (response == 2) {
-            swal("D:", "¡Algo salio mal!", "warning");
-        } else {
-            swal("):", "¡Error!", "error");
-        }
-
+      if (response == 1) {
+        $("#form_register").trigger("reset");
+        swal(":D", "¡Registrado correctamente!", "success");
+      } else if (response == 2) {
+        swal("D:", "¡Algo salio mal!", "warning");
+      } else if (response == 3) {
+        swal(":u", "Introduce el CR de la tienda", "warning");
+      }else {
+        swal("):", "¡Error!", "error");
+      }
     },
-
-
-});
-};
-
+  });
+}

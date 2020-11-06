@@ -8,8 +8,8 @@
             <!-- /.card-header -->
             <div class="card-body">
                 <table id="tabla-mantenimientos" class="table table-bordered table-hover table-striped">
-                <thead>
-                    <tr class="table-primary">
+                <thead class="table-primary">
+                    <tr>
                     <th>#</th>
                     <th>CR</th>
                     <th>Tienda</th>

@@ -50,15 +50,23 @@ function MostrarMtos() {
               }}, 
               
           ],
+          scrollY: "50vh",
+          scrollCollapse: true,
+          paging: true,
           responsive: true,
-          lengthChange: false,
-          autoWidth: false,
+          
+          
           dom: 'Bfrtip',
           buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+          
+          order: [[0, 'desc']],
+
+          
         })
         .buttons()
         .container()
         .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
     },
   });
 }

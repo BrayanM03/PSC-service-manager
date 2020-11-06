@@ -182,7 +182,7 @@ if (empty($_SESSION["userName"])) {
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index3.html" class="brand-link" style="display:flex; justify-content:space-around; padding-left:20px">
-        <img src="vistas/dist/img/logo-psc.png" alt="AdminLTE Logo" class="brand-image elevation-3" style="opacity: .8;">
+        <img src="vistas/dist/img/logor.png" alt="PSC Logo" class="brand-image elevation-3" style="opacity: .9;">
         <span class="brand-text font-weight-light" style="font-size:15px; margin-right:0px;">Service M</span>
 
       </a>
