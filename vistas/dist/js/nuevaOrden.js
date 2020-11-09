@@ -392,13 +392,13 @@ function insertarNuevaOrden() {
 
       if (response == 1) {
         $("#form_register").trigger("reset");
-        swal(":D", "¡Registrado correctamente!", "success");
+        Swal.fire(":D", "¡Registrado correctamente!", "success");
       } else if (response == 2) {
-        swal("D:", "¡Algo salio mal!", "warning");
+        Swal.fire("D:", "¡Algo salio mal!", "warning");
       } else if (response == 3) {
-        swal(":u", "Introduce el CR de la tienda", "warning");
+        Swal.fire(":u", "Introduce el CR de la tienda", "warning");
       }else {
-        swal("):", "¡Error!", "error");
+        Swal.fire("):", "¡Error!", "error");
       }
     },
   });

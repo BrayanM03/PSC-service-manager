@@ -531,6 +531,7 @@ if (empty($_SESSION["userName"])) {
   <script src="vistas/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
   <script src="vistas/plugins/nice-select/js/jquery.nice-select.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
   <!-- AdminLTE App -->
   <script src="vistas/dist/js/adminlte.min.js"></script>
