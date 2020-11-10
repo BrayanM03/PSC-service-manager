@@ -28,10 +28,10 @@ if (empty($_SESSION["userName"])) {
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
-  <!-- DataTables -->
+  <!-- DataTables 
   <link rel="stylesheet" href="vistas/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="vistas/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="vistas/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="vistas/plugins/datatables-buttons/css/buttons.bootstrap4.min.css"> -->
   <link rel="stylesheet" href="vistas/dist/css/nuevaOrden.css">
   <link rel="stylesheet" href="vistas/dist/css/tablas-ordenes.css">
   <link rel="stylesheet" href="vistas/plugins/nice-select/css/nice-select.css">
@@ -515,23 +515,30 @@ if (empty($_SESSION["userName"])) {
   <script src="vistas/plugins/chart.js/Chart.min.js"></script>
   <script src="vistas/dist/js/graficas.js"></script>
 
-  <!-- DataTables  & Plugins -->
+  <!-- DataTables  & Plugins
   <script src="vistas/plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="vistas/plugins/datatables/defaults.js"></script>
   <script src="vistas/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
   <script src="vistas/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
   <script src="vistas/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
   <script src="vistas/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="vistas/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="vistas/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script> 
   <script src="vistas/plugins/jszip/jszip.min.js"></script>
   <script src="vistas/plugins/pdfmake/pdfmake.min.js"></script>
   <script src="vistas/plugins/pdfmake/vfs_fonts.js"></script>
   <script src="vistas/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
   <script src="vistas/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="vistas/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+  <script src="vistas/plugins/datatables-buttons/js/buttons.colVis.min.js"></script> -->
   <script src="vistas/plugins/nice-select/js/jquery.nice-select.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.22/af-2.3.5/b-1.6.5/b-colvis-1.6.5/b-flash-1.6.5/b-html5-1.6.5/b-print-1.6.5/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.3/r-2.2.6/rg-1.1.2/rr-1.2.7/sc-2.0.3/sb-1.0.0/sp-1.2.1/sl-1.3.1/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.22/af-2.3.5/b-1.6.5/b-colvis-1.6.5/b-flash-1.6.5/b-html5-1.6.5/b-print-1.6.5/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.3/r-2.2.6/rg-1.1.2/rr-1.2.7/sc-2.0.3/sb-1.0.0/sp-1.2.1/sl-1.3.1/datatables.min.js"></script>
+
 
   <!-- AdminLTE App -->
   <script src="vistas/dist/js/adminlte.min.js"></script>

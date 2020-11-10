@@ -25,7 +25,7 @@ function MostrarMtos() {
       $("#contenido-panel").html(response);
       //$('#contenido-panel').html(response);
 
-      $("#tabla-mantenimientos")
+       table= $("#tabla-mantenimientos")
         .DataTable({
           ajax: {
             method: "POST",
@@ -47,7 +47,7 @@ function MostrarMtos() {
               data: null,
               className: "celda-acciones",
               render: function () {
-                return '<button type="button" onclick="editarRegistro()" class="btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" onclick="borrarRegistro()" class="ButtonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+                return '<button type="button" onclick="editarRegistro()" class="btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="ButtonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
               },
             },
           ],
@@ -65,15 +65,23 @@ function MostrarMtos() {
         .container()
         .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
 
-    },
+        obtenerData('#tabla-mantenimientos tbody', table);
+
+        
+    } //Fin de respuesta ajax
+
+   
+
+  }); //Fin de funcion async ajax
+ 
+}//Fin mostrarmtos()
+
+var obtenerData = function (tbody, table ) { 
+  $(tbody).on("click", "button.ButtonBorrar", function(){
+    var datos = table.rows($(this).parents("tr")).data();
+
   });
-
-}
-
-function borrarRegistro() {
-  var arr= $("#tabla-mantenimientos").data();
- console.log(arr);
-  }
+ }
 
 function editarRegistro() {
   Swal.fire({
