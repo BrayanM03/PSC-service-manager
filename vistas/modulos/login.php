@@ -18,12 +18,17 @@
     <title>Iniciar sesión | PSC service manager</title>
 </head>
 
-<body>
+<body> 
+
+<video autoplay muted loop id="myVideo">
+  <source src="../dist/img/mar.mp4" type="video/mp4">
+</video>
+
     <div class="container-fluid">
         <div id="cardlogin" class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <img id="profile-img" class="profile-img-card" src="../dist/img/logo-psc.png" />
-            <p id="profile-name" class="profile-name-card"></p>
+            <img id="profile-img" class="profile-img-card" src="../dist/img/logor.png" />
+           
             <form class="form-signin" id="form-signin" method="POST" onsubmit="return login();">
                 <span id="reauth-email" class="reauth-email"></span>
                 <div class="credentials">
