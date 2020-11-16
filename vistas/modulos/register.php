@@ -24,6 +24,11 @@
 </head>
 
 <body>
+
+<video autoplay muted loop id="myVideoReg">
+  <source src="../dist/img/gente.mp4" type="video/mp4">
+</video>
+
     <div class="container-fluid">
         <div id="card" class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->

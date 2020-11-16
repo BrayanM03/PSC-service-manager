@@ -13,9 +13,7 @@ if (isset($_POST)) {
         "tienda" => $_POST['tienda-span-modal-mto'],
         "fecha" => $_POST['date-nuevaOrden'],
         "folio" => $_POST['folio-nueva-orden'],
-        //"subcat" => $_POST['select-subcat-nueva-orden'],
         "estatus" => $_POST['status-new-orden'],
-        //"solucion" => $_POST['solucion-nueva-orden'],
         "mes" => $mesActual,
         "usuario" => $_SESSION["userName"],
         "subcat" => $_POST["select-cat-nueva-orden"]
@@ -29,6 +27,8 @@ if (isset($_POST)) {
         
     }
 
+    //Procesando los datos del lado del servidor
+
     switch ($datos['subcat']) {
          
          //PROCESANDO DATOS DE MANTENIMIENTO-------:d
@@ -40,12 +40,12 @@ if (isset($_POST)) {
                 $chboxcctv="Mantenimiento CCTV";
                 $chboxmto1 = "Mantenimiento POS";
     
-               // $chboxcctv=$_POST["chboxCctv"];
+              
     
                 if (isset($_POST['chboxMembrana']) && $_POST['chboxMembrana'] == "membrana") {
                     $chboxmem=$_POST["chboxMembrana"];
                    
-                     //llenado automatico
+                //llenado automatico
                 $mantenimientoSol= "Se realiza mantenimiento preventivo a equipo de computo de caja 1 y 2.
                 Se realiza mantenimiento a equipo site de comunicaciones.
                 Se hacen pruebas y se deja funcionando.";
@@ -170,6 +170,274 @@ if (isset($_POST)) {
                 print_r(3);
             }
 
+             //FIN PROCESAMIENTO DE DATOS DE MANTENIMIENTO
+
+            case 'Computadora':
+
+                if ($datos['cr'] != "" && $datos['subcat']== "Computadora" ) {
+                  
+                  //$solucion= $_POST['solucion-nueva-orden'];  
+                if (isset($_POST['chboxNuevaOrden'])) {
+                   
+                $subcategoria= $_POST['chboxNuevaOrden'];  
+   
+                //Insertado sql de computadora
+                $sqlInsertComp = "INSERT INTO computadorascat(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario) VALUES (?,?,?,?,?,?,?,?,?)";
+                $resultado = $con->prepare($sqlInsertComp);
+                $resultado->bind_param(
+                    'sssisssss',
+                    $datos['cr'],
+                    $datos['tienda'],
+                    $datos['fecha'],
+                    $datos['folio'],
+                    $subcategoria,
+                    $datos['estatus'],
+                    $descripcion,
+                    $datos['mes'],
+                    $datos['usuario']
+                );
+    
+                $resultado->execute();
+                $resultado->close();
+                print_r(1);
+
+                  }elseif(empty($_POST['chboxNuevaOrden'])){
+                      print_r(5);
+                  }
+                
+
+                }
+
+                
+                
+
+            break;
+
+            case 'Voz y Datos':
+                
+                if ($datos['cr'] != "" && $datos['subcat']== "Voz y Datos" ) {
+                  
+                    //$solucion= $_POST['solucion-nueva-orden'];  
+                  if (isset($_POST['chboxNuevaOrden'])) {
+                     
+                  $subcategoria= $_POST['chboxNuevaOrden'];  
+     
+                  //Insertado sql de voz y datos
+                  $sqlInsertVoz = "INSERT INTO vozydatoscat(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario) VALUES (?,?,?,?,?,?,?,?,?)";
+                  $resultado = $con->prepare($sqlInsertVoz);
+                  $resultado->bind_param(
+                      'sssisssss',
+                      $datos['cr'],
+                      $datos['tienda'],
+                      $datos['fecha'],
+                      $datos['folio'],
+                      $subcategoria,
+                      $datos['estatus'],
+                      $descripcion,
+                      $datos['mes'],
+                      $datos['usuario']
+                  );
+      
+                  $resultado->execute();
+                  $resultado->close();
+                  print_r(1);
+  
+                    }elseif(empty($_POST['chboxNuevaOrden'])){
+                        print_r(5);
+                    }
+                  
+  
+                  }
+
+            break;
+
+            case 'CCTV':
+                
+                if ($datos['cr'] != "" && $datos['subcat']== "CCTV" ) {
+                  
+                    //$solucion= $_POST['solucion-nueva-orden'];  
+                  if (isset($_POST['chboxNuevaOrden'])) {
+                     
+                  $subcategoria= $_POST['chboxNuevaOrden'];  
+     
+                  //Insertado sql de computadora
+                  $sqlInsertCctv = "INSERT INTO cctvcat(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario) VALUES (?,?,?,?,?,?,?,?,?)";
+                  $resultado = $con->prepare($sqlInsertCctv);
+                  $resultado->bind_param(
+                      'sssisssss',
+                      $datos['cr'],
+                      $datos['tienda'],
+                      $datos['fecha'],
+                      $datos['folio'],
+                      $subcategoria,
+                      $datos['estatus'],
+                      $descripcion,
+                      $datos['mes'],
+                      $datos['usuario']
+                  );
+      
+                  $resultado->execute();
+                  $resultado->close();
+                  print_r(1);
+  
+                    }elseif(empty($_POST['chboxNuevaOrden'])){
+                        print_r(5);
+                    }
+                  
+  
+                  }
+            break;
+
+            case 'Impresoras':
+                
+                if ($datos['cr'] != "" && $datos['subcat']== "Impresoras" ) {
+                  
+                    //$solucion= $_POST['solucion-nueva-orden'];  
+                  if (isset($_POST['chboxNuevaOrden'])) {
+                     
+                  $subcategoria= $_POST['chboxNuevaOrden'];  
+     
+                  //Insertado sql de computadora
+                  $sqlInsertImp = "INSERT INTO impresorascat(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario) VALUES (?,?,?,?,?,?,?,?,?)";
+                  $resultado = $con->prepare($sqlInsertImp);
+                  $resultado->bind_param(
+                      'sssisssss',
+                      $datos['cr'],
+                      $datos['tienda'],
+                      $datos['fecha'],
+                      $datos['folio'],
+                      $subcategoria,
+                      $datos['estatus'],
+                      $descripcion,
+                      $datos['mes'],
+                      $datos['usuario']
+                  );
+      
+                  $resultado->execute();
+                  $resultado->close();
+                  print_r(1);
+  
+                    }elseif(empty($_POST['chboxNuevaOrden'])){
+                        print_r(5);
+                    }
+                  
+  
+                  }
+
+            break;
+
+            case 'Accesorios':
+                
+                if ($datos['cr'] != "" && $datos['subcat']== "Accesorios" ) {
+                  
+                    //$solucion= $_POST['solucion-nueva-orden'];  
+                  if (isset($_POST['chboxNuevaOrden'])) {
+                     
+                  $subcategoria= $_POST['chboxNuevaOrden'];  
+     
+                  //Insertado sql de computadora
+                  $sqlInsertAcc = "INSERT INTO accesorioscat(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario) VALUES (?,?,?,?,?,?,?,?,?)";
+                  $resultado = $con->prepare($sqlInsertAcc);
+                  $resultado->bind_param(
+                      'sssisssss',
+                      $datos['cr'],
+                      $datos['tienda'],
+                      $datos['fecha'],
+                      $datos['folio'],
+                      $subcategoria,
+                      $datos['estatus'],
+                      $descripcion,
+                      $datos['mes'],
+                      $datos['usuario']
+                  );
+      
+                  $resultado->execute();
+                  $resultado->close();
+                  print_r(1);
+  
+                    }elseif(empty($_POST['chboxNuevaOrden'])){
+                        print_r(5);
+                    }
+                  
+  
+                  }
+
+            break;
+
+            case 'IMAC':
+                
+                if ($datos['cr'] != "" && $datos['subcat']== "IMAC" ) {
+                  
+                    //$solucion= $_POST['solucion-nueva-orden'];  
+                  if (isset($_POST['chboxNuevaOrden'])) {
+                     
+                  $subcategoria= $_POST['chboxNuevaOrden'];  
+     
+                  //Insertado sql de computadora
+                  $sqlInsertImac = "INSERT INTO imaccat(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario) VALUES (?,?,?,?,?,?,?,?,?)";
+                  $resultado = $con->prepare($sqlInsertImac);
+                  $resultado->bind_param(
+                      'sssisssss',
+                      $datos['cr'],
+                      $datos['tienda'],
+                      $datos['fecha'],
+                      $datos['folio'],
+                      $subcategoria,
+                      $datos['estatus'],
+                      $descripcion,
+                      $datos['mes'],
+                      $datos['usuario']
+                  );
+      
+                  $resultado->execute();
+                  $resultado->close();
+                  print_r(1);
+  
+                    }elseif(empty($_POST['chboxNuevaOrden'])){
+                        print_r(5);
+                    }
+                  
+  
+                  }
+
+            break;
+
+            case 'Refacciones':
+                
+               if ($datos['cr'] != "" && $datos['subcat']== "Refacciones" ) {
+                  
+                  //$solucion= $_POST['solucion-nueva-orden'];  
+                if (isset($_POST['chboxNuevaOrden'])) {
+                   
+                $subcategoria= $_POST['chboxNuevaOrden'];  
+   
+                //Insertado sql de computadora
+                $sqlInsertRef = "INSERT INTO refaccionescat(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario) VALUES (?,?,?,?,?,?,?,?,?)";
+                $resultado = $con->prepare($sqlInsertRef);
+                $resultado->bind_param(
+                    'sssisssss',
+                    $datos['cr'],
+                    $datos['tienda'],
+                    $datos['fecha'],
+                    $datos['folio'],
+                    $subcategoria,
+                    $datos['estatus'],
+                    $descripcion,
+                    $datos['mes'],
+                    $datos['usuario']
+                );
+    
+                $resultado->execute();
+                $resultado->close();
+                print_r(1);
+
+                  }elseif(empty($_POST['chboxNuevaOrden'])){
+                      print_r(5);
+                  }
+                
+
+                }
+
             break;
         
         default:
@@ -181,7 +449,7 @@ if (isset($_POST)) {
 
   /*  
 
-    //FIN PROCESAMIENTO DE DATOS DE MANTENIMIENTO
+   
        
     } else {
         print_r(2);

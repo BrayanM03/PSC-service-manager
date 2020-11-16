@@ -6,10 +6,18 @@
 /*
  * General styles
  */
+ #myVideoReg {
+    position: fixed;
+    right: 0;
+    
+    min-width: 100%;
+    min-height: 100%;
+  }
+
 
 body {
     background-repeat: no-repeat;
-    background-image: url('../img/bg-login.jpg');
+    /*background-image: url('../img/bg-login.jpg');*/
     background-size: cover;
 }
 
@@ -69,7 +77,7 @@ body {
 .card {
     width: 300px;
     height: 690px;
-    background-color: #F7F7F7;
+    background-color: rgba(255, 255, 255, 0.5);
     /* just in case there no content*/
     padding: 20px 25px 30px;
     margin: 0 auto 25px;

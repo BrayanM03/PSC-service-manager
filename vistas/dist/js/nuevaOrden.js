@@ -152,17 +152,17 @@ function MostrarNuevaOrden() {
       var areaSoluc = $("#area-solucion");
 
       datos = [
-        "<input type='checkbox' class='mr-2 ml-2'>CPU<br>",
-        "<input type='checkbox' class='mr-2 ml-2'>Scanner<br>",
-        "<input type='checkbox' class='mr-2 ml-2'>Teclado<br>",
-        "<input type='checkbox' class='mr-2 ml-2'>Pinpad",
+        "<input type='radio' name='chboxNuevaOrden' value='cpu' class='mr-2 ml-2'>CPU<br>",
+        "<input type='radio' name='chboxNuevaOrden' value='scaner' class='mr-2 ml-2'>Scanner<br>",
+        "<input type='radio' name='chboxNuevaOrden' value='teclado' class='mr-2 ml-2'>Teclado<br>",
+        "<input type='radio' name='chboxNuevaOrden' value='pinpad' class='mr-2 ml-2'>Pinpad",
       ];
 
       datos2 = [
-        "<input type='checkbox' class='mr-2 ml-2'>POS<br>",
-        "<input type='checkbox' class='mr-2 ml-2'>XPOS<br>",
-        "<input type='checkbox' class='mr-2 ml-2'>Monitor<br>",
-        "<input type='checkbox' class='mr-2 ml-2'>Servicio<br>",
+        "<input type='radio' name='chboxNuevaOrden' value='pos' class='mr-2 ml-2'>POS<br>",
+        "<input type='radio' name='chboxNuevaOrden' value='xpos' class='mr-2 ml-2'>XPOS<br>",
+        "<input type='radio' name='chboxNuevaOrden' value='monitor' class='mr-2 ml-2'>Monitor<br>",
+        "<input type='radio' name='chboxNuevaOrden' value='servicio' class='mr-2 ml-2'>Servicio<br>",
       ];
 
       subcategoriaCol1.append(datos);
@@ -192,15 +192,15 @@ function MostrarNuevaOrden() {
             subcategoriaCol2.empty();
 
             VyD1 = [
-              "<input type='checkbox' class='mr-2 ml-2'>Enlace<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>3G<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>4G<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Enlace' class='mr-2 ml-2'>Enlace<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='3G' class='mr-2 ml-2'>3G<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='4G' class='mr-2 ml-2'>4G<br>",
             ];
 
             VyD2 = [
-              "<input type='checkbox' class='mr-2 ml-2'>Telefono<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Modem<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Servicio<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Telefono' class='mr-2 ml-2'>Telefono<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Modem' class='mr-2 ml-2'>Modem<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Servicio' class='mr-2 ml-2'>Servicio<br>",
             ];
 
             subcategoriaCol1.append(VyD1);
@@ -220,13 +220,13 @@ function MostrarNuevaOrden() {
             subcategoriaCol2.empty();
 
             var CCTV1 = [
-              "<input type='checkbox' class='mr-2 ml-2'>Camaras<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>DVR<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Camaras' class='mr-2 ml-2'>Camaras<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='DVR' class='mr-2 ml-2'>DVR<br>",
             ];
 
             var CCTV2 = [
-              "<input type='checkbox' class='mr-2 ml-2'>Nas<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Servicio<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Nas' class='mr-2 ml-2'>Nas<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Servicio' class='mr-2 ml-2'>Servicio<br>",
             ];
 
             subcategoriaCol1.append(CCTV1);
@@ -247,7 +247,7 @@ function MostrarNuevaOrden() {
             $("#textareaNueva-orden").detach();
 
             var mt1 =
-              "<input type='checkbox' id='chboxMembrana' name='chboxMembrana' value='membrana' class='mr-2 ml-2'>Se cambio membrana<br>";
+              "<input type='radio' id='chboxMembrana' name='chboxMembrana' value='Membrana' class='mr-2 ml-2'>Se cambio membrana<br>";
            // var mt2 =
               //"<input type='checkbox' id='chboxMto' name='chboxMto' value='Mantenimiento POS' class='mr-2 ml-2'>Incluir mantenimiento a equipos<br>";
             //var mt3 =
@@ -274,9 +274,9 @@ function MostrarNuevaOrden() {
             subcategoriaCol2.empty();
 
             impr1 = [
-              "<input type='checkbox' class='mr-2 ml-2'>Targeta logica<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Cabezal<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Servicio<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Targeta logica' class='mr-2 ml-2'>Targeta logica<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Cabezal' class='mr-2 ml-2'>Cabezal<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Servicio' class='mr-2 ml-2'>Servicio<br>",
             ];
 
             subcategoriaCol1.append(impr1);
@@ -295,20 +295,20 @@ function MostrarNuevaOrden() {
             subcategoriaCol2.empty();
 
             acc1 = [
-              "<input type='checkbox' class='mr-2 ml-2'>Dsico Duro<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Cable LTP1/USB<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Cable Espiral<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Patchord<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Teclado<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Modem",
+              "<input type='radio'  name='chboxNuevaOrden' value='Disco Duro' class='mr-2 ml-2'>Disco Duro<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Cable LTP1/USB' class='mr-2 ml-2'>Cable LTP1/USB<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Cable Espiral' class='mr-2 ml-2'>Cable Espiral<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Patchord' class='mr-2 ml-2'>Patchord<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Teclado' class='mr-2 ml-2'>Teclado<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Modem' class='mr-2 ml-2'>Modem",
             ];
 
             acc2 = [
-              "<input type='checkbox' class='mr-2 ml-2'>Switch<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Memoria<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Membrana<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Energia<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Otros",
+              "<input type='radio'  name='chboxNuevaOrden' value='Switch' class='mr-2 ml-2'>Switch<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Memoria' class='mr-2 ml-2'>Memoria<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Membrana' class='mr-2 ml-2'>Membrana<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Energia' class='mr-2 ml-2'>Energia<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Otros' class='mr-2 ml-2'>Otros",
             ];
 
             subcategoriaCol1.append(acc1);
@@ -328,16 +328,16 @@ function MostrarNuevaOrden() {
             subcategoriaCol2.empty();
 
             imac = [
-              "<input type='checkbox' class='mr-2 ml-2'>Instalación<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Redes<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>CCTV<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>CFE",
+              "<input type='radio'  name='chboxNuevaOrden' value='Instalación' class='mr-2 ml-2'>Instalación<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Redes' class='mr-2 ml-2'>Redes<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='CCTV' class='mr-2 ml-2'>CCTV<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='CFE' class='mr-2 ml-2'>CFE",
             ];
 
             imac2 = [
-              "<input type='checkbox' class='mr-2 ml-2'>TI<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Renovación tecnologica<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Servicios<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='TI' class='mr-2 ml-2'>TI<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Renovación tecnologica' class='mr-2 ml-2'>Renovación tecnologica<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Servicios' class='mr-2 ml-2'>Servicios<br>",
             ];
 
             subcategoriaCol1.append(imac);
@@ -350,9 +350,9 @@ function MostrarNuevaOrden() {
             subcategoriaCol2.empty();
 
             refac = [
-              "<input type='checkbox' class='mr-2 ml-2'>Refacción para computadora<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Refaccioón para impresora<br>",
-              "<input type='checkbox' class='mr-2 ml-2'>Accesorios<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Refacción para computadora' class='mr-2 ml-2'>Refacción para computadora<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Refacción para impresora' class='mr-2 ml-2'>Refacción para impresora<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Accesorios' class='mr-2 ml-2'>Accesorios<br>",
             ];
 
             subcategoriaCol1.append(refac);
@@ -397,6 +397,8 @@ function insertarNuevaOrden() {
         Swal.fire("D:", "¡Algo salio mal!", "warning");
       } else if (response == 3) {
         Swal.fire(":u", "Introduce el CR de la tienda", "warning");
+      }else if (response == 5) {
+        Swal.fire(":c", "Selecciona una subcategoria", "warning");
       }else {
         Swal.fire("):", "¡Error!", "error");
       }

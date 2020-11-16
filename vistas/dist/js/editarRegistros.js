@@ -151,7 +151,7 @@ var editarData = function (tbody, table ) {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Si, dale tronco',
             backdrop: `
-            rgba(0,0,123,0.4)
+            rgba(0,0,0,0.4)
             no-repeat
           `
           }).then((result) => {
