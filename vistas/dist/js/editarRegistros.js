@@ -35,7 +35,7 @@ var editarData = function (tbody, table ) {
   
       Swal.fire({
         title: "Editar registro",
-        html: '<form class="mt-4" id="formulario-nueva-orden">'+
+        html: '<form class="mt-4" id="formulario-editar-registro">'+
         '<div class="row">'+
             '<div class="col-6">'+
             '<div class="form-group">'+
@@ -122,7 +122,7 @@ var editarData = function (tbody, table ) {
         '<div class="col-12">'+
         '<div class="form-group" id="area-solucion">'+
         '<label><b>Solución</b></label>'+
-        '<textarea class="form-control" name="solucion-nueva-orden" style="height:100px" id="textareaNueva-orden" form="formulario-nueva-orden" placeholder="Escriba la solución">'+ solucion +'</textarea>'+
+        '<textarea class="form-control" name="swal-solucion" style="height:100px" id="textarea-swal-solucion" form="formulario-editar-registro" placeholder="Escriba la solución">'+ solucion +'</textarea>'+
         '</div>'+
         '</div>'+
         '</div>'+
@@ -134,6 +134,41 @@ var editarData = function (tbody, table ) {
         showConfirmButton: true,
         confirmButtonText: 'Actualizar',
         cancelButtonColor:'#ff764d',
+      }).then((result) => {
+          if(result.isConfirmed){
+
+            $.ajax({
+                method: "POST",
+                url: "./modelo/actualizarRegistros.php",
+                data: $("#formulario-editar-registro").serialize(),
+            
+                success: function (response) {
+                  response = response.trim();
+            
+                  if (response == 1) {
+                    $("#form_register").trigger("reset");
+                    Swal.fire(":D", "¡Actualizado correctamente!", "success");
+                  } else if (response == 2) {
+                    Swal.fire("D:", "¡Algo salio mal!", "warning");
+                  } else if (response == 3) {
+                    Swal.fire(":u", "Todo correcto", "success");
+                  }else if (response == 5) {
+                    Swal.fire(":c", "Selecciona una subcategoria", "warning");
+                  }else {
+                    Swal.fire("):", "¡Error!", "error");
+                  }
+                },
+              });
+
+            
+          /*  Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Actualizado',
+                showConfirmButton: false,
+                timer: 850
+              });   */
+          }
       }); 
   
     });
@@ -161,7 +196,7 @@ var editarData = function (tbody, table ) {
                     icon: 'success',
                     title: 'Borrado con exito',
                     showConfirmButton: false,
-                    timer: 900
+                    timer: 850
                   })
             }
           })
