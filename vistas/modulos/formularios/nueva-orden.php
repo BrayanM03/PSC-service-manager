@@ -68,7 +68,9 @@ if (isset($_POST)) {
                                 <option id="optionPrints" value="Impresoras">Impresoras</option>
                                 <option id="optionAccesorios" value="Accesorios">Accesorios</option>
                                 <option id="optionIMAC" value="IMAC">IMAC</option>
-                                <option id="optionRefaccion" value="Refacciones">Refacciones</option>
+                                <option id="optionRefaccion" value="Refacciones">Refacciones</option>  
+                                <option id="optionRenovacion" value="Renovacion">Renovación Tecnológica</option>
+
                             </select>
                         </div>
                     </div>

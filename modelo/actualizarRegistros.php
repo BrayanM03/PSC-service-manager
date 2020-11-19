@@ -6,7 +6,7 @@ session_start();
 if (isset($_POST)) {
 
     $mesActual = strftime("%B");
-    $descripcion= $_POST["swal-solucion"];
+    $descripcion = $_POST["swal-solucion"];
 
     $datos = array(
         "cr" => $_POST['cr-input-nuevaOrden'],
@@ -18,11 +18,39 @@ if (isset($_POST)) {
         "usuario" => $_SESSION["userName"],
         "subcat" => $_POST["select-cat-nueva-orden"],
         "solucion" => $descripcion
-        
-      
+
+
     );
 
-    print_r($datos["solucion"]);
-}
+   /* Computadora
+Voz y Datos
+CCTV">CCTV<
+Mantenimien
+Impresoras"
+Accesorios"
+IMAC">IMAC<
+Refacciones  */
 
-?>
+    switch ($datos["subcat"]) {
+        case 'Computadora':
+
+            print_r(3);
+
+
+            break;
+
+        case 'Voz y Datos':
+
+            print_r(2);
+
+
+            break;
+
+        default:
+
+            print_r(2);
+
+
+            break;
+    }
+}

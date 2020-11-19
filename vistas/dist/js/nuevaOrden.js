@@ -366,6 +366,31 @@ function MostrarNuevaOrden() {
 
             break;
 
+            case "Renovacion":
+            subcategoriaCol1.empty();
+            subcategoriaCol2.empty();
+
+            refac = [
+              "<input type='radio'  name='chboxNuevaOrden' value='CPU' class='mr-2 ml-2'>CPU<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Impresora' class='mr-2 ml-2'>Impresora<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Escáner' class='mr-2 ml-2'>Escáner<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Router' class='mr-2 ml-2'>Router<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Switch' class='mr-2 ml-2'>Switch<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Otros' class='mr-2 ml-2'>Otros<br>",
+            ];
+
+            subcategoriaCol1.append(refac);
+
+            if ($("#textareaNueva-orden").length) {
+              //alert('Existe el elemento texarea');
+            } else {
+              //alert('No existe el elemento textarea');
+              areaSoluc.append(textareaNuevo);
+            }
+
+            break;
+
+
           default:
             subcategoriaCol1.empty(datos);
             subcategoriaCol2.empty(datos2);
