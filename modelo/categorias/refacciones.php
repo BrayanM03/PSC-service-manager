@@ -2,7 +2,7 @@
     if (isset($_POST)) {
         include "../../controladores/conexion.php";
         $con= $conectando->conexion();
-        $sqlMtos="SELECT * FROM mantenimientocat";
+        $sqlMtos="SELECT * FROM refaccionescat";
         $result = mysqli_query($con, $sqlMtos);
         if(!$result){
             echo 'Error';

@@ -2,7 +2,7 @@
     if (isset($_POST)) {
         include "../../controladores/conexion.php";
         $con= $conectando->conexion();
-        $sqlMtos="SELECT * FROM mantenimientocat";
+        $sqlMtos="SELECT * FROM cctvcat";
         $result = mysqli_query($con, $sqlMtos);
         if(!$result){
             echo 'Error';
@@ -15,19 +15,19 @@
             }
 
             if(empty($arreglo)){
-                $arreglo = array(
-                 'cr' => "No",
-                 'estatus' => "hay",
-                 'fecha' => "nada",
-                 'folio' => "en",
-                 'id' => "esta",
-                 'mes' => "tabla",
-                 'solucion' => "Porfavor",
-                 'subcat' => "Ingresa",
-                 'tienda' => "informacion",
-                 'usuario' => "JEJE"
-                );
-             }
+               $arreglo = array(
+                'cr' => "No",
+                'estatus' => "hay",
+                'fecha' => "nada",
+                'folio' => "en",
+                'id' => "esta",
+                'mes' => "tabla",
+                'solucion' => "Porfavor",
+                'subcat' => "Ingresa",
+                'tienda' => "informacion",
+                'usuario' => "JEJE"
+               );
+            }
 
             echo json_encode($arreglo);
            

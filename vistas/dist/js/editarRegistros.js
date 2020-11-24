@@ -111,6 +111,21 @@ var editarData = function (tbody, table ) {
     '</div>'+
             '</div>'+
         '</div>'+
+        '<div class="row">'+
+        '<div class="col-6">'+
+            '<div class="form-group">'+
+                '<label><b>subcategoria</b></label>'+
+                '<input type="text" class="form-control" value="'+ categoria +'"name="cat-editar-orden" placeholder="Escribe subcat">'+
+            '</div>'+
+        '</div>'+
+        
+        '<div class="col-6">'+
+            '<div class="form-group">'+
+                '<label><b>Mes</b></label>'+
+                '<input type="text" class="form-control" value="'+ mes +'"name="mes-editar-orden" placeholder="Escribe el mes">'+
+            '</div>'+
+        '</div>'+
+        '</div>'+
     
         '<div class="sub-categorias mb-5" id="subcategorias">'+
             '<div class="row">'+
@@ -133,7 +148,7 @@ var editarData = function (tbody, table ) {
         cancelButtonText: 'Cerrar',
         cancelButtonColor: '#00e059',
         showConfirmButton: true,
-        confirmButtonText: 'Actualizar',
+        confirmButtonText: 'Actualizar', 
         cancelButtonColor:'#ff764d',
       }).then((result) => {
           if(result.isConfirmed){
@@ -185,7 +200,7 @@ var editarData = function (tbody, table ) {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, dale tronco',
+            confirmButtonText: 'Si, borrala',
             backdrop: `
             rgba(0,0,0,0.4)
             no-repeat

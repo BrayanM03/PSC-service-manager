@@ -226,19 +226,19 @@ if (empty($_SESSION["userName"])) {
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#v-pills-comp" id="nav-computadoras" onclick="MostrarTiendas();" data-toggle="pill" class="nav-link">
+                  <a href="#v-pills-comp" id="nav-computadoras" onclick="MostrarCompu();" data-toggle="pill" class="nav-link">
                     <i class="fas fa-desktop nav-icon"></i>
                     <p>Computadoras</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#v-pill-mto" id="nav-mantenimiento" onclick="MostrarMtos();" class="nav-link" data-toggle="pill">
+                  <a href="#v-pill-mto" id="nav-vozydat" onclick="MostrarVozydat();" class="nav-link" data-toggle="pill">
                     <i class="fas fa-phone-volume nav-icon"></i>
                     <p>Voz y Datos</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#v-pill-mto" id="nav-mantenimiento" onclick="MostrarMtos();" class="nav-link" data-toggle="pill">
+                  <a href="#v-pill-mto" id="nav-cctv" onclick="MostrarCctv();" class="nav-link" data-toggle="pill">
                     <i class="fas fa-video nav-icon"></i>
                     <p>CCTV</p>
                   </a>
@@ -250,28 +250,34 @@ if (empty($_SESSION["userName"])) {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#v-pill-mto" id="nav-mantenimiento" onclick="MostrarMtos();" class="nav-link" data-toggle="pill">
+                  <a href="#v-pill-mto" id="nav-printers" onclick="MostrarPrinters();" class="nav-link" data-toggle="pill">
                     <i class="fas fa-print nav-icon"></i>
                     <p>Impresoras</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#v-pill-mto" id="nav-mantenimiento" onclick="MostrarMtos();" class="nav-link" data-toggle="pill">
+                  <a href="#v-pill-mto" id="nav-accesorios" onclick="MostrarAcc();" class="nav-link" data-toggle="pill">
                     <i class="fas fa-keyboard nav-icon"></i>
                     <p>Accesorios</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#v-pill-mto" id="nav-mantenimiento" onclick="MostrarMtos();" class="nav-link" data-toggle="pill">
+                  <a href="#v-pill-mto" id="nav-imac" onclick="MostrarImac();" class="nav-link" data-toggle="pill">
                     <i class="fas fa-wifi nav-icon"></i>
                     <p>IMAC</p>
 
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#v-pill-mto" id="nav-mantenimiento" onclick="MostrarMtos();" class="nav-link" data-toggle="pill">
+                  <a href="#v-pill-mto" id="nav-refacciones" onclick="MostrarRefacci();" class="nav-link" data-toggle="pill">
                     <i class="fas fa-cogs nav-icon"></i>
                     <p>Refacciones</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#v-pill-mto" id="nav-refacciones" onclick="MostrarRenovacion();" class="nav-link" data-toggle="pill">
+                    <i class="fas fa-history nav-icon"></i>
+                    <p>Renovacion Tec</p>
                   </a>
                 </li>
               </ul>
@@ -302,7 +308,7 @@ if (empty($_SESSION["userName"])) {
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1 class="m-0">Categoria Computadoras</h1>
+                <h1 class="m-0" id="titulo-categoria">Categoria Computadoras</h1>
               </div><!-- /.col -->
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">

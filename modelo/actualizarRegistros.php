@@ -16,13 +16,15 @@ if (isset($_POST)) {
         "estatus" => $_POST['status-new-orden'],
         "mes" => $mesActual,
         "usuario" => $_SESSION["userName"],
-        "subcat" => $_POST["select-cat-nueva-orden"],
-        "solucion" => $descripcion
+        "cat" => $_POST["select-cat-nueva-orden"],
+        "solucion" => $descripcion,
+        "subcat" => $_POST["cat-editar-orden"],
+        
 
 
     );
 
-   /* Computadora
+    /* Computadora
 Voz y Datos
 CCTV">CCTV<
 Mantenimien
@@ -34,6 +36,27 @@ Refacciones  */
     switch ($datos["subcat"]) {
         case 'Computadora':
 
+            if ($datos["subcat"] == 'Computadora') {
+                
+                $sqlInsertComp = "UPDATE computadorascat SET cr= ?, tienda= ?, fecha= ?, folio=?, subcat= ?, estatus= ?, solucion=?, mes= ?, usuario=?";
+                $resultado = $con->prepare($sqlInsertComp);
+                $resultado->bind_param(
+                    'sssisssss',
+                    $datos['cr'],
+                    $datos['tienda'],
+                    $datos['fecha'],
+                    $datos['folio'],
+                    $datos['subcat'],
+                    $datos['estatus'],
+                    $descripcion,
+                    $datos['mes'],
+                    $datos['usuario']
+                );
+    
+                $resultado->execute();
+                $resultado->close();
+
+            }
             print_r(3);
 
 
@@ -43,6 +66,55 @@ Refacciones  */
 
             print_r(2);
 
+
+            break;
+
+        case 'CCTV':
+
+            print_r(2);
+
+
+            break;
+
+
+        case 'Mantenimiento':
+
+            print_r(2);
+
+            break;
+
+
+        case 'Impresoras':
+
+            print_r(2);
+
+            break;
+
+
+        case 'Accesorios':
+
+            print_r(2);
+
+            break;
+
+
+        case 'IMAC':
+
+            print_r(2);
+
+            break;
+
+
+        case 'Refacciones':
+
+            print_r(2);
+
+            break;
+
+
+        case 'Renovacion':
+
+            print_r(2);
 
             break;
 

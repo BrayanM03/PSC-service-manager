@@ -12,6 +12,234 @@ function MostrarTiendas() {
   });
 }
 
+//Muestra las ordenes de los computadoras
+function MostrarCompu() {
+  $.ajax({
+    type: "POST",
+    url: "./vistas/modulos/tablas/prueba.php",
+    data: "data",
+
+    success: function (response) {
+      console.log(response);
+
+      $("#contenido-panel").html(response);
+      //$('#contenido-panel').html(response);
+
+       table= $("#tabla-mantenimientos")
+        .DataTable({
+          ajax: {
+            method: "POST",
+            url: "./modelo/categorias/computadoras.php",
+          },
+          select: true,
+          columns: [
+            { data: "id" },
+            { data: "cr" },
+            { data: "tienda", width: "20%" },
+            { data: "fecha" },
+            { data: "folio" },
+            { data: "subcat" },
+            { data: "estatus" },
+            { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "mes" },
+            { data: "usuario" },
+            {
+              data: null,
+              className: "celda-acciones",
+              render: function () {
+                return '<button type="button" class="buttonEditar btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+              },
+            },
+          ],
+          scrollY: "50vh",
+          scrollCollapse: true,
+          paging: true,
+          responsive: true,
+
+          dom: "Bfrtip",
+          buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+
+          order: [[3, "desc"], [0, "desc"]],
+
+          language: {
+            
+            emptyTable: "No hay registros",
+            infoEmpty: "Ups!, no hay registros aun en esta categoria."
+          }
+        });
+
+        table.buttons()
+        .container()
+        .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+        //Funciones del crud
+      
+        editarData('#tabla-mantenimientos tbody', table);
+        borrarData('#tabla-mantenimientos tbody', table);
+
+        
+       
+    } //Fin de respuesta ajax
+
+   
+
+  }); //Fin de funcion async ajax
+ 
+}//Fin mostrarmtos()
+
+//Muestra las ordenes de los voz y datos
+function MostrarVozydat() {
+  $.ajax({
+    type: "POST",
+    url: "./vistas/modulos/tablas/prueba.php",
+    data: "data",
+
+    success: function (response) {
+      console.log(response);
+
+      $("#contenido-panel").html(response);
+      //$('#contenido-panel').html(response);
+
+       table= $("#tabla-mantenimientos")
+        .DataTable({
+          ajax: {
+            method: "POST",
+            url: "./modelo/categorias/vozydatos.php",
+          },
+          select: true,
+          columns: [
+            { data: "id" },
+            { data: "cr" },
+            { data: "tienda", width: "20%" },
+            { data: "fecha" },
+            { data: "folio" },
+            { data: "subcat" },
+            { data: "estatus" },
+            { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "mes" },
+            { data: "usuario" },
+            {
+              data: null,
+              className: "celda-acciones",
+              render: function () {
+                return '<button type="button" class="buttonEditar btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+              },
+            },
+          ],
+          scrollY: "50vh",
+          scrollCollapse: true,
+          paging: true,
+          responsive: true,
+
+          dom: "Bfrtip",
+          buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+
+          order: [[3, "desc"], [0, "desc"]],
+
+          language: {
+            infoEmpty: "Ups!, no hay registros aun en esta categoria."
+          }
+        });
+
+        table.buttons()
+        .container()
+        .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+        //Funciones del crud
+      
+        editarData('#tabla-mantenimientos tbody', table);
+        borrarData('#tabla-mantenimientos tbody', table);
+
+        
+       
+    } //Fin de respuesta ajax
+
+   
+
+  }); //Fin de funcion async ajax
+ 
+}//Fin mostrarvozydat()
+
+
+
+//Muestra las ordenes de CCTV
+
+
+function MostrarCctv() {
+  $.ajax({
+    type: "POST",
+    url: "./vistas/modulos/tablas/prueba.php",
+    data: "data",
+
+    success: function (response) {
+      console.log(response);
+
+      $("#contenido-panel").html(response);
+      //$('#contenido-panel').html(response);
+
+       table= $("#tabla-mantenimientos")
+        .DataTable({
+          ajax: {
+            method: "POST",
+            url: "./modelo/categorias/cctv.php",
+          },
+          select: true,
+          columns: [
+            { data: "id" },
+            { data: "cr" },
+            { data: "tienda", width: "20%" },
+            { data: "fecha" },
+            { data: "folio" },
+            { data: "subcat" },
+            { data: "estatus" },
+            { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "mes" },
+            { data: "usuario" },
+            {
+              data: null,
+              className: "celda-acciones",
+              render: function () {
+                return '<button type="button" class="buttonEditar btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+              },
+            },
+          ],
+          scrollY: "50vh",
+          scrollCollapse: true,
+          paging: true,
+          responsive: true,
+
+          dom: "Bfrtip",
+          buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+
+          order: [[3, "desc"],  [0, "desc"]],
+
+          language: {
+            
+            emptyTable: "No hay registros",
+            infoEmpty: "Ups!, no hay registros aun en esta categoria."
+          }
+
+        });
+
+        table.buttons()
+        .container()
+        .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+        //Funciones del crud
+      
+        editarData('#tabla-mantenimientos tbody', table);
+        borrarData('#tabla-mantenimientos tbody', table);
+
+        
+       
+    } //Fin de respuesta ajax
+
+   
+
+  }); //Fin de funcion async ajax
+ 
+}//Fin mostrarcctv()
+
 //Muestra las ordenes de los mantenimientos
 function MostrarMtos() {
   $.ajax({
@@ -59,7 +287,14 @@ function MostrarMtos() {
           dom: "Bfrtip",
           buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
 
-          order: [[0, "desc"]],
+          order: [[3, "desc"],  [0, "desc"]],
+
+          language: {
+            
+            emptyTable: "No hay registros",
+            infoEmpty: "Ups!, no hay registros aun en esta categoria."
+          }
+
         });
 
         table.buttons()
@@ -80,6 +315,383 @@ function MostrarMtos() {
   }); //Fin de funcion async ajax
  
 }//Fin mostrarmtos()
+
+//Muestra las ordenes de las impresoras
+function MostrarPrinters() {
+  $.ajax({
+    type: "POST",
+    url: "./vistas/modulos/tablas/prueba.php",
+    data: "data",
+
+    success: function (response) {
+      console.log(response);
+
+      $("#contenido-panel").html(response);
+      //$('#contenido-panel').html(response);
+
+       table= $("#tabla-mantenimientos")
+        .DataTable({
+          ajax: {
+            method: "POST",
+            url: "./modelo/categorias/impresoras.php",
+          },
+          select: true,
+          columns: [
+            { data: "id" },
+            { data: "cr" },
+            { data: "tienda", width: "20%" },
+            { data: "fecha" },
+            { data: "folio" },
+            { data: "subcat" },
+            { data: "estatus" },
+            { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "mes" },
+            { data: "usuario" },
+            {
+              data: null,
+              className: "celda-acciones",
+              render: function () {
+                return '<button type="button" class="buttonEditar btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+              },
+            },
+          ],
+          scrollY: "50vh",
+          scrollCollapse: true,
+          paging: true,
+          responsive: true,
+
+          dom: "Bfrtip",
+          buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+
+          order: [[3, "desc"],  [0, "desc"]],
+          language: {
+            
+            emptyTable: "No hay registros",
+            infoEmpty: "Ups!, no hay registros aun en esta categoria."
+          }
+
+        });
+
+        table.buttons()
+        .container()
+        .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+        //Funciones del crud
+      
+        editarData('#tabla-mantenimientos tbody', table);
+        borrarData('#tabla-mantenimientos tbody', table);
+
+        
+       
+    } //Fin de respuesta ajax
+
+   
+
+  }); //Fin de funcion async ajax
+ 
+}//Fin mostrarprinters()
+
+//Muestra las ordenes de accesorios
+function MostrarAcc() {
+  $.ajax({
+    type: "POST",
+    url: "./vistas/modulos/tablas/prueba.php",
+    data: "data",
+
+    success: function (response) {
+      console.log(response);
+
+      $("#contenido-panel").html(response);
+      //$('#contenido-panel').html(response);
+
+       table= $("#tabla-mantenimientos")
+        .DataTable({
+          ajax: {
+            method: "POST",
+            url: "./modelo/categorias/accesorios.php",
+          },
+          select: true,
+          columns: [
+            { data: "id" },
+            { data: "cr" },
+            { data: "tienda", width: "20%" },
+            { data: "fecha" },
+            { data: "folio" },
+            { data: "subcat" },
+            { data: "estatus" },
+            { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "mes" },
+            { data: "usuario" },
+            {
+              data: null,
+              className: "celda-acciones",
+              render: function () {
+                return '<button type="button" class="buttonEditar btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+              },
+            },
+          ],
+          scrollY: "50vh",
+          scrollCollapse: true,
+          paging: true,
+          responsive: true,
+
+          dom: "Bfrtip",
+          buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+
+          order: [[3, "desc"],  [0, "desc"]],
+          language: {
+            
+            emptyTable: "No hay registros",
+            infoEmpty: "Ups!, no hay registros aun en esta categoria."
+          }
+
+        });
+
+        table.buttons()
+        .container()
+        .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+        //Funciones del crud
+      
+        editarData('#tabla-mantenimientos tbody', table);
+        borrarData('#tabla-mantenimientos tbody', table);
+
+        
+       
+    } //Fin de respuesta ajax
+
+   
+
+  }); //Fin de funcion async ajax
+ 
+}//Fin mostrarmtos()
+
+//Muestra las ordenes de los mantenimientos
+function MostrarImac() {
+  $.ajax({
+    type: "POST",
+    url: "./vistas/modulos/tablas/prueba.php",
+    data: "data",
+
+    success: function (response) {
+      console.log(response);
+
+      $("#contenido-panel").html(response);
+      //$('#contenido-panel').html(response);
+
+       table= $("#tabla-mantenimientos")
+        .DataTable({
+          ajax: {
+            method: "POST",
+            url: "./modelo/categorias/imac.php",
+          },
+          select: true,
+          columns: [
+            { data: "id" },
+            { data: "cr" },
+            { data: "tienda", width: "20%" },
+            { data: "fecha" },
+            { data: "folio" },
+            { data: "subcat" },
+            { data: "estatus" },
+            { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "mes" },
+            { data: "usuario" },
+            {
+              data: null,
+              className: "celda-acciones",
+              render: function () {
+                return '<button type="button" class="buttonEditar btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+              },
+            },
+          ],
+          scrollY: "50vh",
+          scrollCollapse: true,
+          paging: true,
+          responsive: true,
+
+          dom: "Bfrtip",
+          buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+
+          order: [[3, "desc"],  [0, "desc"]],
+          language: {
+            
+            emptyTable: "No hay registros",
+            infoEmpty: "Ups!, no hay registros aun en esta categoria."
+          }
+
+        });
+
+        table.buttons()
+        .container()
+        .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+        //Funciones del crud
+      
+        editarData('#tabla-mantenimientos tbody', table);
+        borrarData('#tabla-mantenimientos tbody', table);
+
+        
+       
+    } //Fin de respuesta ajax
+
+   
+
+  }); //Fin de funcion async ajax
+ 
+}//Fin mostrarimac()
+
+//Muestra las ordenes de los mantenimientos
+function MostrarRefacci() {
+  $.ajax({
+    type: "POST",
+    url: "./vistas/modulos/tablas/prueba.php",
+    data: "data",
+
+    success: function (response) {
+      console.log(response);
+
+      $("#contenido-panel").html(response);
+      //$('#contenido-panel').html(response);
+
+       table= $("#tabla-mantenimientos")
+        .DataTable({
+          ajax: {
+            method: "POST",
+            url: "./modelo/categorias/refacciones.php",
+          },
+          select: true,
+          columns: [
+            { data: "id" },
+            { data: "cr" },
+            { data: "tienda", width: "20%" },
+            { data: "fecha" },
+            { data: "folio" },
+            { data: "subcat" },
+            { data: "estatus" },
+            { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "mes" },
+            { data: "usuario" },
+            {
+              data: null,
+              className: "celda-acciones",
+              render: function () {
+                return '<button type="button" class="buttonEditar btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+              },
+            },
+          ],
+          scrollY: "50vh",
+          scrollCollapse: true,
+          paging: true,
+          responsive: true,
+
+          dom: "Bfrtip",
+          buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+
+          order: [[3, "desc"],  [0, "desc"]],
+          language: {
+            
+            emptyTable: "No hay registros",
+            infoEmpty: "Ups!, no hay registros aun en esta categoria."
+          }
+
+        });
+
+        table.buttons()
+        .container()
+        .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+        //Funciones del crud
+      
+        editarData('#tabla-mantenimientos tbody', table);
+        borrarData('#tabla-mantenimientos tbody', table);
+
+        
+       
+    } //Fin de respuesta ajax
+
+   
+
+  }); //Fin de funcion async ajax
+ 
+}//Fin mostrarrefacc()
+
+
+
+//Muestra las ordenes de la renovacion tecnologica
+function MostrarRenovacion() {
+  $.ajax({
+    type: "POST",
+    url: "./vistas/modulos/tablas/prueba.php",
+    data: "data",
+
+    success: function (response) {
+      console.log(response);
+
+      $("#contenido-panel").html(response);
+      //$('#contenido-panel').html(response);
+
+       table= $("#tabla-mantenimientos")
+        .DataTable({
+          ajax: {
+            method: "POST",
+            url: "./modelo/categorias/renovacion_tecno.php",
+          },
+          select: true,
+          columns: [
+            { data: "id" },
+            { data: "cr" },
+            { data: "tienda", width: "20%" },
+            { data: "fecha" },
+            { data: "folio" },
+            { data: "subcat" },
+            { data: "estatus" },
+            { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "mes" },
+            { data: "usuario" },
+            {
+              data: null,
+              className: "celda-acciones",
+              render: function () {
+                return '<button type="button" class="buttonEditar btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+              },
+            },
+          ],
+          scrollY: "50vh",
+          scrollCollapse: true,
+          paging: true,
+          responsive: true,
+
+          dom: "Bfrtip",
+          buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+
+          order: [[3, "desc"],  [0, "desc"]],
+          language: {
+            
+            emptyTable: "No hay registros",
+            infoEmpty: "Ups!, no hay registros aun en esta categoria."
+          }
+
+        });
+
+        table.buttons()
+        .container()
+        .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+        //Funciones del crud
+      
+        editarData('#tabla-mantenimientos tbody', table);
+        borrarData('#tabla-mantenimientos tbody', table);
+
+        
+       
+    } //Fin de respuesta ajax
+
+   
+
+  }); //Fin de funcion async ajax
+ 
+}//Fin mostrarRenovacion()
 
 
  
