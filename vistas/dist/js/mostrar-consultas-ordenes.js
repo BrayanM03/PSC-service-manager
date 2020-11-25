@@ -14,6 +14,21 @@ function MostrarTiendas() {
 
 //Muestra las ordenes de los computadoras
 function MostrarCompu() {
+
+  $.ajax({
+    type: "post",
+    url: "./modelo/trayendoCategoria.php",
+    data: {categoria: 'computadora'},
+  
+    success: function (response) {
+      alert(response);
+     
+
+      
+    }
+  });
+
+  //Trayendo tabla
   $.ajax({
     type: "POST",
     url: "./vistas/modulos/tablas/prueba.php",
