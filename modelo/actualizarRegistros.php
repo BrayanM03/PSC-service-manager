@@ -7,7 +7,7 @@ if (isset($_POST)) {
 
     $mesActual = strftime("%B");
     $descripcion = $_POST["swal-solucion"];
-
+    $ID = $_POST['id-input-modal'];
     $datos = array(
         "cr" => $_POST['cr-input-nuevaOrden'],
         "tienda" => $_POST['tienda-span-modal-mto'],
@@ -16,9 +16,9 @@ if (isset($_POST)) {
         "estatus" => $_POST['status-new-orden'],
         "mes" => $mesActual,
         "usuario" => $_SESSION["userName"],
-        "cat" => $_POST["select-cat-nueva-orden"],
+        "cat" => $_POST["select-cat-editar-orden"],
         "solucion" => $descripcion,
-        "subcat" => $_POST["cat-editar-orden"],
+        "subcat" => $_POST["subcat-editar-orden"],
         
 
 
@@ -33,12 +33,12 @@ Accesorios"
 IMAC">IMAC<
 Refacciones  */
 
-    switch ($datos["subcat"]) {
+    switch ($datos["cat"]) {
+
         case 'Computadora':
 
-            if ($datos["subcat"] == 'Computadora') {
-                
-                $sqlInsertComp = "UPDATE computadorascat SET cr= ?, tienda= ?, fecha= ?, folio=?, subcat= ?, estatus= ?, solucion=?, mes= ?, usuario=?";
+           
+               $sqlInsertComp = "UPDATE computadorascat SET cr= ?, tienda= ?, fecha= ?, folio=?, subcat= ?, estatus= ?, solucion=?, mes= ?, usuario=? WHERE id= $ID";
                 $resultado = $con->prepare($sqlInsertComp);
                 $resultado->bind_param(
                     'sssisssss',
@@ -56,8 +56,10 @@ Refacciones  */
                 $resultado->execute();
                 $resultado->close();
 
-            }
-            print_r(3);
+                print_r(3);
+
+            
+           
 
 
             break;

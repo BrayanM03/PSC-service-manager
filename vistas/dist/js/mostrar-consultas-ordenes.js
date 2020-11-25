@@ -395,7 +395,7 @@ function MostrarPrinters() {
 function MostrarAcc() {
   $.ajax({
     type: "POST",
-    url: "./vistas/modulos/tablas/prueba.php",
+    url: "./vistas/modulos/tablas/tablas_con_cant.php",
     data: "data",
 
     success: function (response) {
@@ -418,15 +418,18 @@ function MostrarAcc() {
             { data: "fecha" },
             { data: "folio" },
             { data: "subcat" },
+            { data: "cant" },
             { data: "estatus" },
             { data: "solucion", width: "30%", className: "celda-descripcion" },
             { data: "mes" },
             { data: "usuario" },
+           
+
             {
               data: null,
               className: "celda-acciones",
               render: function () {
-                return '<button type="button" class="buttonEditar btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+                return '<button type="button" class="buttonEditarCant btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
               },
             },
           ],
@@ -455,6 +458,7 @@ function MostrarAcc() {
       
         editarData('#tabla-mantenimientos tbody', table);
         borrarData('#tabla-mantenimientos tbody', table);
+        editarDataconCant('#tabla-mantenimientos tbody', table);
 
         
        
@@ -622,7 +626,7 @@ function MostrarRefacci() {
 function MostrarRenovacion() {
   $.ajax({
     type: "POST",
-    url: "./vistas/modulos/tablas/prueba.php",
+    url: "./vistas/modulos/tablas/tablas_con_cant.php",
     data: "data",
 
     success: function (response) {
@@ -645,6 +649,7 @@ function MostrarRenovacion() {
             { data: "fecha" },
             { data: "folio" },
             { data: "subcat" },
+            { data: "cant" },
             { data: "estatus" },
             { data: "solucion", width: "30%", className: "celda-descripcion" },
             { data: "mes" },
@@ -653,7 +658,7 @@ function MostrarRenovacion() {
               data: null,
               className: "celda-acciones",
               render: function () {
-                return '<button type="button" class="buttonEditar btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+                return '<button type="button" class="buttonEditarCant btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
               },
             },
           ],
@@ -682,6 +687,7 @@ function MostrarRenovacion() {
       
         editarData('#tabla-mantenimientos tbody', table);
         borrarData('#tabla-mantenimientos tbody', table);
+        editarDataconCant('#tabla-mantenimientos tbody', table);
 
         
        

@@ -15,7 +15,7 @@
             }
 
             if(empty($arreglo)){
-                $arreglo = array(
+                $arreglo = array( 
                  'cr' => "No",
                  'estatus' => "hay",
                  'fecha' => "nada",

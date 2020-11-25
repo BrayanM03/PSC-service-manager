@@ -295,24 +295,50 @@ function MostrarNuevaOrden() {
             subcategoriaCol2.empty();
 
             acc1 = [
-              "<input type='radio'  name='chboxNuevaOrden' value='Disco Duro' class='mr-2 ml-2'>Disco Duro<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Cable LTP1/USB' class='mr-2 ml-2'>Cable LTP1/USB<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Cable Espiral' class='mr-2 ml-2'>Cable Espiral<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Patchord' class='mr-2 ml-2'>Patchord<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Teclado' class='mr-2 ml-2'>Teclado<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Modem' class='mr-2 ml-2'>Modem",
+              "<input type='radio'  name='chboxNuevaOrden' value='Disco Duro' class='chckbox-acc mr-2 ml-2'>Disco Duro<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Cable LTP1/USB' class='chckbox-acc mr-2 ml-2'>Cable LTP1/USB<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Cable Espiral' class='chckbox-acc mr-2 ml-2'>Cable Espiral<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Patchord' class='chckbox-acc mr-2 ml-2'>Patchord<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Teclado' class='chckbox-acc mr-2 ml-2'>Teclado<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Modem' class='chckbox-acc mr-2 ml-2'>Modem",
             ];
 
             acc2 = [
-              "<input type='radio'  name='chboxNuevaOrden' value='Switch' class='mr-2 ml-2'>Switch<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Memoria' class='mr-2 ml-2'>Memoria<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Membrana' class='mr-2 ml-2'>Membrana<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Energia' class='mr-2 ml-2'>Energia<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Otros' class='mr-2 ml-2'>Otros",
+              "<input type='radio'  name='chboxNuevaOrden' value='Switch' class='chckbox-acc mr-2 ml-2'>Switch<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Memoria' class='chckbox-acc mr-2 ml-2'>Memoria<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Membrana' class='chckbox-acc mr-2 ml-2'>Membrana<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Energia' class='chckbox-acc mr-2 ml-2'>Energia<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Otros' class='chckbox-acc mr-2 ml-2'>Otros",
             ];
 
             subcategoriaCol1.append(acc1);
             subcategoriaCol2.append(acc2);
+
+             var chequeo = $(".chckbox-acc");    //----Esta porcion de codigo solo activar cuando se decida incluir numero de membranas
+             flag=0;
+            chequeo.change(function () {
+              
+              if(flag ==0){
+                
+                var pregunta =
+                "<input type='number' placeholder='Cantidad' width='50' name='cantAcc' id='numeroacc' class='mr-2 mt-2 form-control ml-2'>";
+                subcategoriaCol1.append(pregunta);
+                flag =1;
+                
+              }if(flag == 1){
+                $('#numeroacc').remove();
+                var pregunta =
+                "<input type='number' placeholder='Cantidad' width='50' name='cantAcc' id='numeroacc' class='mr-2 mt-2 form-control ml-2'>";
+                subcategoriaCol1.append(pregunta);
+                flag=1;
+
+
+              }
+             
+                  
+            
+
+            });
 
             if ($("#textareaNueva-orden").length) {
               //alert('Existe el elemento texarea');
@@ -343,6 +369,8 @@ function MostrarNuevaOrden() {
             subcategoriaCol1.append(imac);
             subcategoriaCol2.append(imac2);
 
+            
+
             break;
 
           case "Refacciones":
@@ -371,15 +399,44 @@ function MostrarNuevaOrden() {
             subcategoriaCol2.empty();
 
             refac = [
-              "<input type='radio'  name='chboxNuevaOrden' value='CPU' class='mr-2 ml-2'>CPU<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Impresora' class='mr-2 ml-2'>Impresora<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Escáner' class='mr-2 ml-2'>Escáner<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Router' class='mr-2 ml-2'>Router<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Switch' class='mr-2 ml-2'>Switch<br>",
-              "<input type='radio'  name='chboxNuevaOrden' value='Otros' class='mr-2 ml-2'>Otros<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='CPU' class='chckbox-ren mr-2 ml-2'>CPU<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Impresora' class='chckbox-ren mr-2 ml-2'>Impresora<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Escáner' class='chckbox-ren mr-2 ml-2'>Escáner<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Router' class='chckbox-ren mr-2 ml-2'>Router<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Switch' class='chckbox-ren mr-2 ml-2'>Switch<br>",
+              "<input type='radio'  name='chboxNuevaOrden' value='Otros' class='chckbox-ren mr-2 ml-2'>Otros<br>",
             ];
 
             subcategoriaCol1.append(refac);
+
+            
+            var chequeo = $(".chckbox-ren");    //----Esta porcion de codigo solo activar cuando se decida incluir numero de membranas
+            flag=0;
+           chequeo.change(function () {
+             
+             if(flag ==0){
+               
+               var pregunta =
+               "<input type='number' placeholder='Cantidad' width='50' name='cantRen' id='cantRen' class='mr-2 mt-2 form-control ml-2'>";
+               subcategoriaCol1.append(pregunta);
+               flag =1;
+               
+             }if(flag == 1){
+               $('#cantRen').remove();
+               var pregunta =
+               "<input type='number' placeholder='Cantidad' width='50' name='cantRen' id='cantRen' class='mr-2 mt-2 form-control ml-2'>";
+               subcategoriaCol1.append(pregunta);
+               flag=1;
+
+
+             }
+            
+                 
+           
+
+           });
+
+            
 
             if ($("#textareaNueva-orden").length) {
               //alert('Existe el elemento texarea');

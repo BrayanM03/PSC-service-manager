@@ -14,24 +14,26 @@
 
             }
 
+            if(empty($arreglo)){
+                $arreglo = array(
+                 'cr' => "No",
+                 'estatus' => "hay",
+                 'fecha' => "nada",
+                 'folio' => "en",
+                 'id' => "esta",
+                 'mes' => "tabla",
+                 'solucion' => "Porfavor",
+                 'subcat' => "Ingresa",
+                 'tienda' => "informacion",
+                 'usuario' => "JEJE"
+                );
+             }
+
             echo json_encode($arreglo);
            
         }
 
-        if(empty($arreglo)){
-            $arreglo = array(
-             'cr' => "No",
-             'estatus' => "hay",
-             'fecha' => "nada",
-             'folio' => "en",
-             'id' => "esta",
-             'mes' => "tabla",
-             'solucion' => "Porfavor",
-             'subcat' => "Ingresa",
-             'tienda' => "informacion",
-             'usuario' => "JEJE"
-            );
-         }
+      
 
         
         mysqli_close($con);
