@@ -15,13 +15,22 @@ function MostrarTiendas() {
 //Muestra las ordenes de los computadoras
 function MostrarCompu() {
 
+  //Taryendo la categoria jeje
   $.ajax({
     type: "post",
     url: "./modelo/trayendoCategoria.php",
-    data: {categoria: 'computadora'},
+    data: {categoria: 'computadorascat'},
+    dataType: 'json',
   
     success: function (response) {
-      alert(response);
+    
+     arreglo = response.data[0]
+
+      var categoriaTitulo = arreglo.categoria;
+      console.log(categoriaTitulo);
+
+      $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+    
      
 
       
@@ -35,7 +44,7 @@ function MostrarCompu() {
     data: "data",
 
     success: function (response) {
-      console.log(response);
+     
 
       $("#contenido-panel").html(response);
       //$('#contenido-panel').html(response);
@@ -104,6 +113,30 @@ function MostrarCompu() {
 
 //Muestra las ordenes de los voz y datos
 function MostrarVozydat() {
+
+    //Taryendo la categoria jeje
+    $.ajax({
+      type: "post",
+      url: "./modelo/trayendoCategoria.php",
+      data: {categoria: 'vozydatoscat'},
+      dataType: 'json',
+    
+      success: function (response) {
+      
+       arreglo = response.data[0]
+  
+        var categoriaTitulo = arreglo.categoria;
+        console.log(categoriaTitulo);
+  
+        $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+      
+       
+  
+        
+      }
+    });
+  
+    //Trayendo tabla
   $.ajax({
     type: "POST",
     url: "./vistas/modulos/tablas/prueba.php",

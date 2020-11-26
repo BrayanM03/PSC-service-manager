@@ -1,13 +1,18 @@
 <?php
     if(isset($_POST)){
+
+
         if(isset($_POST["categoria"])){
+        $categoria = $_POST["categoria"];
             
         include "../controladores/conexion.php";
         $con= $conectando->conexion();
-        $sqlcat="SELECT categoria FROM computadorascat";
+
+
+        $sqlcat="SELECT categoria FROM $categoria";
         $result = mysqli_query($con, $sqlcat);
         if(!$result){
-            echo 'Error';
+            print_r($categoria);
             
         }else{
           
@@ -37,6 +42,8 @@
 
         
         mysqli_close($con);
+        }else{
+            print_r($categoria);
         }
     }
 ?>

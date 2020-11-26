@@ -308,7 +308,7 @@ if (empty($_SESSION["userName"])) {
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1 class="m-0" id="titulo-categoria">Categoria Computadoras</h1>
+                <h1 class="m-0" id="titulo-categoria">Bienvenido al panel de control <?php echo $_SESSION['userName']; echo " "; echo $_SESSION["userLastname"]; ?> </h1>
               </div><!-- /.col -->
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
