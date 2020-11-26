@@ -107,14 +107,14 @@ var editarData = function (tbody, table ) {
             '<div class="col-7">'+
                 '<div class="form-group nice-select-group">'+
                     '<label><b>Categoria</b></label>'+
-                    '<select class="form-control" name="select-cat-editar-orden" id="optionsNuevaOrden">'+
+                    '<select class="form-control" name="select-cat-editar-orden" id="optionsCatEditarOrden">'+
                         '<option id="optionComputer" value="Computadora">Computadora</option>'+
                         '<option id="optionVozyDat" value="Voz y Datos">Voz y datos</option>'+
                         '<option id="optionCCTV" value="CCTV">CCTV</option>'+
                         '<option id="optionMto" value="Mantenimiento">Mantenimiento</option>'+
                         '<option id="optionPrints" value="Impresoras">Impresoras</option>'+
                         '<option id="optionAccesorios" value="Accesorios">Accesorios</option>'+
-                        '<option id="optionIMAC" value="IMAC">IMAC</option>'+
+                        '<option id="optionIMAC" value="IMAC" selected>IMAC</option>'+
                         '<option id="optionRefaccion" value="Refacciones">Refacciones</option>'+
                         '<option id="optionRenovacion" value="Renovacion">Renovación Tecnológica</option>'+
                     '</select>'+
@@ -190,6 +190,10 @@ var editarData = function (tbody, table ) {
               });   */
           }
       }); 
+
+      var selectCatEditarOrden = $('#optionsCatEditarOrden');
+      var opcionSelect = selectCatEditarOrden.options[selectCatEditarOrden.selectedIndex].text;
+      console.log(selectCatEditarOrden);
   
     });
    }

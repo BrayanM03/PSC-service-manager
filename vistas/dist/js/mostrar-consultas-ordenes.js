@@ -214,6 +214,30 @@ function MostrarVozydat() {
 
 
 function MostrarCctv() {
+
+   //Taryendo la categoria jeje
+   $.ajax({
+    type: "post",
+    url: "./modelo/trayendoCategoria.php",
+    data: {categoria: 'cctvcat'},
+    dataType: 'json',
+  
+    success: function (response) {
+    
+     arreglo = response.data[0]
+
+      var categoriaTitulo = arreglo.categoria;
+      console.log(categoriaTitulo);
+
+      $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+    
+     
+
+      
+    }
+  });
+
+  //Trayendo tabla
   $.ajax({
     type: "POST",
     url: "./vistas/modulos/tablas/prueba.php",
@@ -290,6 +314,30 @@ function MostrarCctv() {
 
 //Muestra las ordenes de los mantenimientos
 function MostrarMtos() {
+
+   //Taryendo la categoria jeje
+   $.ajax({
+    type: "post",
+    url: "./modelo/trayendoCategoria.php",
+    data: {categoria: 'mantenimientocat'},
+    dataType: 'json',
+  
+    success: function (response) {
+    
+     arreglo = response.data[0]
+
+      var categoriaTitulo = arreglo.categoria;
+      console.log(categoriaTitulo);
+
+      $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+    
+     
+
+      
+    }
+  });
+
+  //Trayendo tabla
   $.ajax({
     type: "POST",
     url: "./vistas/modulos/tablas/prueba.php",
@@ -366,6 +414,30 @@ function MostrarMtos() {
 
 //Muestra las ordenes de las impresoras
 function MostrarPrinters() {
+
+   //Taryendo la categoria jeje
+   $.ajax({
+    type: "post",
+    url: "./modelo/trayendoCategoria.php",
+    data: {categoria: 'impresorascat'},
+    dataType: 'json',
+  
+    success: function (response) {
+    
+     arreglo = response.data[0]
+
+      var categoriaTitulo = arreglo.categoria;
+      console.log(categoriaTitulo);
+
+      $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+    
+     
+
+      
+    }
+  });
+
+  //Trayendo tabla
   $.ajax({
     type: "POST",
     url: "./vistas/modulos/tablas/prueba.php",
@@ -441,6 +513,30 @@ function MostrarPrinters() {
 
 //Muestra las ordenes de accesorios
 function MostrarAcc() {
+
+   //Taryendo la categoria jeje
+   $.ajax({
+    type: "post",
+    url: "./modelo/trayendoCategoria.php",
+    data: {categoria: 'accesorioscat'},
+    dataType: 'json',
+  
+    success: function (response) {
+    
+     arreglo = response.data[0]
+
+      var categoriaTitulo = arreglo.categoria;
+      console.log(categoriaTitulo);
+
+      $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+    
+     
+
+      
+    }
+  });
+
+  //Trayendo tabla
   $.ajax({
     type: "POST",
     url: "./vistas/modulos/tablas/tablas_con_cant.php",
@@ -520,6 +616,30 @@ function MostrarAcc() {
 
 //Muestra las ordenes de los mantenimientos
 function MostrarImac() {
+
+   //Taryendo la categoria jeje
+   $.ajax({
+    type: "post",
+    url: "./modelo/trayendoCategoria.php",
+    data: {categoria: 'imaccat'},
+    dataType: 'json',
+  
+    success: function (response) {
+    
+     arreglo = response.data[0]
+
+      var categoriaTitulo = arreglo.categoria;
+      console.log(categoriaTitulo);
+
+      $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+    
+     
+
+      
+    }
+  });
+
+  //Trayendo tabla
   $.ajax({
     type: "POST",
     url: "./vistas/modulos/tablas/prueba.php",
@@ -595,6 +715,30 @@ function MostrarImac() {
 
 //Muestra las ordenes de los mantenimientos
 function MostrarRefacci() {
+
+   //Taryendo la categoria jeje
+   $.ajax({
+    type: "post",
+    url: "./modelo/trayendoCategoria.php",
+    data: {categoria: 'refaccionescat'},
+    dataType: 'json',
+  
+    success: function (response) {
+    
+     arreglo = response.data[0]
+
+      var categoriaTitulo = arreglo.categoria;
+      console.log(categoriaTitulo);
+
+      $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+    
+     
+
+      
+    }
+  });
+
+  //Trayendo tabla
   $.ajax({
     type: "POST",
     url: "./vistas/modulos/tablas/prueba.php",
@@ -672,6 +816,30 @@ function MostrarRefacci() {
 
 //Muestra las ordenes de la renovacion tecnologica
 function MostrarRenovacion() {
+
+   //Taryendo la categoria jeje
+   $.ajax({
+    type: "post",
+    url: "./modelo/trayendoCategoria.php",
+    data: {categoria: 'renovacioncat'},
+    dataType: 'json',
+  
+    success: function (response) {
+    
+     arreglo = response.data[0]
+
+      var categoriaTitulo = arreglo.categoria;
+      console.log(categoriaTitulo);
+
+      $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+    
+     
+
+      
+    }
+  });
+
+  //Trayendo tabla
   $.ajax({
     type: "POST",
     url: "./vistas/modulos/tablas/tablas_con_cant.php",

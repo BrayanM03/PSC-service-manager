@@ -56,7 +56,7 @@ if (isset($_POST)) {
     
               
     
-                if (isset($_POST['chboxMembrana']) && $_POST['chboxMembrana'] == "membrana") {
+                if (isset($_POST['chboxMembrana']) && $_POST['chboxMembrana'] == "Membrana") {
                     $chboxmem=$_POST["chboxMembrana"];
                    
                 //llenado automatico
@@ -88,7 +88,7 @@ if (isset($_POST)) {
                 $resultado->execute();
                 $resultado->close();
     
-                //Insertado sql de cctv
+                //Insertado sql de mto
                 $sqlInsertCCTV = "INSERT INTO mantenimientocat(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario, categoria) VALUES (?,?,?,?,?,?,?,?,?,?)";
                 $resultado2 = $con->prepare($sqlInsertCCTV);
                 $resultado2->bind_param(
@@ -110,10 +110,12 @@ if (isset($_POST)) {
     
                 //Insertado sql de membrana accesorio
                 $statMem= "Cerrado";
-                $sqlInsertMem = "INSERT INTO accesorioscat(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario, categoria) VALUES (?,?,?,?,?,?,?,?,?,?)";
+                $cantMem = 2;
+                $catmtoconMem= 'Accesorios'; 
+                $sqlInsertMem = "INSERT INTO accesorioscat(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario, cant, categoria) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
                 $resultado3 = $con->prepare($sqlInsertMem);
                 $resultado3->bind_param(
-                    'sssissssss',
+                    'sssisssssis',
                     $datos['cr'],
                     $datos['tienda'],
                     $datos['fecha'],
@@ -123,7 +125,8 @@ if (isset($_POST)) {
                     $membranaSol,
                     $datos['mes'],
                     $datos['usuario'],
-                    $datos['subcat']
+                    $cantMem,
+                    $catmtoconMem
                 );
     
                 $resultado3->execute();
