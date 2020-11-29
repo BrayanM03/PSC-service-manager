@@ -191,9 +191,11 @@ var editarData = function (tbody, table ) {
           }
       }); 
 
+
+
       var selectCatEditarOrden = $('#optionsCatEditarOrden');
-      var opcionSelect = selectCatEditarOrden.options[selectCatEditarOrden.selectedIndex].text;
-      console.log(selectCatEditarOrden);
+      var categoriaTitulo =  $('#titulo-categoria').attr("categoria");
+      console.log(selectCatEditarOrden[0].value = categoriaTitulo);
   
     });
    }
@@ -343,7 +345,7 @@ var editarData = function (tbody, table ) {
             '<div class="col-7">'+
                 '<div class="form-group nice-select-group">'+
                     '<label><b>Categoria</b></label>'+
-                    '<select class="form-control" name="select-cat-editar-orden" id="optionsNuevaOrden">'+
+                    '<select class="form-control" name="select-cat-editar-orden" id="optionsCatEditarOrden">'+
                         '<option id="optionComputer" value="Computadora">Computadora</option>'+
                         '<option id="optionVozyDat" value="Voz y Datos">Voz y datos</option>'+
                         '<option id="optionCCTV" value="CCTV">CCTV</option>'+
@@ -441,6 +443,10 @@ var editarData = function (tbody, table ) {
               });   */
           }
       }); 
+
+      var selectCatEditarOrden = $('#optionsCatEditarOrden');
+      var categoriaTitulo =  $('#titulo-categoria').attr("categoria");
+      console.log(selectCatEditarOrden[0].value = categoriaTitulo);
   
     });
    }

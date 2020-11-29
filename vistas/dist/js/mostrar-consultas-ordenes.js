@@ -26,13 +26,12 @@ function MostrarCompu() {
     
      arreglo = response.data[0]
 
-      var categoriaTitulo = arreglo.categoria;
+     var categoriaTitulo = arreglo.categoria;
       console.log(categoriaTitulo);
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+      $('#titulo-categoria').attr("categoria", categoriaTitulo);
     
-     
-
       
     }
   });
@@ -129,9 +128,9 @@ function MostrarVozydat() {
         console.log(categoriaTitulo);
   
         $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+        $('#titulo-categoria').attr("categoria", categoriaTitulo);
       
        
-  
         
       }
     });
@@ -230,6 +229,7 @@ function MostrarCctv() {
       console.log(categoriaTitulo);
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+      $('#titulo-categoria').attr("categoria", categoriaTitulo);
     
      
 
@@ -330,6 +330,7 @@ function MostrarMtos() {
       console.log(categoriaTitulo);
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+      $('#titulo-categoria').attr("categoria", categoriaTitulo);
     
      
 
@@ -430,6 +431,7 @@ function MostrarPrinters() {
       console.log(categoriaTitulo);
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+      $('#titulo-categoria').attr("categoria", categoriaTitulo);
     
      
 
@@ -529,6 +531,7 @@ function MostrarAcc() {
       console.log(categoriaTitulo);
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+      $('#titulo-categoria').attr("categoria", categoriaTitulo);
     
      
 
@@ -543,7 +546,7 @@ function MostrarAcc() {
     data: "data",
 
     success: function (response) {
-      console.log(response);
+      
 
       $("#contenido-panel").html(response);
       //$('#contenido-panel').html(response);
@@ -632,6 +635,7 @@ function MostrarImac() {
       console.log(categoriaTitulo);
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+      $('#titulo-categoria').attr("categoria", categoriaTitulo);
     
      
 
@@ -646,8 +650,7 @@ function MostrarImac() {
     data: "data",
 
     success: function (response) {
-      console.log(response);
-
+      
       $("#contenido-panel").html(response);
       //$('#contenido-panel').html(response);
 
@@ -731,6 +734,7 @@ function MostrarRefacci() {
       console.log(categoriaTitulo);
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+      $('#titulo-categoria').attr("categoria", categoriaTitulo);
     
      
 
@@ -745,7 +749,7 @@ function MostrarRefacci() {
     data: "data",
 
     success: function (response) {
-      console.log(response);
+      
 
       $("#contenido-panel").html(response);
       //$('#contenido-panel').html(response);
@@ -832,6 +836,7 @@ function MostrarRenovacion() {
       console.log(categoriaTitulo);
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
+      $('#titulo-categoria').attr("categoria", categoriaTitulo);
     
      
 
@@ -846,7 +851,7 @@ function MostrarRenovacion() {
     data: "data",
 
     success: function (response) {
-      console.log(response);
+      
 
       $("#contenido-panel").html(response);
       //$('#contenido-panel').html(response);
