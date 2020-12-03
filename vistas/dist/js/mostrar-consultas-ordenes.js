@@ -31,6 +31,9 @@ function MostrarCompu() {
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
       $('#titulo-categoria').attr("categoria", categoriaTitulo);
+
+      $('#titulo-cate').html(categoriaTitulo);
+      $('#titulo-cate').attr("categoria", categoriaTitulo);
     
       
     }

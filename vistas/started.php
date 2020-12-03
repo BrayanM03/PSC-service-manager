@@ -312,7 +312,7 @@ if (empty($_SESSION["userName"])) {
               </div><!-- /.col -->
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Computadoras</a></li>
+                  <li class="breadcrumb-item" id="titulo-cate"><a href="#">Computadoras</a></li>
                   <li class="breadcrumb-item active">Ordenes</li>
                 </ol>
               </div><!-- /.col -->

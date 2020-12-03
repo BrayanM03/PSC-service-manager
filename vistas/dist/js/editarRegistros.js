@@ -1,4 +1,6 @@
 var editarData = function (tbody, table ) { 
+    
+
     $(tbody).on("click", "button.buttonEditar", function(){
       
       roww             = $(this).closest("tr");
@@ -31,6 +33,8 @@ var editarData = function (tbody, table ) {
       usuario         = filaM.usuario;
   
       }
+
+      cate =  $('#titulo-categoria').attr("categoria");
         
   
       Swal.fire({
@@ -44,6 +48,12 @@ var editarData = function (tbody, table ) {
         '<input class="form-control " value="'+id+'" name="id-input-modal" readonly>'+
            '</div>'+
            '</div>'+
+           '<div class="col-8">'+
+           '<div class="form-group">'+
+           '<label><b>Cat:</b></label></br>'+
+           '<input class="form-control " value="'+cate+'" name="cate-input-modal" readonly>'+
+              '</div>'+
+              '</div>'+
            '</div>'+
 
         '<div class="row">'+
@@ -164,22 +174,26 @@ var editarData = function (tbody, table ) {
             
                 success: function (response) {
                   response = response.trim();
-            
+
+                  
+
                   if (response == 1) {
                     $("#form_register").trigger("reset");
                     Swal.fire(":D", "¡Actualizado correctamente!", "success");
                   } else if (response == 2) {
                     Swal.fire("D:", "¡Algo salio mal!", "warning");
                   } else if (response == 3) {
-                    Swal.fire(":u", "Todo correcto", "success");
-                  }else if (response == 5) {
-                    Swal.fire(":c", "Selecciona una subcategoria", "warning");
+                    Swal.fire(":u", "Actualizado, la categoria es igual", "success");
+                    MostrarCompu();
+                  }else if (response == 4) {
+                    Swal.fire(":D", "Actualizado, No es igual la categoria", "warning");
                   }else {
                     Swal.fire("):", "¡Error!", "error");
                   }
                 },
               });
 
+             
             
           /*  Swal.fire({
                 position: 'top-end',
@@ -269,6 +283,7 @@ var editarData = function (tbody, table ) {
   
       }
         
+      cate =  $('#titulo-categoria').attr("categoria");
   
       Swal.fire({
         title: "Editar registro",
@@ -279,6 +294,12 @@ var editarData = function (tbody, table ) {
         '<div class="form-group">'+
         '<label><b>ID:</b></label></br>'+
         '<input class="form-control " value="'+id+'" name="id-input-modal" readonly>'+
+           '</div>'+
+           '</div>'+
+           '<div class="col-4">'+
+        '<div class="form-group">'+
+        '<label><b>Cat:</b></label></br>'+
+        '<input class="form-control " value="'+cate+'" name="cate-input-modal" readonly>'+
            '</div>'+
            '</div>'+
            '</div>'+

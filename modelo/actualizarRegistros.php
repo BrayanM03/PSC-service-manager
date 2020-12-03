@@ -20,6 +20,7 @@ if (isset($_POST)) {
         "solucion" => $descripcion,
         "subcat" => $_POST["subcat-editar-orden"],
         
+        "this_cate" => $_POST["cate-input-modal"]
 
 
     );
@@ -33,12 +34,13 @@ Accesorios"
 IMAC">IMAC<
 Refacciones  */
 
-    switch ($datos["cat"]) {
+    switch ($datos["this_cate"]) {
 
         case 'Computadora':
+               
+            if ($datos["cat"] == $datos["this_cate"]) {
 
-           
-               $sqlInsertComp = "UPDATE computadorascat SET cr= ?, tienda= ?, fecha= ?, folio=?, subcat= ?, estatus= ?, solucion=?, mes= ?, usuario=? WHERE id= $ID";
+                $sqlInsertComp = "UPDATE computadorascat SET cr= ?, tienda= ?, fecha= ?, folio=?, subcat= ?, estatus= ?, solucion=?, mes= ?, usuario=? WHERE id= $ID";
                 $resultado = $con->prepare($sqlInsertComp);
                 $resultado->bind_param(
                     'sssisssss',
@@ -54,9 +56,34 @@ Refacciones  */
                 );
     
                 $resultado->execute();
-                $resultado->close();
+                $resultado->close(); 
 
                 print_r(3);
+
+            }else{
+
+                print_r(4);
+            }
+           
+              /* $sqlInsertComp = "UPDATE computadorascat SET cr= ?, tienda= ?, fecha= ?, folio=?, subcat= ?, estatus= ?, solucion=?, mes= ?, usuario=? WHERE id= $ID";
+                $resultado = $con->prepare($sqlInsertComp);
+                $resultado->bind_param(
+                    'sssisssss',
+                    $datos['cr'],
+                    $datos['tienda'],
+                    $datos['fecha'],
+                    $datos['folio'],
+                    $datos['subcat'],
+                    $datos['estatus'],
+                    $descripcion,
+                    $datos['mes'],
+                    $datos['usuario']
+                );
+    
+                $resultado->execute();
+                $resultado->close(); */
+
+              
 
             
            
