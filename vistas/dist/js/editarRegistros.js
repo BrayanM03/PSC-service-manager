@@ -180,8 +180,10 @@ var editarData = function (tbody, table ) {
                   if (response == 1) {
                     $("#form_register").trigger("reset");
                     Swal.fire(":D", "¡Actualizado correctamente!", "success");
+                    MostrarCompu();
                   } else if (response == 2) {
-                    Swal.fire("D:", "¡Algo salio mal!", "warning");
+                    Swal.fire(":D", "¡Actualizado correctamente!", "success");
+                    MostrarVozydat();
                   } else if (response == 3) {
                     Swal.fire(":u", "Actualizado, la categoria es igual", "success");
                     MostrarCompu();
@@ -231,7 +233,38 @@ var editarData = function (tbody, table ) {
           `
           }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire({
+              
+
+                  $.ajax({
+                    method: "POST",
+                    url: "./modelo/actualizarRegistros.php",
+                    data: $("#formulario-editar-registro").serialize(),
+                   
+                
+                    success: function (response) {
+                      response = response.trim();
+    
+                      
+    
+                      if (response == 1) {
+                        $("#form_register").trigger("reset");
+                        Swal.fire(":D", "¡Actualizado correctamente!", "success");
+                        MostrarCompu();
+                      } else if (response == 2) {
+                        Swal.fire(":D", "¡Actualizado correctamente!", "success");
+                        MostrarVozydat();
+                      } else if (response == 3) {
+                        Swal.fire(":u", "Actualizado, la categoria es igual", "success");
+                        MostrarCompu();
+                      }else if (response == 4) {
+                        Swal.fire(":D", "Actualizado, No es igual la categoria", "warning");
+                      }else {
+                        Swal.fire("):", "¡Error!", "error");
+                      }
+                    },
+                  });
+
+                  Swal.fire({
                     position: 'top-end',
                     icon: 'success',
                     title: 'Borrado con exito',

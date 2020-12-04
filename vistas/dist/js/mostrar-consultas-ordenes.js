@@ -125,7 +125,7 @@ function MostrarVozydat() {
     
       success: function (response) {
       
-       arreglo = response.data[0]
+       arreglo = response.data[0];
   
         var categoriaTitulo = arreglo.categoria;
         console.log(categoriaTitulo);

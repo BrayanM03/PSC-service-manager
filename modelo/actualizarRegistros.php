@@ -33,6 +33,9 @@ Impresoras"
 Accesorios"
 IMAC">IMAC<
 Refacciones  */
+    
+   
+    $cadena = strtolower(str_replace(' ', '', $datos["cat"]));
 
     switch ($datos["this_cate"]) {
 
@@ -40,8 +43,8 @@ Refacciones  */
                
             if ($datos["cat"] == $datos["this_cate"]) {
 
-                $sqlInsertComp = "UPDATE computadorascat SET cr= ?, tienda= ?, fecha= ?, folio=?, subcat= ?, estatus= ?, solucion=?, mes= ?, usuario=? WHERE id= $ID";
-                $resultado = $con->prepare($sqlInsertComp);
+                $sqlUpdateComp = "UPDATE computadorascat SET cr= ?, tienda= ?, fecha= ?, folio=?, subcat= ?, estatus= ?, solucion=?, mes= ?, usuario=? WHERE id= $ID";
+                $resultado = $con->prepare($sqlUpdateComp);
                 $resultado->bind_param(
                     'sssisssss',
                     $datos['cr'],
@@ -58,15 +61,52 @@ Refacciones  */
                 $resultado->execute();
                 $resultado->close(); 
 
-                print_r(3);
+                print_r(1);
 
             }else{
 
-                print_r(4);
+                if($cadena == 'computadora'){
+                    $cadenaF = $cadena . "scat";
+                }else{
+                    $cadenaF = $cadena . "cat";
+                }
+                
+                $sqlInsertComp = "INSERT INTO $cadenaF(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario, categoria) VALUES (?,?,?,?,?,?,?,?,?,?)";
+                $resultado = $con->prepare($sqlInsertComp);
+                $resultado->bind_param(
+                    'sssissssss',
+                    $datos['cr'],
+                    $datos['tienda'],
+                    $datos['fecha'],
+                    $datos['folio'],
+                    $datos['subcat'],
+                    $datos['estatus'],
+                    $descripcion,
+                    $datos['mes'],
+                    $datos['usuario'],
+                    $datos["cat"]
+                );
+    
+                $resultado->execute();
+                $resultado->close();
+                
+                $borrado = "DELETE FROM computadorascat WHERE id = $ID";
+                mysqli_query($con, $borrado);
+                
+                print_r(1);
             }
            
-              /* $sqlInsertComp = "UPDATE computadorascat SET cr= ?, tienda= ?, fecha= ?, folio=?, subcat= ?, estatus= ?, solucion=?, mes= ?, usuario=? WHERE id= $ID";
-                $resultado = $con->prepare($sqlInsertComp);
+           
+
+
+            break;
+
+        case 'Voz y Datos':
+
+            if ($datos["cat"] == $datos["this_cate"]) {
+
+                $sqlUpdateComp = "UPDATE vozydatoscat SET cr= ?, tienda= ?, fecha= ?, folio=?, subcat= ?, estatus= ?, solucion=?, mes= ?, usuario=? WHERE id= $ID";
+                $resultado = $con->prepare($sqlUpdateComp);
                 $resultado->bind_param(
                     'sssisssss',
                     $datos['cr'],
@@ -81,19 +121,42 @@ Refacciones  */
                 );
     
                 $resultado->execute();
-                $resultado->close(); */
+                $resultado->close(); 
 
-              
+                print_r(2);
 
-            
-           
+            }else{
 
-
-            break;
-
-        case 'Voz y Datos':
-
-            print_r(2);
+                if($cadena == 'computadora'){
+                    $cadenaF = $cadena . "scat";
+                }else{
+                    $cadenaF = $cadena . "cat";
+                }
+                
+                $sqlInsertComp = "INSERT INTO $cadenaF(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario, categoria) VALUES (?,?,?,?,?,?,?,?,?,?)";
+                $resultado = $con->prepare($sqlInsertComp);
+                $resultado->bind_param(
+                    'sssissssss',
+                    $datos['cr'],
+                    $datos['tienda'],
+                    $datos['fecha'],
+                    $datos['folio'],
+                    $datos['subcat'],
+                    $datos['estatus'],
+                    $descripcion,
+                    $datos['mes'],
+                    $datos['usuario'],
+                    $datos["cat"]
+                );
+    
+                $resultado->execute();
+                $resultado->close();
+                
+                $borrado = "DELETE FROM vozydatoscat WHERE id = $ID";
+                mysqli_query($con, $borrado);
+                
+                print_r(2);
+            }
 
 
             break;
