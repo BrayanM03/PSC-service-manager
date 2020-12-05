@@ -185,10 +185,26 @@ var editarData = function (tbody, table ) {
                     Swal.fire(":D", "¡Actualizado correctamente!", "success");
                     MostrarVozydat();
                   } else if (response == 3) {
-                    Swal.fire(":u", "Actualizado, la categoria es igual", "success");
-                    MostrarCompu();
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success");
+                    MostrarCctv();
                   }else if (response == 4) {
-                    Swal.fire(":D", "Actualizado, No es igual la categoria", "warning");
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success")
+                    MostrarMtos();
+                  }else if (response == 5) {
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success");
+                    MostrarPrinters();
+                  }else if (response == 6) {
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success");
+                    MostrarAcc();
+                  }else if (response == 7) {
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success");
+                    MostrarImac();
+                  }else if (response == 8) {
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success");
+                    MostrarRefacci();
+                  }else if (response == 9) {
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success");
+                    MostrarRenovacion();
                   }else {
                     Swal.fire("):", "¡Error!", "error");
                   }
@@ -475,15 +491,35 @@ var editarData = function (tbody, table ) {
                   if (response == 1) {
                     $("#form_register").trigger("reset");
                     Swal.fire(":D", "¡Actualizado correctamente!", "success");
+                    MostrarCompu();
                   } else if (response == 2) {
-                    Swal.fire("D:", "¡Algo salio mal!", "warning");
+                    Swal.fire(":D", "¡Actualizado correctamente!", "success");
+                    MostrarVozydat();
                   } else if (response == 3) {
-                    Swal.fire(":u", "Todo correcto", "success");
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success");
+                    MostrarCctv();
+                  }else if (response == 4) {
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success")
+                    MostrarMtos();
                   }else if (response == 5) {
-                    Swal.fire(":c", "Selecciona una subcategoria", "warning");
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success");
+                    MostrarPrinters();
+                  }else if (response == 6) {
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success");
+                    MostrarAcc();
+                  }else if (response == 7) {
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success");
+                    MostrarImac();
+                  }else if (response == 8) {
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success");
+                    MostrarRefacci();
+                  }else if (response == 9) {
+                    Swal.fire(":u", "¡Actualizado correctamente!", "success");
+                    MostrarRenovacion();
                   }else {
                     Swal.fire("):", "¡Error!", "error");
                   }
+
                 },
               });
 
