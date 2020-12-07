@@ -27,7 +27,7 @@ function MostrarCompu() {
      arreglo = response.data[0]
 
      var categoriaTitulo = arreglo.categoria;
-      console.log(categoriaTitulo);
+      
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
       $('#titulo-categoria').attr("categoria", categoriaTitulo);
@@ -128,7 +128,7 @@ function MostrarVozydat() {
        arreglo = response.data[0];
   
         var categoriaTitulo = arreglo.categoria;
-        console.log(categoriaTitulo);
+       
   
         $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
         $('#titulo-categoria').attr("categoria", categoriaTitulo);
@@ -145,8 +145,7 @@ function MostrarVozydat() {
     data: "data",
 
     success: function (response) {
-      console.log(response);
-
+     
       $("#contenido-panel").html(response);
       //$('#contenido-panel').html(response);
 
@@ -229,7 +228,7 @@ function MostrarCctv() {
      arreglo = response.data[0]
 
       var categoriaTitulo = arreglo.categoria;
-      console.log(categoriaTitulo);
+     
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
       $('#titulo-categoria').attr("categoria", categoriaTitulo);
@@ -247,7 +246,7 @@ function MostrarCctv() {
     data: "data",
 
     success: function (response) {
-      console.log(response);
+    
 
       $("#contenido-panel").html(response);
       //$('#contenido-panel').html(response);
@@ -330,7 +329,7 @@ function MostrarMtos() {
      arreglo = response.data[0]
 
       var categoriaTitulo = arreglo.categoria;
-      console.log(categoriaTitulo);
+    
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
       $('#titulo-categoria').attr("categoria", categoriaTitulo);
@@ -348,7 +347,7 @@ function MostrarMtos() {
     data: "data",
 
     success: function (response) {
-      console.log(response);
+  
 
       $("#contenido-panel").html(response);
       //$('#contenido-panel').html(response);
@@ -431,7 +430,7 @@ function MostrarPrinters() {
      arreglo = response.data[0]
 
       var categoriaTitulo = arreglo.categoria;
-      console.log(categoriaTitulo);
+     
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
       $('#titulo-categoria').attr("categoria", categoriaTitulo);
@@ -449,8 +448,7 @@ function MostrarPrinters() {
     data: "data",
 
     success: function (response) {
-      console.log(response);
-
+    
       $("#contenido-panel").html(response);
       //$('#contenido-panel').html(response);
 
@@ -531,7 +529,7 @@ function MostrarAcc() {
      arreglo = response.data[0]
 
       var categoriaTitulo = arreglo.categoria;
-      console.log(categoriaTitulo);
+      
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
       $('#titulo-categoria').attr("categoria", categoriaTitulo);
@@ -635,7 +633,7 @@ function MostrarImac() {
      arreglo = response.data[0]
 
       var categoriaTitulo = arreglo.categoria;
-      console.log(categoriaTitulo);
+      
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
       $('#titulo-categoria').attr("categoria", categoriaTitulo);
@@ -734,7 +732,7 @@ function MostrarRefacci() {
      arreglo = response.data[0]
 
       var categoriaTitulo = arreglo.categoria;
-      console.log(categoriaTitulo);
+     
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
       $('#titulo-categoria').attr("categoria", categoriaTitulo);
@@ -836,7 +834,7 @@ function MostrarRenovacion() {
      arreglo = response.data[0]
 
       var categoriaTitulo = arreglo.categoria;
-      console.log(categoriaTitulo);
+     
 
       $('#titulo-categoria').html("Categoria: "+ categoriaTitulo);
       $('#titulo-categoria').attr("categoria", categoriaTitulo);
@@ -927,43 +925,73 @@ function MostrarRenovacion() {
  
  //Mostrar usuarios
 function mostrarUsuarios() {
-  $.ajax({
-    type: "POST",
-    url: "./vistas/modulos/Mostrar-usuarios.php",
-    data: "data",
+ //Trayendo tabla
+ $.ajax({
+  type: "POST",
+  url: "./vistas/modulos/tablas/tabla-users.php",
+  data: "data",
 
-    success: function (data) {
-      console.log(data);
-      jsonObject = JSON.parse(data);
-      var datosUsuarios = jsonObject;
+  success: function (response) {
+    
+    
 
-      $("#contenido-panel").html(
-        "<div class='row' id='contenedores-targetas'></div>"
-      );
+    $("#contenido-panel").html(response);
+    //$('#contenido-panel').html(response);
 
-      $.each(datosUsuarios, function (key, value) {
-        $("#contenedores-targetas").append(
-          "<div class='col-md-4' id='targeta-Usuarios'><div class='card m-2 rounded text-center' style='border-radius:20px;'><div class='card-header bg-info card-title'>" +
-            value.Nombre +
-            "</div><div class='card-body bg-white'><div class='user-img-card'><img style='width:60%; clip-path: circle(40% at 50% 50%);'  src='./vistas/dist/img/userB.jpg'></div><b>Nombre: </b>" +
-            value.Nombre +
-            " " +
-            value.Apellido +
-            "</br>" +
-            "<b>Usuario: </b>" +
-            value.user +
-            "</br>" +
-            "<b>Cumpleaños: </b>" +
-            value.fecha +
-            "</div></div></div>"
-        );
+     table= $("#tabla-mantenimientos")
+      .DataTable({
+        ajax: {
+          method: "POST",
+          url: "./vistas/modulos/Mostrar-usuarios.php",
+        },
+        select: true,
+        columns: [
+          { data: "id" },
+          { data: "Nombre" },
+          { data: "Apellido" },
+          { data: "user"},
+          { data: "fecha" },
+          {
+            data: null,
+            className: "celda-acciones",
+            render: function () {
+              return '<button type="button" class="buttonEditarUsuarios btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+            },
+          },
+        ],
+        scrollY: "50vh",
+        scrollCollapse: true,
+        paging: true,
+        responsive: true,
+
+        dom: "Bfrtip",
+        buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+
+        language: {
+          
+          emptyTable: "No hay registros",
+          infoEmpty: "Ups!, no hay registros aun en esta categoria."
+        }
+
       });
 
-      /*datosUsuarios.each(element => {
-       
-     
+      table.buttons()
+      .container()
+      .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
 
-      */
-    },
-  });
+      //Funciones del crud
+    
+      editarData('#tabla-mantenimientos tbody', table);
+      borrarData('#tabla-mantenimientos tbody', table);
+      editarDataconCant('#tabla-mantenimientos tbody', table);
+      editarDataUser('#tabla-mantenimientos tbody', table);
+
+      
+     
+  } //Fin de respuesta ajax
+
+ 
+
+}); //Fin de funcion async ajax
+
 }

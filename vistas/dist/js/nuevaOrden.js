@@ -1,4 +1,7 @@
 function MostrarNuevaOrden() {
+
+  $('#titulo-categoria').html("");
+
   $.ajax({
     type: "POST",
     url: "./vistas/modulos/formularios/nueva-orden.php",

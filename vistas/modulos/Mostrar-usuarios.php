@@ -1,26 +1,42 @@
 <?php
 
-if($_POST){
+ if (isset($_POST)) {
     include "../../controladores/conexion.php";
-        $con= $conectando->conexion();
-        $sql = "SELECT * FROM usuarios";
-        $result = mysqli_query($con, $sql);
+    $con= $conectando->conexion();
+    $sqlMtos="SELECT * FROM usuarios";
+    $result = mysqli_query($con, $sqlMtos);
+    if(!$result){
+        echo 'Error';
+        
+    }else{
+      
+        while ($datas=mysqli_fetch_assoc($result)) {
+            $arreglo['data'][] = $datas;
 
-        if(!$result){
-            echo 'Error';
-        }else{
-          
-            while ($datas=mysqli_fetch_assoc($result)) {
-                $arreglo[] = $datas;
-
-            }
-
-            echo json_encode($arreglo);
-           
         }
 
-        mysqli_free_result($result);
-        mysqli_close($con);
-}
+        if(empty($arreglo)){
+            $arreglo = array(
+             'cr' => "No",
+             'estatus' => "hay",
+             'fecha' => "nada",
+             'folio' => "en",
+             'id' => "esta",
+             'mes' => "tabla",
+             'solucion' => "Porfavor",
+             'subcat' => "Ingresa",
+             'tienda' => "informacion",
+             'usuario' => "JEJE"
+            );
+         }
+
+        echo json_encode($arreglo);
+       
+    }
+
+    
+    mysqli_close($con);
+
+}   
 
 ?>

@@ -34,6 +34,7 @@ if (empty($_SESSION["userName"])) {
   <link rel="stylesheet" href="vistas/plugins/datatables-buttons/css/buttons.bootstrap4.min.css"> 
   <link rel="stylesheet" href="vistas/dist/css/nuevaOrden.css">
   <link rel="stylesheet" href="vistas/dist/css/tablas-ordenes.css">
+  <link rel="stylesheet" href="vistas/dist/css/index.css">
   <link rel="stylesheet" href="vistas/plugins/nice-select/css/nice-select.css">
   
 
@@ -49,18 +50,13 @@ if (empty($_SESSION["userName"])) {
         <li class="nav-item">
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" onclick="MostrarNuevaOrden();" class="btn btn-success">Nueva orden</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" onclick="MostrarCotizador();" class="btn btn-info ml-2">Nueva cotización</a>
-        </li>
+       
         <li class="nav-item d-none d-sm-inline-block">
           <a href="" class="nav-link">Inicio</a>
         </li>
       </ul>
 
-      <!-- SEARCH FORM -->
+      <!-- SEARCH FORM 
       <form class="form-inline ml-3">
         <div class="input-group input-group-sm">
           <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
@@ -70,95 +66,22 @@ if (empty($_SESSION["userName"])) {
             </button>
           </div>
         </div>
-      </form>
+      </form>-->
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-        <!-- Messages Dropdown Menu -->
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="far fa-comments"></i>
-            <span class="badge badge-danger navbar-badge">3</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <a href="#" class="dropdown-item">
-              <!-- Message Start -->
-              <div class="media">
-                <img src="" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    Brad Diesel
-                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">Call me whenever you can...</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div>
-              <!-- Message End -->
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <!-- Message Start -->
-              <div class="media">
-                <img src="" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    John Pierce
-                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">I got your message bro</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div>
-              <!-- Message End -->
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <!-- Message Start -->
-              <div class="media">
-                <img src="" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    Nora Silvester
-                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">The subject goes here</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div>
-              <!-- Message End -->
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-          </div>
-        </li>
+      
         <!-- Notifications Dropdown Menu -->
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="far fa-bell"></i>
-            <span class="badge badge-warning navbar-badge">15</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <span class="dropdown-header">15 Notifications</span>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-envelope mr-2"></i> 4 new messages
-              <span class="float-right text-muted text-sm">3 mins</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-users mr-2"></i> 8 friend requests
-              <span class="float-right text-muted text-sm">12 hours</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-file mr-2"></i> 3 new reports
-              <span class="float-right text-muted text-sm">2 days</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-          </div>
+       
+        <li class="nav-item">
+        
+          <a href="#" onclick="MostrarNuevaOrden();" class="btn btn-success">Nueva orden</a>
         </li>
+
+        <li class="nav-item">
+        <a href="#" onclick="MostrarCotizador();" class="btn btn-info ml-2 ">Nueva cotización</a>
+        </li>
+       
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
             <i class="fas fa-expand-arrows-alt"></i>
@@ -181,8 +104,8 @@ if (empty($_SESSION["userName"])) {
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link" style="display:flex; justify-content:space-around; padding-left:20px">
-        <img src="vistas/dist/img/logor.png" alt="PSC Logo" class="brand-image elevation-3" style="opacity: .9;">
+      <a href="index.php" class="brand-link" style="display:flex; justify-content:space-around; padding-left:20px">
+        <img src="vistas/dist/img/logo-2.png" alt="PSC Logo" class="brand-image elevation-3" style="opacity: .9;">
         <span class="brand-text font-weight-light" style="font-size:15px; margin-right:0px;">Service M</span>
 
       </a>
@@ -307,10 +230,10 @@ if (empty($_SESSION["userName"])) {
         <div class="content-header">
           <div class="container-fluid">
             <div class="row mb-2">
-              <div class="col-sm-6">
+              <div class="col-sm-10 titulo-categoria">
                 <h1 class="m-0" id="titulo-categoria">Bienvenido al panel de control <?php echo $_SESSION['userName']; echo " "; echo $_SESSION["userLastname"]; ?> </h1>
               </div><!-- /.col -->
-              <div class="col-sm-6">
+              <div class="col-sm-2">
                 <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item" id="titulo-cate"><a href="#">Computadoras</a></li>
                   <li class="breadcrumb-item active">Ordenes</li>
@@ -498,11 +421,7 @@ if (empty($_SESSION["userName"])) {
 
     <!-- Main Footer -->
     <footer class="main-footer">
-      <!-- To the right -->
-      <div class="float-right d-none d-sm-inline">
-        Anything you want
-      </div>
-      <!-- Default to the left -->
+    
       
       <strong>Copyright &copy; 2020 Ediciones e integracion por <a href="https://www.facebook.com/BrayanM03/" target="_blank"> Brayan Maldonado Morgado</a>.</strong><br>
       <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io"> AdminLTE.io</a>.</strong> All rights reserved.
@@ -551,6 +470,7 @@ if (empty($_SESSION["userName"])) {
   <script src="vistas/dist/js/mostrarTablasDatatable.js"></script>
   <script src="vistas/dist/js/nuevaOrden.js"></script>
   <script src="vistas/dist/js/editarRegistros.js"></script>
+  <script src="vistas/dist/js/editar-usuarios.js"></script>
   
 
   <script>

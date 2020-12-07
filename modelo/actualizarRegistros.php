@@ -3,7 +3,7 @@ include '../controladores/conexion.php';
 $con = $conectando->conexion();
 session_start();
 
-if (isset($_POST)) {
+if (isset($_POST["swal-solucion"])) {
 
     $mesActual = strftime("%B");
     $descripcion = $_POST["swal-solucion"];
@@ -25,14 +25,6 @@ if (isset($_POST)) {
 
     );
 
-    /* Computadora
-Voz y Datos
-CCTV">CCTV<
-Mantenimien
-Impresoras"
-Accesorios"
-IMAC">IMAC<
-Refacciones  */
     
    
     $cadena = strtolower(str_replace(' ', '', $datos["cat"]));

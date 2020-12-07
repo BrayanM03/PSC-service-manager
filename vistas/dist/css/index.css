@@ -1,0 +1,34 @@
+.titulo-categoria{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+   
+}
+
+
+.img-user-mod{
+    border: 1px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 5;
+}
+
+.img-user-mod:hover{
+   
+    opacity: .5;
+}
+.edit-img-user{
+    
+    position: absolute;
+    z-index: 1;
+}
+
+.icono-edit{
+    z-index: 5;
+    margin-right: 16px;
+}
+
+.select-file{
+    display: none;
+}
