@@ -38,7 +38,7 @@ var editarDataUser = function (tbody, table ) {
       Swal.fire({
         title: "Editar registro",
         background: "#61C4EE",
-        html: '<form class="mt-4" id="formulario-editar-registro">'+
+        html: '<form class="mt-4" id="formulario-editar-registro" enctype="multipart/form-data">'+
 
         '<div class="row">'+
         '<div class="col-8">'+
@@ -114,7 +114,7 @@ var editarDataUser = function (tbody, table ) {
 
             $.ajax({
                 method: "POST",
-                url: "./modelo/actualizarRegistros.php",
+                url: "./modelo/actualizarUsuarios.php",
                 data: $("#formulario-editar-registro").serialize(),
                
             
@@ -126,7 +126,7 @@ var editarDataUser = function (tbody, table ) {
                   if (response == 1) {
                     $("#form_register").trigger("reset");
                     Swal.fire(":D", "¡Actualizado correctamente!", "success");
-                    MostrarCompu();
+                    mostrarUsuarios();
                   } else if (response == 2) {
                     Swal.fire(":D", "¡Actualizado correctamente!", "success");
                     MostrarVozydat();
