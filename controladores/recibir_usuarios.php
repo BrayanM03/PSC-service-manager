@@ -18,7 +18,7 @@ if (isset($_POST)) {
 
 
     $usuario = $datos['usuario'];
-    $sqlCheck = "SELECT user FROM usuarios WHERE user = '$usuario'";
+    $sqlCheck = "SELECT user FROM usuarios WHERE user = '$usuario'"; 
     $result = mysqli_query($con, $sqlCheck);
     $nums = mysqli_num_rows($result);
 
@@ -42,7 +42,9 @@ if (isset($_POST)) {
 
             $resultado->execute();
             $resultado->close();
-            print_r(1);
+            print_r($nums);
+            print_r($resultado);
+            print_r($datos);
 
             
         

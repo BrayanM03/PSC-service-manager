@@ -15,16 +15,17 @@ $con = $conectando->conexion();
     $result->close();
     
     if ($total == 1) {
-        $validarID ="SELECT Nombre , Apellido FROM usuarios WHERE user = ?";
+        $validarID ="SELECT Nombre , Apellido, user FROM usuarios WHERE user = ?";
         $results=  $con->prepare($validarID);
         $results->bind_param('s', $usuario);
         $results->execute();
-        $results->bind_result($nombre, $apellido);
+        $results->bind_result($nombre, $apellido, $user);
 
        while ($results->fetch()) {
            session_start();
            $_SESSION["userName"] = $nombre;
-           $_SESSION["userLastname"] = $apellido;
+           $_SESSION["userLastname"] = $apellido; 
+           $_SESSION["userUser"] = $user; 
            
            print_r(1);
        }

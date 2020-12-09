@@ -72,7 +72,7 @@
         function login() {
             $.ajax({
                 method: "POST",
-                url: "../../controladores/validar_usuarios.php",
+                url: "../../controladores/validar_usuarios.php", 
                 data: $('#form-signin').serialize(),
                 success: function (response) {
                    
