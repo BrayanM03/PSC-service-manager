@@ -9,7 +9,7 @@ $con = $conectando->conexion();
    if ($_POST) {
       
     
-    $validar ="SELECT((SELECT COUNT(*) FROM computadorascat)+(SELECT COUNT(*) FROM imacccat))";
+    $validar ="SELECT (SELECT COUNT(*) FROM computadorascat) + (SELECT COUNT(*) FROM imaccat) AS total";
 
    // $result = mysqli_query($con, $validar);
 
@@ -20,12 +20,13 @@ $result->bind_result($total);
 $result->fetch();
 $result->close();
 
-if ($result == 0) {
-print_r("No hay registros". $result);
+if ($total== 0) {
+print_r("No hay registros");
 
 }else{
-print_r("Hay un total de ".$result. " registros");
+print_r("Hay un total de ".$total. " registros");
 }
+
 
    }
 
