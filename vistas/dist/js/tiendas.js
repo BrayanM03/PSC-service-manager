@@ -28,8 +28,14 @@ function MostrarTiendas() {
              method: "POST",
              url: "./modelo/traerTiendas.php",
            },
+           createdRow: function( row, data, dataIndex){
+            if( data[3] ==  `pendiente`){
+                $(row).addClass('table-danger');
+            }
+        },
            select: true,
            columns: [
+             
              { data: "id" },
              { data: "cr" },
              { data: "tienda", width: "20%" },
