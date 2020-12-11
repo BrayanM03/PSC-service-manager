@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST)) {
-        include "../../controladores/conexion.php";
+        include "../controladores/conexion.php";
         $con= $conectando->conexion();
         $sqlMtos="SELECT * FROM cr";
         $result = mysqli_query($con, $sqlMtos);

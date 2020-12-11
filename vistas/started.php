@@ -482,6 +482,7 @@ if (empty($_SESSION["userName"])) {
   <script src="vistas/dist/js/editarRegistros.js"></script>
   <script src="vistas/dist/js/editar-usuarios.js"></script>
   <script src="vistas/dist/js/targetasInicio.js"></script>
+  <script src="vistas/dist/js/tiendas.js"></script>
   
 
   <script>

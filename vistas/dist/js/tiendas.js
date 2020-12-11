@@ -50,7 +50,7 @@ function MostrarTiendas() {
            dom: "Bfrtip",
            buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
  
-           order: [[3, "desc"],  [0, "desc"]],
+           order: [[0, "asc"]],
            language: {
              
              emptyTable: "No hay registros",
