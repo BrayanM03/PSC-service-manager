@@ -4,6 +4,13 @@ $.ajax({
     data: {estadisticas: 'estadisticas'},
     
     success: function (response) {
-        alert(response);
+       
+        $('#total-ordenes').html(response);
+
+        //año
+        var fecha = new Date();
+        var year = fecha. getFullYear();
+        $('.title-cards').html("Estadisticas del año "+year)
+        
     }
 });

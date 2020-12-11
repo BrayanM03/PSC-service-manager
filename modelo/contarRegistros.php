@@ -7,24 +7,32 @@ $con = $conectando->conexion();
     
    // $contraseña = sha1($_POST['inputPassword']);
    if ($_POST) {
-      
+
+$añoenCurso = date("Y");      
     
-    $validar ="SELECT (SELECT COUNT(*) FROM computadorascat) + (SELECT COUNT(*) FROM imaccat) AS total";
+$validar ="SELECT (SELECT COUNT(YEAR(fecha)) FROM computadorascat WHERE YEAR(fecha)= $añoenCurso) + (SELECT COUNT(YEAR(fecha)) FROM imaccat WHERE YEAR(fecha)= $añoenCurso)
+                                                             + (SELECT COUNT(YEAR(fecha)) FROM vozydatoscat WHERE YEAR(fecha)= $añoenCurso) 
+                                                             + (SELECT COUNT(YEAR(fecha)) FROM mantenimientocat WHERE YEAR(fecha)= $añoenCurso)
+                                                             + (SELECT COUNT(YEAR(fecha)) FROM accesorioscat WHERE YEAR(fecha)= $añoenCurso)
+                                                             + (SELECT COUNT(YEAR(fecha)) FROM cctvcat WHERE YEAR(fecha)= $añoenCurso)
+                                                             + (SELECT COUNT(YEAR(fecha)) FROM refaccionescat WHERE YEAR(fecha)= $añoenCurso)
+                                                             + (SELECT COUNT(YEAR(fecha)) FROM impresorascat WHERE YEAR(fecha)= $añoenCurso)
+                                                             + (SELECT COUNT(YEAR(fecha)) FROM renovacioncat WHERE YEAR(fecha)= $añoenCurso)
+                                                              AS total"; 
 
-   // $result = mysqli_query($con, $validar);
-
+   
 $result=  $con->prepare($validar);
-//$result->bind_param('ss', $usuario, $contraseña);
+
 $result->execute();
 $result->bind_result($total);
 $result->fetch();
 $result->close();
 
 if ($total== 0) {
-print_r("No hay registros");
+print_r($total);
 
 }else{
-print_r("Hay un total de ".$total. " registros");
+print_r($total);
 }
 
 

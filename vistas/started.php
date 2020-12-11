@@ -210,7 +210,17 @@ if (empty($_SESSION["userName"])) {
                 <i class="nav-icon fas fa-user"></i>
                 <p>
                   Usuarios
-                  <span class="right badge badge-danger">New</span>
+                  <!-- <span class="right badge badge-danger">New</span>-->
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item bg-danger rounded mt-3">
+              <a href="#" class="nav-link" onclick="MostrarTiendas();">
+                <i class="nav-icon fas fa-store"></i>
+                <p>
+                 Tiendas
+                 
                 </p>
               </a>
             </li>
@@ -253,7 +263,7 @@ if (empty($_SESSION["userName"])) {
           <div id="contenido-panel" class="container-fluid" style="width: 80vw;" >
             <div class="card">
               <div class="card-header text-center">
-                <h3 class="card-title ">Estadisticas</h3>
+                <h3 class="card-title title-cards">Estadisticas</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -263,9 +273,9 @@ if (empty($_SESSION["userName"])) {
                       <!-- small box -->
                       <div class="small-box bg-info">
                         <div class="inner">
-                          <h3>150</h3>
+                          <h3 id="total-ordenes"></h3>
 
-                          <p>Mantenimientos totales</p>
+                          <p>Ordenes totales</p>
                         </div>
                         <div class="icon">
                           <i class="ion ion-wrench"></i>
