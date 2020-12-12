@@ -269,6 +269,15 @@ if (empty($_SESSION["userName"])) {
               <div class="card-body">
                 <div class="container">
                   <div class="row">
+                    <div class="col-lg-12">
+                    <div id="my-progress">
+                    <div id="progress-bar">
+                      <div id="label-bar">10%</div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row">
                     <div class="col-lg-3 col-6">
                       <!-- small box -->
                       <div class="small-box bg-info">
@@ -288,9 +297,9 @@ if (empty($_SESSION["userName"])) {
                       <!-- small box -->
                       <div class="small-box bg-success">
                         <div class="inner">
-                          <h3>53<sup style="font-size: 20px">%</sup></h3>
+                          <h3 id="porcentaje-ordenes"><sup style="font-size: 20px">%</sup></h3>
 
-                          <p>Mantenimientos completos</p>
+                          <p>Mantenimientos completos<br>este semestre</p>
                         </div>
                         <div class="icon">
                           <i class="ion ion-android-checkbox"></i>
@@ -467,6 +476,7 @@ if (empty($_SESSION["userName"])) {
   <script src="vistas/plugins/nice-select/js/jquery.nice-select.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 
  
 

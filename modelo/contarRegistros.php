@@ -6,7 +6,7 @@ $con = $conectando->conexion();
    // $usuario = $_POST['inputUser'];
     
    // $contraseña = sha1($_POST['inputPassword']);
-   if ($_POST) {
+   if ($_POST['estadisticas']) {
 
 $añoenCurso = date("Y");      
     
@@ -29,6 +29,7 @@ $result->fetch();
 $result->close();
 
 if ($total== 0) {
+json_encode($total);
 print_r($total);
 
 }else{
@@ -37,8 +38,6 @@ print_r($total);
 
 
    }
-
+   
    
 
-
-?>

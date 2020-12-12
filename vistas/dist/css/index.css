@@ -32,3 +32,25 @@
 .select-file{
     display: none;
 }
+
+#my-progress {
+    position: relative;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 100%;
+    height: 30px;
+    background-color: #ddd;
+  }
+  
+  #progress-bar {
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    background-color: #4CAF50;
+  }
+  
+  #label-bar {
+    text-align: center;
+    line-height: 30px;
+    color: white;
+  }
