@@ -20,13 +20,13 @@ $results->fetch();
 
 $results->close();
 
-$porcentaje = $totalP / $totalR;
+$porcentaje = ($totalP / $totalR)*100;
 $porc = substr($porcentaje, 0,5);
 
 //$porcentaje = $totalP;
 
 
-print_r($porc . "%");
+print_r($porc);
 
 
 

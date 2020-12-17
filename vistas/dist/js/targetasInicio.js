@@ -7,8 +7,7 @@ $.ajax({
     success: function (response) {
        
         $('#total-ordenes').html(response);
-        console.log(response);
-
+        
         //año
         var fecha = new Date();
         var year = fecha. getFullYear();
@@ -16,6 +15,7 @@ $.ajax({
         
     }
 });
+
 
 
 
@@ -28,21 +28,19 @@ function move() {
         
         success: function (res) {
             console.log(res);
-            $('#porcentaje-ordenes').html(res);
+            $("#porcentaje-ordenes").html("<h3>" +res+  "%"+"</h3>" );
+            $("#porcentaje-ordenes").attr("valor", res);
             
-           
             
-            
-        }
-    });
-
-    porcentajeBar =$("#porcentaje-ordenes").innerHTML;
-    console.log(porcentajeBar);
     var elem = document.getElementById("progress-bar");   
     var width = 0;
-    var id = setInterval(frame, 10);
+    var id = setInterval(frame, 20);
     function frame() {
-      if (width >= 0.05) {
+     
+      if (width == 0) {
+        elem.style.width = width ; 
+        //document.getElementById("label-bar").innerHTML = width * 1  + '%'; 
+      }if (width >= res && width != 0) {
         clearInterval(id);
       } else {
         width++; 
@@ -50,6 +48,14 @@ function move() {
         document.getElementById("label-bar").innerHTML = width * 1  + '%';
       }
     }
+            
+        }
+    });
+
+   
+
+    
   }
 
   move();
+
