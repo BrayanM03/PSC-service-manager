@@ -493,6 +493,7 @@ if (empty($_SESSION["userName"])) {
   <script src="vistas/dist/js/editar-usuarios.js"></script>
   <script src="vistas/dist/js/targetasInicio.js"></script>
   <script src="vistas/dist/js/tiendas.js"></script>
+  <script src="vistas/dist/js/editarInv.js"></script>
   
 
   <script>
@@ -537,6 +538,11 @@ if (empty($_SESSION["userName"])) {
 
 
     //Tabla mantenimientos actuales
+
+    $('#clickme').click(function () { 
+        alert("Hola");
+        
+    });
 
   
   </script>

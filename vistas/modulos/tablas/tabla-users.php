@@ -8,7 +8,7 @@
             <!-- /.card-header -->
             <div class="card-body">
                 <table id="tabla-mantenimientos" class="table table-bordered table-hover table-striped">
-                <thead class="table-primary">
+                <thead class="table-warning">
                     <tr>
                     <th>#</th>
                     <th>Nombre</th>
