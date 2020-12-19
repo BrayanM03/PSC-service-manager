@@ -44,7 +44,7 @@ function MostrarTiendas() {
                data: null,
                className: "celda-acciones",
                render: function () {
-                 return '<button type="button" class="buttonEditar btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
+                 return '<button type="button" class="buttonEditarTiendas btn btn-warning"><span class="fa fa-edit"></span><span class="hidden-xs"></span></button><br><button type="button" class="buttonBorrar btn btn-danger"><span class="fa fa-trash"></span><span class="hidden-xs"></span></button>';
                },
              },
            ],
@@ -72,6 +72,7 @@ function MostrarTiendas() {
          //Funciones del crud
        
          editarData('#tabla-mantenimientos tbody', table);
+         editarInv('#tabla-mantenimientos tbody', table);
          borrarData('#tabla-mantenimientos tbody', table);
  
          
