@@ -539,10 +539,7 @@ if (empty($_SESSION["userName"])) {
 
     //Tabla mantenimientos actuales
 
-    $('#clickme').click(function () { 
-        alert("Hola");
-        
-    });
+   
 
   
   </script>
