@@ -1071,6 +1071,12 @@ var editarInv = function (tbody, table ) {
             '<input class="form-control w-2" value="" name="gateway-enlace-enlace" placeholder="No. Oxxo"></br>'+
             '</div>'+
             '</div>'+
+            '<div class="row">'+
+            '<div class="col-11">'+
+            '<p>VLAN:</p>'+
+            '<input class="form-control w-2" value="" name="gateway-enlace-enlace" placeholder="No. Oxxo"></br>'+
+            '</div>'+
+            '</div>'+
  
  
             '</div>'+

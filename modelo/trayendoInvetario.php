@@ -6,7 +6,7 @@ $con= $conectando->conexion();
 if(isset($_POST)){
    
     $vista = "CREATE VIEW vistaInventario AS SELECT cr.cr, 
-                                                    MODELO_CPU, 
+                                                    PRO_MODELO_CPU, 
                                                     PRO_SERIE_CPU, 
                                                     PRO_OXXO_CPU,
                                                     PRO_MODELO_IMP,
