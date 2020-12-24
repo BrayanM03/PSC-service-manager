@@ -5,7 +5,7 @@ $con= $conectando->conexion();
 
 if(isset($_POST)){
    
-    $vista = "CREATE VIEW vistaInventario AS SELECT cr.cr, 
+    $vista = "CREATE VIEW vistaInventario AS SELECT cr.cr, cr.tienda, 
                                                     PRO_MODELO_CPU, 
                                                     PRO_SERIE_CPU, 
                                                     PRO_OXXO_CPU,
@@ -17,7 +17,6 @@ if(isset($_POST)){
                                                     PRO_OXXO_ESC,
                                                     PRO_MODELO_MON,
                                                     PRO_SERIE_MON,
-
                                                     VT1_MODELO_CPU, 
                                                     VT1_SERIE_CPU, 
                                                     VT1_OXXO_CPU,
@@ -29,7 +28,6 @@ if(isset($_POST)){
                                                     VT1_OXXO_ESC,
                                                     VT1_MODELO_MON,
                                                     VT1_SERIE_MON,
-
                                                     VT2_MODELO_CPU, 
                                                     VT2_SERIE_CPU, 
                                                     VT2_OXXO_CPU,
@@ -40,8 +38,7 @@ if(isset($_POST)){
                                                     VT2_SERIE_ESC,
                                                     VT2_OXXO_ESC,
                                                     VT2_MODELO_MON,
-                                                    VT2_SERIE_MON,
-
+                                                    VT2_SERIE_MON, 
                                                     CCTV_MODELO_DVR, 
                                                     CCTV_SERIE_DVR, 
                                                     CCTV_OXXO_DVR,
@@ -57,7 +54,6 @@ if(isset($_POST)){
                                                     CCTV_MODELO_CAM_BODEGA,
                                                     CCTV_SERIE_CAM_BODEGA,
                                                     CCTV_OXXO_CAM_BODEGA,
-
                                                     EN_MODELO_TEL,
                                                     EN_SERIE_TEL,
                                                     EN_OXXO_TEL,
@@ -70,8 +66,15 @@ if(isset($_POST)){
                                                     EN_PRINCIPAL,
                                                     EN_REDUNDANTE,
                                                     EN_GATEWAY
-                                                    FROM cr INNER JOIN inventario_cajas_proceso TO cr.cr = inventario_cajas_proceso.cr";
-    $consula = "SELECT * FROM vistaInventario";
+
+                                                    FROM cr INNER JOIN inventario_cajas_proceso AS proceso ON cr.cr = proceso.CR
+                                                            INNER JOIN inventario_cajas_venta1 AS venta1 ON proceso.cr = venta1.CR
+                                                            INNER JOIN inventario_cajas_venta2 AS venta2 ON venta1.cr = venta2.CR
+                                                            INNER JOIN inventario_tiendas_cctv AS cctv ON venta2.cr = cctv.CR
+                                                            INNER JOIN inventario_tiendas_voz_y_datos AS enlace ON cctv.CR = enlace.CR";
+
+    $result = mysqli_query($con, $vista);
+    $consula = "SELECT * FROM vistaInventario WHERE cr = '50MYV'";
     $result = mysqli_query($con, $consula);
     if(!$result){
         echo 'Error';
