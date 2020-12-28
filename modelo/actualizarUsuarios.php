@@ -61,7 +61,7 @@ if($_POST){
         move_uploaded_file($fileTmpName, $fileUpload);
 
         if ($fileName) {
-            $newfileName = rename($fileUpload, $dir.$id.$user.".jpg"); 
+            $newfileName = rename($fileUpload, $dir.$user.".jpg"); 
         }
      
 

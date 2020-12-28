@@ -4,6 +4,8 @@ include "../controladores/conexion.php";
 $con= $conectando->conexion();
 
 if(isset($_POST)){
+
+    $cr = $_POST["clave"];
    
     $vista = "CREATE VIEW vistaInventario AS SELECT cr.cr, cr.tienda, 
                                                     PRO_MODELO_CPU, 
@@ -74,7 +76,7 @@ if(isset($_POST)){
                                                             INNER JOIN inventario_tiendas_voz_y_datos AS enlace ON cctv.CR = enlace.CR";
 
     $result = mysqli_query($con, $vista);
-    $consula = "SELECT * FROM vistaInventario WHERE cr = '50MYV'";
+    $consula = "SELECT * FROM vistaInventario WHERE cr = '$cr'";
     $result = mysqli_query($con, $consula);
     if(!$result){
         echo 'Error';
@@ -82,7 +84,7 @@ if(isset($_POST)){
     }else{
       
         while ($datas=mysqli_fetch_assoc($result)) {
-            $arreglo['datos'][] = $datas;
+            $arreglo[] = $datas;
 
         }
 
