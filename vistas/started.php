@@ -29,13 +29,13 @@ if (empty($_SESSION["userName"])) {
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
   <!-- DataTables -->
+  <link rel="stylesheet" href="vistas/dist/css/index.css">
   <link rel="stylesheet" href="vistas/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="vistas/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="https://nightly.datatables.net/colreorder/css/colReorder.dataTables.min.css">
   <link rel="stylesheet" href="vistas/plugins/datatables-buttons/css/buttons.bootstrap4.min.css"> 
   <link rel="stylesheet" href="vistas/dist/css/nuevaOrden.css">
   <link rel="stylesheet" href="vistas/dist/css/tablas-ordenes.css">
-  <link rel="stylesheet" href="vistas/dist/css/index.css">
   <link rel="stylesheet" href="vistas/plugins/nice-select/css/nice-select.css">
   
 
@@ -206,6 +206,7 @@ if (empty($_SESSION["userName"])) {
                 </li>
               </ul>
             </li>
+
             <li class="nav-item bg-warning rounded mt-3">
               <a href="#" class="nav-link" onclick="mostrarUsuarios();">
                 <i class="nav-icon fas fa-user"></i>
@@ -216,15 +217,34 @@ if (empty($_SESSION["userName"])) {
               </a>
             </li>
 
-            <li class="nav-item bg-danger rounded mt-3">
-              <a href="#" class="nav-link" onclick="MostrarTiendas();">
+
+            <li class="nav-item menu-open mt-3">
+              <a href="#" class="bg-danger nav-link active">
                 <i class="nav-icon fas fa-store"></i>
                 <p>
-                 Tiendas
-                 
+                  Tiendas
+                  <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
+              <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                  <a href="#v-pill-mto" id="nav-refacciones" onclick="MostrarTiendas();" class="nav-link" data-toggle="pill">
+                    <i class="fas fa-clipboard-check nav-icon"></i>
+                    <p>Inventario de Tiendas</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#v-pill-mto" id="nav-refacciones" onclick="MostrarTiendas();" class="nav-link" data-toggle="pill">
+                    <i class="fas fa-calendar-alt nav-icon"></i>
+                    <p>Calendario preventivo</p>
+                  </a>
+                </li>
+              </ul>
             </li>
+
+
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

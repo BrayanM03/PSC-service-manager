@@ -1,4 +1,4 @@
-
+/*
 $.ajax({
   type: "POST",
   url: "url./modelo/grafica_mto.php",
@@ -7,7 +7,7 @@ $.ajax({
   success: function (response) {
     
   }
-});
+}); */
 
 var ctx = $('#barChart').get(0).getContext('2d')
     var myBarChart = new Chart(ctx, {

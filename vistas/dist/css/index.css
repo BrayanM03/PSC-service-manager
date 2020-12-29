@@ -54,3 +54,18 @@
     line-height: 30px;
     color: white;
   }
+
+
+  /*-------Estilos del estatus de la tiendas jejej------*/
+
+  .pendientes{
+    background-color: #fbff8f;
+  }
+
+  .pendientes:hover{
+    background-color: #f9ff57;
+  }
+  .realizados{
+
+    background-color: #bfe9a2;
+  }

@@ -1,4 +1,5 @@
 <?php
+
     if (isset($_POST)) {
         include "../controladores/conexion.php";
         $con= $conectando->conexion();

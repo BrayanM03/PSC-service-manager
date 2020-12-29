@@ -20,7 +20,7 @@ function MostrarTiendas() {
        
  
        $("#contenido-panel").html(response);
-       //$('#contenido-panel').html(response);
+       
  
         table= $("#tabla-mantenimientos")
          .DataTable({
@@ -28,12 +28,10 @@ function MostrarTiendas() {
              method: "POST",
              url: "./modelo/traerTiendas.php",
            },
-           createdRow: function( row, data, dataIndex){
-            if( data[3] ==  `pendiente`){
-                $(row).addClass('table-danger');
-            }
-        },
+           
            select: true,
+
+           
            columns: [
              
              { data: "id" },
@@ -48,6 +46,15 @@ function MostrarTiendas() {
                },
              },
            ],
+           createdRow: function( row, data){
+            if( data.mantenimiento ==  'pendiente'){
+                $(row).removeClass();
+                $(row).addClass('table-warning');
+            }else{
+              $(row).removeClass();
+              $(row).addClass('table-success');
+            }
+        },
            scrollY: "50vh",
            scrollCollapse: true,
            paging: true,
