@@ -18,6 +18,7 @@
                     <th>Categoria</th>
                     <th>Estatus</th>
                     <th id="celda-descripcion">Solucion</th>
+                    <th>ID</th>
                     <th>Mes</th>
                     <th>Usuario</th>
                     <th>Acción</th>

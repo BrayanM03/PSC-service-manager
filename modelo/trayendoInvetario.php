@@ -67,7 +67,8 @@ if(isset($_POST)){
                                                     EN_OXXO_ROUT,
                                                     EN_PRINCIPAL,
                                                     EN_REDUNDANTE,
-                                                    EN_GATEWAY
+                                                    EN_GATEWAY,
+                                                    VLAN
 
                                                     FROM cr INNER JOIN inventario_cajas_proceso AS proceso ON cr.cr = proceso.CR
                                                             INNER JOIN inventario_cajas_venta1 AS venta1 ON proceso.cr = venta1.CR

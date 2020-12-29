@@ -7,6 +7,8 @@ var editarData = function (tbody, table ) {
       fila             = table.row(roww).data();  //Computadora 
       
       filaM            = table.row(this).data();  //Tablet, movil, etc
+
+      
   
       if(fila !== undefined){
       id              = fila.id;

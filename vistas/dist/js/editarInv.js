@@ -111,7 +111,8 @@ var editarInv = function (tbody, table ) {
             oxxo_rout_en     = datos[0].EN_OXXO_ROUT,
             enlace_pri_en    = datos[0].EN_PRINCIPAL,
             enlace_reb_en    = datos[0].EN_REDUNDANTE,
-            enlace_gat_en    = datos[0].EN_GATEWAY
+            enlace_gat_en    = datos[0].EN_GATEWAY,
+            enlace_vlan_en    = datos[0].VLAN
 
 
 
@@ -326,7 +327,7 @@ var editarInv = function (tbody, table ) {
     
                       if (response) {
 
-                        Swal.fire("Genial Brayan, rompiste la app :D", response, "success");
+                        Swal.fire("Genial :D", response, "success");
                         
                       
                       }else {
@@ -1100,7 +1101,7 @@ var editarInv = function (tbody, table ) {
                 '<div class="row">'+
                 '<div class="col-11">'+
                 '<p>VLAN:</p>'+
-                '<input class="form-control w-2" value="" name="enlace-vlan-enlace" placeholder="VLAN"></br>'+
+                '<input class="form-control w-2" value="'+ enlace_vlan_en + '" name="enlace-vlan-enlace" placeholder="VLAN"></br>'+
                 '</div>'+
                 '</div>'+
      

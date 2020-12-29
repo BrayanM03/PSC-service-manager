@@ -31,6 +31,7 @@ if (empty($_SESSION["userName"])) {
   <!-- DataTables -->
   <link rel="stylesheet" href="vistas/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="vistas/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://nightly.datatables.net/colreorder/css/colReorder.dataTables.min.css">
   <link rel="stylesheet" href="vistas/plugins/datatables-buttons/css/buttons.bootstrap4.min.css"> 
   <link rel="stylesheet" href="vistas/dist/css/nuevaOrden.css">
   <link rel="stylesheet" href="vistas/dist/css/tablas-ordenes.css">
@@ -470,7 +471,10 @@ if (empty($_SESSION["userName"])) {
   <script src="vistas/plugins/jszip/jszip.min.js"></script>
   <script src="vistas/plugins/pdfmake/pdfmake.min.js"></script>
   <script src="vistas/plugins/pdfmake/vfs_fonts.js"></script>
-  <script src="vistas/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="https://nightly.datatables.net/buttons/js/dataTables.buttons.min.js"></script>  
+  <!--<script src="vistas/plugins/datatables-buttons/js/buttons.html5.min.js"></script>-->
+  <script src="https://nightly.datatables.net/buttons/js/buttons.html5.min.js"></script>
+  <script src="https://nightly.datatables.net/colreorder/js/dataTables.colReorder.min.js"></script>
   <script src="vistas/plugins/datatables-buttons/js/buttons.print.min.js"></script>
   <script src="vistas/plugins/datatables-buttons/js/buttons.colVis.min.js"></script> 
   <script src="vistas/plugins/nice-select/js/jquery.nice-select.js"></script>
@@ -494,46 +498,11 @@ if (empty($_SESSION["userName"])) {
   <script src="vistas/dist/js/targetasInicio.js"></script>
   <script src="vistas/dist/js/tiendas.js"></script>
   <script src="vistas/dist/js/editarInv.js"></script>
+  <script src="vistas/dist/js/graficaBarras.js"></script>
   
 
   <script>
-    var ctx = $('#barChart').get(0).getContext('2d')
-    var myBarChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-        datasets: [{
-          label: 'Mantenimiento',
-          data: [10, 32, 20, 10, 32, 20, 10, 32, 20, 10, 32, 20],
-          backgroundColor: [
-            'rgb(37, 214, 223 )',
-            'rgb(37, 214, 223 )',
-            'rgb(37, 214, 223 )',
-            'rgb(37, 214, 223 )',
-            'rgb(37, 214, 223 )',
-            'rgb(37, 214, 223 )',
-            'rgb(37, 214, 223 )',
-            'rgb(37, 214, 223 )',
-            'rgb(37, 214, 223 )',
-            'rgb(37, 214, 223 )',
-            'rgb(37, 214, 223 )',
-            'rgb(37, 214, 223 )'
-          ]
-        }]
-      },
-
-      options: {
-        responsive: true,
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
-      }
-
-    });
+    
 
 
 

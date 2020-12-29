@@ -49,7 +49,7 @@ function MostrarCompu() {
      
 
       $("#contenido-panel").html(response);
-      //$('#contenido-panel').html(response);
+      //$('#contenido-panel').html(response); 
 
        table= $("#tabla-mantenimientos")
         .DataTable({
@@ -58,8 +58,8 @@ function MostrarCompu() {
             url: "./modelo/categorias/computadoras.php",
           },
           select: true,
-          columns: [
-            { data: "id" },
+          columns: [   
+            { data: null},
             { data: "cr" },
             { data: "tienda", width: "20%" },
             { data: "fecha" },
@@ -67,6 +67,7 @@ function MostrarCompu() {
             { data: "subcat" },
             { data: "estatus" },
             { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "id" },
             { data: "mes" },
             { data: "usuario" },
             {
@@ -77,6 +78,12 @@ function MostrarCompu() {
               },
             },
           ],
+          colReorder: true,
+          columnDefs: [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        } ],
           scrollY: "50vh",
           scrollCollapse: true,
           paging: true,
@@ -97,6 +104,14 @@ function MostrarCompu() {
         table.buttons()
         .container()
         .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+        //Enumerar las filas "index column"
+        table.on( 'order.dt search.dt', function () {
+          table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+              cell.innerHTML = i+1;
+             
+          } );
+      } ).draw(); 
 
         //Funciones del crud
       
@@ -157,7 +172,7 @@ function MostrarVozydat() {
           },
           select: true,
           columns: [
-            { data: "id" },
+            { data: null},
             { data: "cr" },
             { data: "tienda", width: "20%" },
             { data: "fecha" },
@@ -165,6 +180,7 @@ function MostrarVozydat() {
             { data: "subcat" },
             { data: "estatus" },
             { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "id" },
             { data: "mes" },
             { data: "usuario" },
             {
@@ -175,6 +191,11 @@ function MostrarVozydat() {
               },
             },
           ],
+          columnDefs: [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        } ],
           scrollY: "50vh",
           scrollCollapse: true,
           paging: true,
@@ -193,6 +214,13 @@ function MostrarVozydat() {
         table.buttons()
         .container()
         .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+                //Enumerar las filas "index column"
+                table.on( 'order.dt search.dt', function () {
+                  table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                      cell.innerHTML = i+1;
+                  } );
+              } ).draw();
 
         //Funciones del crud
       
@@ -259,7 +287,7 @@ function MostrarCctv() {
           },
           select: true,
           columns: [
-            { data: "id" },
+            { data: null },
             { data: "cr" },
             { data: "tienda", width: "20%" },
             { data: "fecha" },
@@ -268,6 +296,7 @@ function MostrarCctv() {
             { data: "estatus" },
             { data: "solucion", width: "30%", className: "celda-descripcion" },
             { data: "mes" },
+            { data: "id" },
             { data: "usuario" },
             {
               data: null,
@@ -277,6 +306,11 @@ function MostrarCctv() {
               },
             },
           ],
+          columnDefs: [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        } ],
           scrollY: "50vh",
           scrollCollapse: true,
           paging: true,
@@ -298,6 +332,13 @@ function MostrarCctv() {
         table.buttons()
         .container()
         .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+                //Enumerar las filas "index column"
+                table.on( 'order.dt search.dt', function () {
+                  table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                      cell.innerHTML = i+1;
+                  } );
+              } ).draw();
 
         //Funciones del crud
       
@@ -360,7 +401,7 @@ function MostrarMtos() {
           },
           select: true,
           columns: [
-            { data: "id" },
+            { data: null },
             { data: "cr" },
             { data: "tienda", width: "20%" },
             { data: "fecha" },
@@ -368,6 +409,7 @@ function MostrarMtos() {
             { data: "subcat" },
             { data: "estatus" },
             { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "id" },
             { data: "mes" },
             { data: "usuario" },
             {
@@ -378,6 +420,11 @@ function MostrarMtos() {
               },
             },
           ],
+          columnDefs: [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        } ],
           scrollY: "50vh",
           scrollCollapse: true,
           paging: true,
@@ -399,6 +446,13 @@ function MostrarMtos() {
         table.buttons()
         .container()
         .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+                //Enumerar las filas "index column"
+                table.on( 'order.dt search.dt', function () {
+                  table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                      cell.innerHTML = i+1;
+                  } );
+              } ).draw();
 
         //Funciones del crud
       
@@ -460,7 +514,7 @@ function MostrarPrinters() {
           },
           select: true,
           columns: [
-            { data: "id" },
+            { data: null },
             { data: "cr" },
             { data: "tienda", width: "20%" },
             { data: "fecha" },
@@ -468,6 +522,7 @@ function MostrarPrinters() {
             { data: "subcat" },
             { data: "estatus" },
             { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "id" },
             { data: "mes" },
             { data: "usuario" },
             {
@@ -478,6 +533,11 @@ function MostrarPrinters() {
               },
             },
           ],
+          columnDefs: [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        } ],
           scrollY: "50vh",
           scrollCollapse: true,
           paging: true,
@@ -499,10 +559,19 @@ function MostrarPrinters() {
         .container()
         .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
 
+                //Enumerar las filas "index column"
+                table.on( 'order.dt search.dt', function () {
+                  table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                      cell.innerHTML = i+1;
+                  } );
+              } ).draw();
+
         //Funciones del crud
       
         editarData('#tabla-mantenimientos tbody', table);
         borrarData('#tabla-mantenimientos tbody', table);
+
+        
 
         
        
@@ -560,7 +629,7 @@ function MostrarAcc() {
           },
           select: true,
           columns: [
-            { data: "id" },
+            { data: null },
             { data: "cr" },
             { data: "tienda", width: "20%" },
             { data: "fecha" },
@@ -569,6 +638,7 @@ function MostrarAcc() {
             { data: "cant" },
             { data: "estatus" },
             { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "id" },
             { data: "mes" },
             { data: "usuario" },
            
@@ -581,6 +651,11 @@ function MostrarAcc() {
               },
             },
           ],
+          columnDefs: [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        } ],
           scrollY: "50vh",
           scrollCollapse: true,
           paging: true,
@@ -601,6 +676,13 @@ function MostrarAcc() {
         table.buttons()
         .container()
         .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+                //Enumerar las filas "index column"
+                table.on( 'order.dt search.dt', function () {
+                  table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                      cell.innerHTML = i+1;
+                  } );
+              } ).draw();
 
         //Funciones del crud
       
@@ -663,7 +745,7 @@ function MostrarImac() {
           },
           select: true,
           columns: [
-            { data: "id" },
+            { data: null },
             { data: "cr" },
             { data: "tienda", width: "20%" },
             { data: "fecha" },
@@ -671,6 +753,7 @@ function MostrarImac() {
             { data: "subcat" },
             { data: "estatus" },
             { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "id" },
             { data: "mes" },
             { data: "usuario" },
             {
@@ -681,6 +764,11 @@ function MostrarImac() {
               },
             },
           ],
+          columnDefs: [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        } ],
           scrollY: "50vh",
           scrollCollapse: true,
           paging: true,
@@ -701,6 +789,13 @@ function MostrarImac() {
         table.buttons()
         .container()
         .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+                //Enumerar las filas "index column"
+                table.on( 'order.dt search.dt', function () {
+                  table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                      cell.innerHTML = i+1;
+                  } );
+              } ).draw();
 
         //Funciones del crud
       
@@ -763,7 +858,7 @@ function MostrarRefacci() {
           },
           select: true,
           columns: [
-            { data: "id" },
+            { data: null },
             { data: "cr" },
             { data: "tienda", width: "20%" },
             { data: "fecha" },
@@ -771,6 +866,7 @@ function MostrarRefacci() {
             { data: "subcat" },
             { data: "estatus" },
             { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "id" },
             { data: "mes" },
             { data: "usuario" },
             {
@@ -781,6 +877,11 @@ function MostrarRefacci() {
               },
             },
           ],
+          columnDefs: [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        } ],
           scrollY: "50vh",
           scrollCollapse: true,
           paging: true,
@@ -801,6 +902,13 @@ function MostrarRefacci() {
         table.buttons()
         .container()
         .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+                //Enumerar las filas "index column"
+                table.on( 'order.dt search.dt', function () {
+                  table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                      cell.innerHTML = i+1;
+                  } );
+              } ).draw();
 
         //Funciones del crud
       
@@ -865,7 +973,7 @@ function MostrarRenovacion() {
           },
           select: true,
           columns: [
-            { data: "id" },
+            { data: null },
             { data: "cr" },
             { data: "tienda", width: "20%" },
             { data: "fecha" },
@@ -874,6 +982,7 @@ function MostrarRenovacion() {
             { data: "cant" },
             { data: "estatus" },
             { data: "solucion", width: "30%", className: "celda-descripcion" },
+            { data: "id" },
             { data: "mes" },
             { data: "usuario" },
             {
@@ -884,6 +993,11 @@ function MostrarRenovacion() {
               },
             },
           ],
+          columnDefs: [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        } ],
           scrollY: "50vh",
           scrollCollapse: true,
           paging: true,
@@ -904,6 +1018,13 @@ function MostrarRenovacion() {
         table.buttons()
         .container()
         .appendTo("#tabla-mantenimientos_wrapper .col-md-6:eq(0)");
+
+                //Enumerar las filas "index column"
+                table.on( 'order.dt search.dt', function () {
+                  table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                      cell.innerHTML = i+1;
+                  } );
+              } ).draw();
 
         //Funciones del crud
       
@@ -959,6 +1080,7 @@ function mostrarUsuarios() {
             },
           },
         ],
+       
         scrollY: "50vh",
         scrollCollapse: true,
         paging: true,

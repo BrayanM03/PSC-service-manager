@@ -146,11 +146,13 @@ if (isset($_POST)) {
                                                     EN_OXXO_ROUT =?,
                                                     EN_PRINCIPAL =?,
                                                     EN_REDUNDANTE =?,
-                                                    EN_GATEWAY =? WHERE CR= '$cr'";
+                                                    EN_GATEWAY =?, 
+                                                    VLAN = ?
+                                                    WHERE CR= '$cr'";
             
                                     $resultado = $con->prepare($sqlUpdateEN);
                                     $resultado->bind_param(
-                                    'ssssssssssss',
+                                    'sssssssssssss',
                                     $_POST['modelo-tel-enlace'],
                                     $_POST['serie-tel-enlace'],
                                     $_POST['oxxo-tel-enlace'],
@@ -162,8 +164,8 @@ if (isset($_POST)) {
                                     $_POST['oxxo-router-enlace'],
                                     $_POST['principal-enlace-enlace'],
                                     $_POST['rebundante-enlace-enlace'],
-                                    $_POST['gateway-enlace-enlace']
-                                    //$_POST['enlace-vlan-enlace']
+                                    $_POST['gateway-enlace-enlace'],
+                                    $_POST['enlace-vlan-enlace']
                                     );
             
                                     $resultado->execute();
@@ -209,7 +211,7 @@ if (isset($_POST)) {
                                     $_POST['modelo-cam3-cctv'],
                                     $_POST['serie-cam3-cctv'],
                                     $_POST['oxxo-cam3-cctv'],
-                                    $_POST['modelo-cam4-cctv'].
+                                    $_POST['modelo-cam4-cctv'],
                                     $_POST['serie-cam4-cctv'],
                                     $_POST['oxxo-cam4-cctv'],
                                     );

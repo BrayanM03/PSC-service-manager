@@ -131,6 +131,20 @@ if (isset($_POST)) {
     
                 $resultado3->execute();
                 $resultado3->close();
+
+
+                $tiendaCR= $datos['cr'];
+                $stats = 'realizado';
+
+                $sqlTiendasStatus = "UPDATE cr SET mantenimiento= ? WHERE cr= $tiendaCR";
+                $resultad = $con->prepare($sqlTiendasStatus);
+                $resultad->bind_param(
+                    's',
+                    $stats
+                );
+    
+                $resultad->execute();
+                $resultad->close(); 
                
                print_r(1);
     
@@ -183,9 +197,24 @@ if (isset($_POST)) {
                     $datos['subcat']
 
                 );
-    
+
                 $resultado2->execute();
                 $resultado2->close();
+
+                $tiendaCR= $datos['cr'];
+                $stats = 'realizado';
+
+                $sqlTiendasStatus = "UPDATE cr SET mantenimiento= ? WHERE cr= '$tiendaCR'";
+                $res = $con->prepare($sqlTiendasStatus);
+                $res->bind_param(
+                    's',
+                    $stats
+                );
+    
+                $res->execute();
+                $res->close(); 
+    
+               
                 print_r(1);
                 }
               
