@@ -15,6 +15,7 @@ function MostrarTiendas() {
 //Muestra las ordenes de los computadoras
 function MostrarCompu() {
 
+  $('#titulo-categoria').html("Categoria: Computadoras");
   //Taryendo la categoria jeje
   $.ajax({
     type: "post",
@@ -131,6 +132,7 @@ function MostrarCompu() {
 //Muestra las ordenes de los voz y datos
 function MostrarVozydat() {
 
+  $('#titulo-categoria').html("Categoria: Voz y datos");
     //Taryendo la categoria jeje
     $.ajax({
       type: "post",
@@ -243,6 +245,7 @@ function MostrarVozydat() {
 
 
 function MostrarCctv() {
+  $('#titulo-categoria').html("Categoria: CCTV");
 
    //Taryendo la categoria jeje
    $.ajax({
@@ -357,6 +360,7 @@ function MostrarCctv() {
 
 //Muestra las ordenes de los mantenimientos
 function MostrarMtos() {
+  $('#titulo-categoria').html("Categoria: Mantenimientos");
 
    //Taryendo la categoria jeje
    $.ajax({
@@ -472,6 +476,7 @@ function MostrarMtos() {
 //Muestra las ordenes de las impresoras
 function MostrarPrinters() {
 
+  $('#titulo-categoria').html("Categoria: Impresoras");
    //Taryendo la categoria jeje
    $.ajax({
     type: "post",
@@ -585,7 +590,7 @@ function MostrarPrinters() {
 
 //Muestra las ordenes de accesorios
 function MostrarAcc() {
-
+  $('#titulo-categoria').html("Categoria: Accesorios");
    //Taryendo la categoria jeje
    $.ajax({
     type: "post",
@@ -702,7 +707,7 @@ function MostrarAcc() {
 
 //Muestra las ordenes de los mantenimientos
 function MostrarImac() {
-
+  $('#titulo-categoria').html("Categoria: IMAC");
    //Taryendo la categoria jeje
    $.ajax({
     type: "post",
@@ -814,7 +819,7 @@ function MostrarImac() {
 
 //Muestra las ordenes de los mantenimientos
 function MostrarRefacci() {
-
+  $('#titulo-categoria').html("Categoria: Refacciones");
    //Taryendo la categoria jeje
    $.ajax({
     type: "post",
@@ -929,7 +934,7 @@ function MostrarRefacci() {
 
 //Muestra las ordenes de la renovacion tecnologica
 function MostrarRenovacion() {
-
+  $('#titulo-categoria').html("Categoria: Renovación");
    //Taryendo la categoria jeje
    $.ajax({
     type: "post",
@@ -1046,6 +1051,7 @@ function MostrarRenovacion() {
  
  //Mostrar usuarios
 function mostrarUsuarios() {
+  $('#titulo-categoria').html("Usuarios");
  //Trayendo tabla
  $.ajax({
   type: "POST",

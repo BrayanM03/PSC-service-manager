@@ -118,7 +118,7 @@ var editarDataUser = function (tbody, table) {
               Swal.fire(":D", "¡Actualizado correctamente!", "success");
               mostrarUsuarios();
             } else if (response == 2) {
-              Swal.fire(":(", "¡Solo el usuario "+ user +" puede editar su informacion!", "warning");
+              Swal.fire(":(", "¡Solo "+ nombre +" puede editar su informacion!", "warning");
               mostrarUsuarios();
             } else if (response == 3) {
               Swal.fire(":u", "¡Actualizado correctamente!", "success");

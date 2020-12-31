@@ -23,19 +23,19 @@ if($_POST){
     if($user == $data["usuario"]){
 
     $sqlUpdateUser = "UPDATE usuarios SET Nombre= ?, Apellido= ?, user= ?, fecha= ? WHERE id= $id";
-    $resultado = $con->prepare($sqlUpdateUser);
-    $resultado->bind_param(
+    $resultadoUser = $con->prepare($sqlUpdateUser);
+    $resultadoUser->bind_param(
         'ssss',
         $data['nombre'],
         $data['apellido'],
         $data['usuario'],
-        $data['fecha_nac'],
+        $data['fecha_nac']
         
        
     );
 
-    $resultado->execute();
-    $resultado->close(); 
+    $resultadoUser->execute();
+    $resultadoUser->close(); 
 
    
     //ACTUAIZADO DE FOTO DE PERFIL DEL USUARIO --- 

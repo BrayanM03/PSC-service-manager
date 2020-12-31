@@ -3,7 +3,7 @@
         print_r('
         <div class="card contenedor-card-tablas-ordenes">
             <div class="card-header">
-                <h3 class="card-title">Ordenes de: </h3>
+                <h3 class="card-title"></h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">

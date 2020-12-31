@@ -213,7 +213,7 @@ if (isset($_POST)) {
                                     $_POST['oxxo-cam3-cctv'],
                                     $_POST['modelo-cam4-cctv'],
                                     $_POST['serie-cam4-cctv'],
-                                    $_POST['oxxo-cam4-cctv'],
+                                    $_POST['oxxo-cam4-cctv']
                                     );
 
                                     $resultado->execute();
