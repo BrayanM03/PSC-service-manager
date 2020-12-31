@@ -558,7 +558,7 @@ var editarInv = function (tbody, table ) {
                 '<div class="row">'+
                 '<div class="col-11">'+
                 '<p>No. Oxxo:</p>'+
-                '<input class="form-control w-2" value='+ oxxo_imp_vt1 +'" name="oxxo-print-vt1" placeholder="No. Oxxo"></br>'+
+                '<input class="form-control w-2" value="'+ oxxo_imp_vt1 +'" name="oxxo-print-vt1" placeholder="No. Oxxo"></br>'+
                 '</div>'+
                 '</div>'+
      

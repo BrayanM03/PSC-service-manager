@@ -42,11 +42,9 @@ if (isset($_POST)) {
 
             $resultado->execute();
             $resultado->close();
-            print_r($nums);
-            print_r($resultado);
-            print_r($datos);
-
             
+
+            print_r(1);
         
 
        

@@ -131,7 +131,7 @@
                     } else if (response == 2) {
                         swal("D:", "¡Ese usuario ya existe!", "warning");
                     } else {
-                        swal("):", "¡Error!", "error");
+                        swal("):", "¡Error!", "error"); 
                     }
 
                 },
