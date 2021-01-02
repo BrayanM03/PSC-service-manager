@@ -3,7 +3,7 @@
         print_r('
         <div class="card contenedor-card-tablas-ordenes">
             <div class="card-header">
-                <h3 class="card-title"></h3>
+            <img src="vistas/dist/img/oxxo-logo.png" style="margin-left:auto">
             </div>
             <!-- /.card-header -->
             <div class="card-body">

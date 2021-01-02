@@ -236,7 +236,7 @@ if (empty($_SESSION["userName"])) {
                 </li>
 
                 <li class="nav-item">
-                  <a href="#v-pill-mto" id="nav-refacciones" onclick="MostrarTiendas();" class="nav-link" data-toggle="pill">
+                  <a href="#v-pill-mto" id="nav-refacciones" onclick="MostrarCalendar();" class="nav-link" data-toggle="pill">
                     <i class="fas fa-calendar-alt nav-icon"></i>
                     <p>Calendario preventivo</p>
                   </a>
@@ -519,6 +519,7 @@ if (empty($_SESSION["userName"])) {
   <script src="vistas/dist/js/tiendas.js"></script>
   <script src="vistas/dist/js/editarInv.js"></script>
   <script src="vistas/dist/js/graficaBarras.js"></script>
+  <script src="vistas/dist/js/calendario.js"></script>
   
 
   <script>
