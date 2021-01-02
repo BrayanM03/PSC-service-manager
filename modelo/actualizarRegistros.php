@@ -135,7 +135,7 @@ if (isset($_POST["swal-solucion"])) {
                     $datos['folio'],
                     $datos['subcat'],
                     $datos['estatus'],
-                    $descripcion,
+                    $descripcion, 
                     $datos['mes'],
                     $datos['usuario'],
                     $datos["cat"]

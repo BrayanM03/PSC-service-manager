@@ -196,7 +196,7 @@ if (isset($_POST)) {
                                                     CCTV_SERIE_CAM_BODEGA = ?,
                                                     CCTV_OXXO_CAM_BODEGA = ? WHERE CR= '$cr'";
 
-                                    $resultado = $con->prepare($sqlUpdateEN);
+                                    $resultado = $con->prepare($sqlUpdateEN); 
                                     $resultado->bind_param(
                                     'sssssssssssssss',
                                     $_POST['modelo-dvr-cctv'],

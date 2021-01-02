@@ -73,41 +73,52 @@ if (isset($_POST)) {
                 $resultado = $con->prepare($sqlInsertMto);
                 $resultado->bind_param(
                     'sssissssss',
-                    $datos['cr'],
-                    $datos['tienda'],
-                    $datos['fecha'],
-                    $datos['folio'],
+                    $_POST['cr-input-nuevaOrden'],
+                    $_POST['tienda-span-modal-mto'],
+                    $_POST['date-nuevaOrden'],
+                    $_POST['folio-nueva-orden'],
                     $chboxmto1,
-                    $datos['estatus'],
+                    $_POST['status-new-orden'],
                     $mantenimientoSol,
-                    $datos['mes'],
-                    $datos['usuario'],
-                    $datos['subcat']
+                    $mesActual,
+                    $_SESSION["userName"],
+                    $_POST["select-cat-nueva-orden"]
+
+                     /*
+                      "cr" => $_POST['cr-input-nuevaOrden'],
+        "tienda" => $_POST['tienda-span-modal-mto'],
+        "fecha" => $_POST['date-nuevaOrden'],
+                     "folio" => $_POST['folio-nueva-orden'],
+        "estatus" => $_POST['status-new-orden'],
+        "mes" => $mesActual,
+        "usuario" => $_SESSION["userName"],
+        "subcat" => $_POST["select-cat-nueva-orden"]
+                    */ 
                 );
     
                 $resultado->execute();
-                $resultado->close();
+               
     
                 //Insertado sql de mto
                 $sqlInsertCCTV = "INSERT INTO mantenimientocat(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario, categoria) VALUES (?,?,?,?,?,?,?,?,?,?)";
                 $resultado2 = $con->prepare($sqlInsertCCTV);
                 $resultado2->bind_param(
                     'sssissssss',
-                    $datos['cr'],
-                    $datos['tienda'],
-                    $datos['fecha'],
-                    $datos['folio'],
+                    $_POST['cr-input-nuevaOrden'],
+                    $_POST['tienda-span-modal-mto'],
+                    $_POST['date-nuevaOrden'],
+                    $_POST['folio-nueva-orden'],
                     $chboxcctv,
-                    $datos['estatus'],
+                    $_POST['status-new-orden'],
                     $CCTVSol,
-                    $datos['mes'],
-                    $datos['usuario'],
-                    $datos['subcat']
+                    $mesActual,
+                    $_SESSION["userName"],
+                    $_POST["select-cat-nueva-orden"]
+
                 );
     
                 $resultado2->execute();
-                $resultado2->close();
-    
+               
                 //Insertado sql de membrana accesorio
                 $statMem= "Cerrado";
                 $cantMem = 2;
@@ -116,27 +127,27 @@ if (isset($_POST)) {
                 $resultado3 = $con->prepare($sqlInsertMem);
                 $resultado3->bind_param(
                     'sssisssssis',
-                    $datos['cr'],
-                    $datos['tienda'],
-                    $datos['fecha'],
-                    $datos['folio'],
+                    $_POST['cr-input-nuevaOrden'],
+                    $_POST['tienda-span-modal-mto'],
+                    $_POST['date-nuevaOrden'],
+                    $_POST['folio-nueva-orden'],
                     $chboxmem,
                     $statMem,
                     $membranaSol,
-                    $datos['mes'],
-                    $datos['usuario'],
+                    $mesActual,
+                    $_SESSION["userName"],
                     $cantMem,
                     $catmtoconMem
                 );
     
                 $resultado3->execute();
-                $resultado3->close();
+                
 
 
                 $tiendaCR= $datos['cr'];
                 $stats = 'realizado';
 
-                $sqlTiendasStatus = "UPDATE cr SET mantenimiento= ? WHERE cr= $tiendaCR";
+                $sqlTiendasStatus = "UPDATE cr SET mantenimiento= ? WHERE cr= '$tiendaCR'";
                 $resultad = $con->prepare($sqlTiendasStatus);
                 $resultad->bind_param(
                     's',
@@ -144,7 +155,7 @@ if (isset($_POST)) {
                 );
     
                 $resultad->execute();
-                $resultad->close(); 
+                 
                
                print_r(1);
     
@@ -165,41 +176,41 @@ if (isset($_POST)) {
                 $resultado = $con->prepare($sqlInsertMto);
                 $resultado->bind_param(
                     'sssissssss',
-                    $datos['cr'],
-                    $datos['tienda'],
-                    $datos['fecha'],
-                    $datos['folio'],
+                    $_POST['cr-input-nuevaOrden'],
+                    $_POST['tienda-span-modal-mto'],
+                    $_POST['date-nuevaOrden'],
+                    $_POST['folio-nueva-orden'],
                     $chboxmto1,
-                    $datos['estatus'],
+                    $_POST['status-new-orden'],
                     $mantenimientoSol,
-                    $datos['mes'],
-                    $datos['usuario'],
-                    $datos['subcat']
+                    $mesActual,
+                    $_SESSION["userName"],
+                    $_POST["select-cat-nueva-orden"]
                 );
     
                 $resultado->execute();
-                $resultado->close();
+               
     
                 //Insertado sql de cctv
                 $sqlInsertCCTV = "INSERT INTO mantenimientocat(cr, tienda, fecha, folio, subcat, estatus, solucion, mes, usuario, categoria) VALUES (?,?,?,?,?,?,?,?,?,?)";
                 $resultado2 = $con->prepare($sqlInsertCCTV);
                 $resultado2->bind_param(
                     'sssissssss',
-                    $datos['cr'],
-                    $datos['tienda'],
-                    $datos['fecha'],
-                    $datos['folio'],
+                    $_POST['cr-input-nuevaOrden'],
+                    $_POST['tienda-span-modal-mto'],
+                    $_POST['date-nuevaOrden'],
+                    $_POST['folio-nueva-orden'],
                     $chboxcctv,
-                    $datos['estatus'],
+                    $_POST['status-new-orden'],
                     $CCTVSol,
-                    $datos['mes'],
-                    $datos['usuario'],
-                    $datos['subcat']
+                    $mesActual,
+                    $_SESSION["userName"],
+                    $_POST["select-cat-nueva-orden"]
 
                 );
 
                 $resultado2->execute();
-                $resultado2->close();
+               
 
                 $tiendaCR= $datos['cr'];
                 $stats = 'realizado';
@@ -212,7 +223,7 @@ if (isset($_POST)) {
                 );
     
                 $res->execute();
-                $res->close(); 
+                
     
                
                 print_r(1);
@@ -238,20 +249,25 @@ if (isset($_POST)) {
                 $resultado = $con->prepare($sqlInsertComp);
                 $resultado->bind_param(
                     'sssissssss',
-                    $datos['cr'],
-                    $datos['tienda'],
-                    $datos['fecha'],
-                    $datos['folio'],
+                    $_POST['cr-input-nuevaOrden'],// $datos['cr'],
+                    $_POST['tienda-span-modal-mto'],//$datos['tienda'],
+                    $_POST['date-nuevaOrden'], //$datos['fecha'],
+                    $_POST['folio-nueva-orden'],//$datos['folio'],
                     $subcategoria,
-                    $datos['estatus'],
+                    $_POST['status-new-orden'],//$datos['estatus'],
                     $descripcion,
-                    $datos['mes'],
-                    $datos['usuario'],
-                    $datos['subcat']
+                    $mesActual,//$datos['mes'],
+                    $_SESSION["userName"],//$datos['usuario'],
+                    $_POST["select-cat-nueva-orden"]// $datos['subcat']
+
+                   
                 );
     
                 $resultado->execute();
-                $resultado->close();
+                
+                if($resultado == false){
+                    print_r($con->error);
+                }
                 print_r(1);
 
                   }elseif(empty($_POST['chboxNuevaOrden'])){
@@ -280,20 +296,21 @@ if (isset($_POST)) {
                   $resultado = $con->prepare($sqlInsertVoz);
                   $resultado->bind_param(
                       'sssissssss',
-                      $datos['cr'],
-                      $datos['tienda'],
-                      $datos['fecha'],
-                      $datos['folio'],
-                      $subcategoria,
-                      $datos['estatus'],
-                      $descripcion,
-                      $datos['mes'],
-                      $datos['usuario'],
-                      $datos['subcat']
+                    $_POST['cr-input-nuevaOrden'],// $datos['cr'],
+                    $_POST['tienda-span-modal-mto'],//$datos['tienda'],
+                    $_POST['date-nuevaOrden'], //$datos['fecha'],
+                    $_POST['folio-nueva-orden'],//$datos['folio'],
+                    $subcategoria,
+                    $_POST['status-new-orden'],//$datos['estatus'],
+                    $descripcion,
+                    $mesActual,//$datos['mes'],
+                    $_SESSION["userName"],//$datos['usuario'],
+                    $_POST["select-cat-nueva-orden"]// $datos['subcat']
+
                   );
       
                   $resultado->execute();
-                  $resultado->close();
+                 
                   print_r(1);
   
                     }elseif(empty($_POST['chboxNuevaOrden'])){
@@ -319,20 +336,23 @@ if (isset($_POST)) {
                   $resultado = $con->prepare($sqlInsertCctv);
                   $resultado->bind_param(
                       'sssissssss',
-                      $datos['cr'],
-                      $datos['tienda'],
-                      $datos['fecha'],
-                      $datos['folio'],
-                      $subcategoria,
-                      $datos['estatus'],
-                      $descripcion,
-                      $datos['mes'],
-                      $datos['usuario'],
-                      $datos['subcat']
+                      $_POST['cr-input-nuevaOrden'],// $datos['cr'],
+                    $_POST['tienda-span-modal-mto'],//$datos['tienda'],
+                    $_POST['date-nuevaOrden'], //$datos['fecha'],
+                    $_POST['folio-nueva-orden'],//$datos['folio'],
+                    $subcategoria,
+                    $_POST['status-new-orden'],//$datos['estatus'],
+                    $descripcion,
+                    $mesActual,//$datos['mes'],
+                    $_SESSION["userName"],//$datos['usuario'],
+                    $_POST["select-cat-nueva-orden"]// $datos['subcat']
+
                   );
       
                   $resultado->execute();
-                  $resultado->close();
+                  //$resultado->close();
+                  
+
                   print_r(1);
   
                     }elseif(empty($_POST['chboxNuevaOrden'])){
@@ -357,20 +377,21 @@ if (isset($_POST)) {
                   $resultado = $con->prepare($sqlInsertImp);
                   $resultado->bind_param(
                       'sssissssss',
-                      $datos['cr'],
-                      $datos['tienda'],
-                      $datos['fecha'],
-                      $datos['folio'],
+                      $_POST['cr-input-nuevaOrden'],// $datos['cr'],
+                      $_POST['tienda-span-modal-mto'],//$datos['tienda'],
+                      $_POST['date-nuevaOrden'], //$datos['fecha'],
+                      $_POST['folio-nueva-orden'],//$datos['folio'],
                       $subcategoria,
-                      $datos['estatus'],
+                      $_POST['status-new-orden'],//$datos['estatus'],
                       $descripcion,
-                      $datos['mes'],
-                      $datos['usuario'],
-                      $datos['subcat']
+                      $mesActual,//$datos['mes'],
+                      $_SESSION["userName"],//$datos['usuario'],
+                      $_POST["select-cat-nueva-orden"]// $datos['subcat']
+  
                   );
       
                   $resultado->execute();
-                  $resultado->close();
+                  
                   print_r(1);
   
                     }elseif(empty($_POST['chboxNuevaOrden'])){
@@ -396,21 +417,22 @@ if (isset($_POST)) {
                   $resultado = $con->prepare($sqlInsertAcc);
                   $resultado->bind_param(
                       'sssisssssis',
-                      $datos['cr'],
-                      $datos['tienda'],
-                      $datos['fecha'],
-                      $datos['folio'],
+                      $_POST['cr-input-nuevaOrden'],// $datos['cr'],
+                      $_POST['tienda-span-modal-mto'],//$datos['tienda'],
+                      $_POST['date-nuevaOrden'], //$datos['fecha'],
+                      $_POST['folio-nueva-orden'],//$datos['folio'],
                       $subcategoria,
-                      $datos['estatus'],
+                      $_POST['status-new-orden'],//$datos['estatus'],
                       $descripcion,
-                      $datos['mes'],
-                      $datos['usuario'],
+                      $mesActual,//$datos['mes'],
+                      $_SESSION["userName"],//$datos['usuario'],
                       $cantidadAcc,
-                      $datos['subcat']
+                      $_POST["select-cat-nueva-orden"]// $datos['subcat']
+  
                   );
       
                   $resultado->execute();
-                  $resultado->close();
+                  
                   print_r(1);
   
                     }elseif(empty($_POST['chboxNuevaOrden'])){
@@ -436,20 +458,21 @@ if (isset($_POST)) {
                   $resultado = $con->prepare($sqlInsertImac);
                   $resultado->bind_param(
                       'sssissssss',
-                      $datos['cr'],
-                      $datos['tienda'],
-                      $datos['fecha'],
-                      $datos['folio'],
-                      $subcategoria,
-                      $datos['estatus'],
-                      $descripcion,
-                      $datos['mes'],
-                      $datos['usuario'],
-                      $datos['subcat']
+                      $_POST['cr-input-nuevaOrden'],// $datos['cr'],
+                    $_POST['tienda-span-modal-mto'],//$datos['tienda'],
+                    $_POST['date-nuevaOrden'], //$datos['fecha'],
+                    $_POST['folio-nueva-orden'],//$datos['folio'],
+                    $subcategoria,
+                    $_POST['status-new-orden'],//$datos['estatus'],
+                    $descripcion,
+                    $mesActual,//$datos['mes'],
+                    $_SESSION["userName"],//$datos['usuario'],
+                    $_POST["select-cat-nueva-orden"]// $datos['subcat']
+
                   );
       
                   $resultado->execute();
-                  $resultado->close();
+                  
                   print_r(1);
   
                     }elseif(empty($_POST['chboxNuevaOrden'])){
@@ -475,20 +498,21 @@ if (isset($_POST)) {
                 $resultado = $con->prepare($sqlInsertRef);
                 $resultado->bind_param(
                     'sssissssss',
-                    $datos['cr'],
-                    $datos['tienda'],
-                    $datos['fecha'],
-                    $datos['folio'],
+                    $_POST['cr-input-nuevaOrden'],// $datos['cr'],
+                    $_POST['tienda-span-modal-mto'],//$datos['tienda'],
+                    $_POST['date-nuevaOrden'], //$datos['fecha'],
+                    $_POST['folio-nueva-orden'],//$datos['folio'],
                     $subcategoria,
-                    $datos['estatus'],
+                    $_POST['status-new-orden'],//$datos['estatus'],
                     $descripcion,
-                    $datos['mes'],
-                    $datos['usuario'],
-                    $datos['subcat']
+                    $mesActual,//$datos['mes'],
+                    $_SESSION["userName"],//$datos['usuario'],
+                    $_POST["select-cat-nueva-orden"]// $datos['subcat']
+
                 );
     
                 $resultado->execute();
-                $resultado->close();
+                
                 print_r(1);
 
                   }elseif(empty($_POST['chboxNuevaOrden'])){
@@ -514,21 +538,22 @@ if (isset($_POST)) {
                  $resultado = $con->prepare($sqlInsertRef);
                  $resultado->bind_param(
                      'sssisssssis',
-                     $datos['cr'],
-                     $datos['tienda'],
-                     $datos['fecha'],
-                     $datos['folio'],
+                     $_POST['cr-input-nuevaOrden'],// $datos['cr'],
+                     $_POST['tienda-span-modal-mto'],//$datos['tienda'],
+                     $_POST['date-nuevaOrden'], //$datos['fecha'],
+                     $_POST['folio-nueva-orden'],//$datos['folio'],
                      $subcategoria,
-                     $datos['estatus'],
+                     $_POST['status-new-orden'],//$datos['estatus'],
                      $descripcion,
-                     $datos['mes'],
-                     $datos['usuario'],
+                     $mesActual,//$datos['mes'],
+                     $_SESSION["userName"],//$datos['usuario'],
                      $cantidadRen,
-                     $datos['subcat']
+                     $_POST["select-cat-nueva-orden"]// $datos['subcat']
+ 
                  );
      
                  $resultado->execute();
-                 $resultado->close();
+                
                  print_r(1);
  
                    }elseif(empty($_POST['chboxNuevaOrden'])){
