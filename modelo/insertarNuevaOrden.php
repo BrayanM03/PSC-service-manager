@@ -249,16 +249,16 @@ if (isset($_POST)) {
                 $resultado = $con->prepare($sqlInsertComp);
                 $resultado->bind_param(
                     'sssissssss',
-                    $_POST['cr-input-nuevaOrden'],// $datos['cr'],
-                    $_POST['tienda-span-modal-mto'],//$datos['tienda'],
-                    $_POST['date-nuevaOrden'], //$datos['fecha'],
-                    $_POST['folio-nueva-orden'],//$datos['folio'],
+                    $_POST['cr-input-nuevaOrden'],
+                    $_POST['tienda-span-modal-mto'],
+                    $_POST['date-nuevaOrden'], 
+                    $_POST['folio-nueva-orden'],
                     $subcategoria,
-                    $_POST['status-new-orden'],//$datos['estatus'],
+                    $_POST['status-new-orden'],
                     $descripcion,
-                    $mesActual,//$datos['mes'],
-                    $_SESSION["userName"],//$datos['usuario'],
-                    $_POST["select-cat-nueva-orden"]// $datos['subcat']
+                    $mesActual,
+                    $_SESSION["userName"],
+                    $_POST["select-cat-nueva-orden"]
 
                    
                 );
@@ -276,9 +276,6 @@ if (isset($_POST)) {
                 
 
                 }
-
-                
-                
 
             break;
 
@@ -310,8 +307,11 @@ if (isset($_POST)) {
                   );
       
                   $resultado->execute();
+                  if($resultado == false){
+                    print_r(1);
+                }
                  
-                  print_r(1);
+                  print_r($_POST['cr-input-nuevaOrden']);
   
                     }elseif(empty($_POST['chboxNuevaOrden'])){
                         print_r(5);
