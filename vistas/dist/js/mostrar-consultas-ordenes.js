@@ -63,12 +63,12 @@ function MostrarCompu() {
             { data: null},
             { data: "cr" },
             { data: "tienda", width: "20%" },
-            { data: "fecha" },
+            { data: "fecha"},
             { data: "folio" },
             { data: "subcat" },
             { data: "estatus" },
             { data: "solucion", width: "30%", className: "celda-descripcion" },
-            { data: "id" },
+            { data: "id"},
             { data: "mes" },
             { data: "usuario" },
             {
@@ -91,9 +91,13 @@ function MostrarCompu() {
           responsive: true,
 
           dom: "Bfrtip",
-          buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+          buttons: ["copy", "csv", "pdf", "excel", "print", "colvis"],
 
-          order: [[3, "desc"], [0, "desc"]],
+          order: [[3, "desc"],[8, "desc"]],
+
+          exportOptions: [{
+            order: [[3, "asc"],[8, "asc"]]
+          }],
 
           language: {
             
@@ -113,6 +117,8 @@ function MostrarCompu() {
              
           } );
       } ).draw(); 
+
+     
 
         //Funciones del crud
       
