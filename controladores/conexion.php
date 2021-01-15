@@ -6,10 +6,7 @@ class Conectar
 {
     public function conexion()
     {
-       /* $host = "174.136.52.208";
-        $user = "powerpsc";
-        $password = "9y40bEwzL3:>)<";//"pudin1697*";
-        $db = "powerpsc_servicemanager";*/
+      
 
         $host = "localhost";
         $user = "root";
