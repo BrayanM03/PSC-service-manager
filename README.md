@@ -39,9 +39,9 @@ _Se usaron los siguientes plugins y frameworks_
 
 ## Autores ✒️
 
-_La integracion de las tecnologias y la logica detras del sistema fue prograado por:_
+_La integracion de las tecnologias y la logica detras del sistema fue programado por:_
 
-* **Brayan Maldonado** - *Trabajo Inicial* - [villanuevand](https://www.facebook.com/BrayanM03/)
+* **Brayan Maldonado** - *Trabajo Inicial* - [BrayanM03](https://www.facebook.com/BrayanM03/)
 
 ## Licencia 📄
 
