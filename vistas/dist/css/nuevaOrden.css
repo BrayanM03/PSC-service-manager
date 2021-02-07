@@ -84,7 +84,7 @@
   height: 0;
 }
   to{
-  visibility: visible;
+  visibility: visible; 
   width: 360px;
   height: 300px;
   opacity: 1;

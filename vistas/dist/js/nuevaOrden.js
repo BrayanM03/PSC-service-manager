@@ -49,7 +49,7 @@ function MostrarNuevaOrden() {
               if ($("#cr-input-modal").val().length == 0) {
                 $("#select-mostrar-tienda").empty();
                 $("#search-cr-container")
-                  .removeClass()
+                  .removeClass() 
                   .addClass("search-cr-container-hide");
               } else {
                 $.each(crArreglo, function (key, value) {
