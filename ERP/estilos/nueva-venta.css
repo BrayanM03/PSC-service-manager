@@ -1,0 +1,293 @@
+.form-nueva-venta input{
+    border: 1px solid gray;
+    border-radius: 4px;
+
+}
+
+.card{
+    width: 90%;
+
+
+}
+
+
+.content{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  
+  justify-content: center;
+}
+
+
+.form-nueva-venta{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: flex-start;
+    width: 100%;
+}
+
+.fila4{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.logo-marca-grande{
+    border: 1px solid gray ;
+    border-radius: 8px;
+    width: 130px;
+    height: 130px;
+    margin: 2vh;
+    background-position: center;
+    background-size: cover;
+
+}
+.grupo-1{
+
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.grupo-1 .fila1{
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-1 .fila2{
+    display: flex;
+    flex-direction: row;
+    width: 355px;
+
+    justify-content: center;
+}
+
+.input-corto{
+    display: block;
+    width: 150px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 8px 10px;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 2vh;
+    transition: 0.15s;
+    margin-left: 1vh;
+}
+
+.fila3{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+.folio-fecha{
+    width: 350px;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    margin: 2vh;
+    background-color:wheat;
+    border-radius: 9px;
+    border: 1px solid coral ;
+    padding-top: 8px;
+}
+
+.folio-fecha input{
+    width:100px;
+    height: 50%;
+    font-size: 13px;
+    padding: 8px;
+
+}
+
+.grupo-2{
+  width:60%;
+  display: flex;
+  flex-direction: column;
+  background-color:white;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: flex-start;
+  border-radius: 10px;
+}
+
+
+
+.contenedor-tabla{
+    width: 800px;
+    background-color: white;
+    border: 5px solid rgb(16, 128, 233);
+    border-style: double;
+    border-radius: 9px;
+    padding: 10px;
+    /*margin-bottom: 2vh;*/
+    display: block;
+    margin-top: 55px;
+    position: absolute;
+    z-index: 10;
+    animation: aparecer .1s;
+    transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    opacity: 1;
+    overflow-y: scroll;
+    scroll-snap-align: start end;
+    height: 300px;
+
+}
+
+.logo-marca{
+    width: 50px;
+    height:50px;
+    border-radius: 8px;
+}
+
+@keyframes aparecer {
+    from {
+    visibility: hidden;
+    opacity: 0.5;
+    width: 0;
+    height: 0;
+  }
+    to{
+    visibility: visible;
+    width: 500px;
+    opacity: 1;
+  }
+  }
+
+.tbody tr{
+    margin: 4px 0px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.tbody tr:hover{
+    width: 400px;
+    background-color: chocolate;
+    color:white;
+}
+
+/*.table-wrapper{
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+}
+
+#pre-venta thead tr .ds{
+    width: 280px;
+}*/
+
+
+.scroll-table{
+    height: 450px;
+    overflow: scroll;
+}
+
+.oculto{
+    display: none;
+
+}
+
+
+
+#bloqueado_label{
+    background-color:  rgb(240, 230, 230);
+}
+
+
+
+/*Reposo*/
+.grupo-1 label .input-group{
+    display: block;
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+
+
+}
+
+.grupo-1 label .input-group-disabled{
+    display: block;
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+
+
+}
+
+.grupo-1 label .select-group{
+    display: block;
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+
+}
+
+.grupo-1 .input-largo{
+    display: block;
+    width: 350px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 8px 10px;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 2vh;
+    transition: 0.15s;
+    margin-left: 1vh;
+}
+
+.grupo-1 label span{
+    font-size: 15px;
+    color: gray;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    transition: 0.15s;
+}
+
+
+
+/*Foco*/
+.grupo-1 label.focus{
+    border-color: tomato;
+}
+
+.grupo-1 label span.focus{
+ color: tomato;
+}
+
+/*Top*/
+.grupo-1 label span.top{
+    left: 7px;
+    top: -10px;
+    font-size: 12px;
+    background-color:white;
+    padding: 0px 5px;
+}
+
+.precio-pointer{
+cursor: pointer;
+}
+
+body.swal2-shown > [aria-hidden="true"] {
+    filter: blur(10px);
+  }
+
+  body > * {
+    transition: 0.1s filter linear;
+  }

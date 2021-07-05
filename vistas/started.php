@@ -33,11 +33,11 @@ if (empty($_SESSION["userName"])) {
   <link rel="stylesheet" href="vistas/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="vistas/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="https://nightly.datatables.net/colreorder/css/colReorder.dataTables.min.css">
-  <link rel="stylesheet" href="vistas/plugins/datatables-buttons/css/buttons.bootstrap4.min.css"> 
+  <link rel="stylesheet" href="vistas/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <link rel="stylesheet" href="vistas/dist/css/nuevaOrden.css">
   <link rel="stylesheet" href="vistas/dist/css/tablas-ordenes.css">
   <link rel="stylesheet" href="vistas/plugins/nice-select/css/nice-select.css">
-  
+
 
 </head>
 
@@ -51,13 +51,13 @@ if (empty($_SESSION["userName"])) {
         <li class="nav-item">
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-       
+
         <li class="nav-item d-none d-sm-inline-block">
           <a href="" class="nav-link">Inicio</a>
         </li>
       </ul>
 
-      <!-- SEARCH FORM 
+      <!-- SEARCH FORM
       <form class="form-inline ml-3">
         <div class="input-group input-group-sm">
           <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
@@ -71,18 +71,18 @@ if (empty($_SESSION["userName"])) {
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-      
+
         <!-- Notifications Dropdown Menu -->
-       
+
         <li class="nav-item">
-        
+
           <a href="#" onclick="MostrarNuevaOrden();" class="btn btn-success">Nueva orden</a>
         </li>
 
         <li class="nav-item">
-        <a href="#" onclick="MostrarCotizador();" class="btn btn-info ml-2 ">Nueva cotización</a>
+        <a href="ERP/erp.php" class="btn btn-info ml-2 ">ERP</a>
         </li>
-       
+
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
             <i class="fas fa-expand-arrows-alt"></i>
@@ -134,7 +134,7 @@ if (empty($_SESSION["userName"])) {
             </div>
           </div>
         </div>
- 
+
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" id="v-pills-tab" data-widget="treeview" role="menu" data-accordion="false">
@@ -404,26 +404,27 @@ if (empty($_SESSION["userName"])) {
 
               <div class="col-md-6">
 
-                <div id="card-mto-mes-actual" class="card card-success">
-                  <div class="card-header">
-                    <h3 class="card-title">Mantenimientos del mes</h3>
 
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
-                      </button>
-                      <button type="button" class="btn btn-tool" data-card-widget="remove">
-                        <i class="fas fa-times"></i>
-                      </button>
-                    </div>
+              <!-- DONUT CHART -->
+              <div class="card card-danger" style="width:auto;">
+                <div class="card-header">
+                  <h3 class="card-title">Mantenimiento anual</h3>
+
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
                   </div>
-                  <div class="card-body">
-                    <div id="tabla-mto-mes">
-                      <?php include 'controladores/mto-mes-actual.php' ?>
-                    </div>
-                  </div>
-                  <!-- /.card-body -->
                 </div>
+                <div class="card-body">
+                  <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
 
               </div>
 
@@ -461,8 +462,8 @@ if (empty($_SESSION["userName"])) {
 
     <!-- Main Footer -->
     <footer class="main-footer">
-    
-      
+
+
       <strong>Copyright &copy; 2020 Ediciones e integracion por <a href="https://www.facebook.com/BrayanM03/" target="_blank"> Brayan Maldonado Morgado</a>.</strong><br>
       <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io"> AdminLTE.io</a>.</strong> All rights reserved.
     </footer>
@@ -482,27 +483,27 @@ if (empty($_SESSION["userName"])) {
 
   <!-- DataTables  & Plugins-->
   <script src="vistas/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="vistas/plugins/datatables/defaults.js"></script>
+    <script src="vistas/plugins/datatables/defaults.js"></script>
   <script src="vistas/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
   <script src="vistas/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
   <script src="vistas/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
   <script src="vistas/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="vistas/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script> 
+  <script src="vistas/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
   <script src="vistas/plugins/jszip/jszip.min.js"></script>
   <script src="vistas/plugins/pdfmake/pdfmake.min.js"></script>
   <script src="vistas/plugins/pdfmake/vfs_fonts.js"></script>
-  <script src="https://nightly.datatables.net/buttons/js/dataTables.buttons.min.js"></script>  
+  <script src="https://nightly.datatables.net/buttons/js/dataTables.buttons.min.js"></script>
   <!--<script src="vistas/plugins/datatables-buttons/js/buttons.html5.min.js"></script>-->
   <script src="https://nightly.datatables.net/buttons/js/buttons.html5.min.js"></script>
   <script src="https://nightly.datatables.net/colreorder/js/dataTables.colReorder.min.js"></script>
   <script src="vistas/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="vistas/plugins/datatables-buttons/js/buttons.colVis.min.js"></script> 
+  <script src="vistas/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
   <script src="vistas/plugins/nice-select/js/jquery.nice-select.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
- 
+
 
   <!-- AdminLTE App -->
   <script src="vistas/dist/js/adminlte.min.js"></script>
@@ -520,18 +521,18 @@ if (empty($_SESSION["userName"])) {
   <script src="vistas/dist/js/editarInv.js"></script>
   <script src="vistas/dist/js/graficaBarras.js"></script>
   <script src="vistas/dist/js/calendario.js"></script>
-  
+
 
   <script>
-    
+
 
 
 
     //Tabla mantenimientos actuales
 
-   
 
-  
+
+
   </script>
 
 </body>

@@ -1,0 +1,61 @@
+.targeta-contenedora{
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  height: auto;
+}
+
+.titulo-targeta{
+  margin-top: 10px;
+}
+
+.formulario-target{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  justify-content: center;
+  padding: 15px;
+  width: 50%;
+}
+
+.formulario-target select, .formulario-target input{
+ width: 200px;
+ margin: 8px;
+}
+
+.formulario-target .btn-info{
+  margin: 8px;
+}
+
+.img-product{
+  width: 80px;
+
+}
+
+.targeta-producto{
+  width: 70%;
+  background-color: whitesmoke;
+  align-items:center;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 8px;
+
+}
+
+
+
+.item {
+    width: 150px;
+    height: 150px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 1px solid #009688;
+    border-radius: 8px;
+}
+
+#testing{
+
+}

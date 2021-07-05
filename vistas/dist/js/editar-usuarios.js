@@ -42,7 +42,7 @@ var editarDataUser = function (tbody, table) {
         "</div>" +
         '<div class="col-3">' +
         '<div class="form-group cont">' +
-        '<img src="./vistas/dist/img/users/'+ user +'.jpg" class="img-user-mod" alt="Girl in a jacket" width="80" height="80">' +
+        '<img src="./vistas/dist/img/users/'+ user +'.jpg" class="img-user-mod" alt="user-image" width="80" height="80">' +
         '<img src="./vistas/dist/img/editar.png" class="edit-img-user" alt="Girl in a jacket" width="60" height="80">' +
         '<input type="file" class="form-control select-file" value="Selecc" name="file-input-modal">' +
         "</div>" +
@@ -101,7 +101,7 @@ var editarDataUser = function (tbody, table) {
 
         var form = $('#formulario-editar-registro')[0];
         var data = new FormData(form);
-       
+
 
         $.ajax({
           method: "POST",
