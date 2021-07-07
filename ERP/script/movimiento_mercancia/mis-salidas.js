@@ -70,6 +70,15 @@ $(document).ready(function() {
 
 function generarRemision() {
 
+  $.ajax({
+    type: "POST",
+    url: "../servidor/movimiento_mercancia/vaciar-tabla-presalida.php",
+    data: "data",
+    success: function (response) {
+      
+    }
+  });
+
   Swal.fire({
     title: "Remision de salida",
     html: '<div class="row">'+
@@ -103,7 +112,7 @@ function generarRemision() {
         '<div class="col-12">'+
         '<div class="form-group" id="area-solucion">'+
         '<label><b>Motivo</b></label>'+
-        '<textarea class="form-control" style="height:100px" name="direccion" id="direccion" form="formulario-editar-registro" placeholder="Escriba la dirección del producto"></textarea>'+
+        '<textarea class="form-control" style="height:100px" name="motivo" id="motivo" placeholder="Escriba el motivo de la remisión"></textarea>'+
         '</div>'+
         '</div>'+
 
@@ -542,7 +551,7 @@ function generarRemision() {
        let $id = $(this).attr("rowid");
        $.ajax({
          type: "POST",
-         url: "../servidor/movimiento_mercancia/borrar-prod-presalida.php",
+         url: "../servidor/movimiento_mercancia/borrar-prod-presalida.php", 
          data:{"id": $id},
          success: function(response) {
            if(response == 1){
@@ -567,26 +576,44 @@ function generarRemision() {
 
       data = {
 
-        "nombre":         $("#nombre").val(),
-        "telefono":       $("#telefono").val(),
-        "correo":         $("#correo").val(),
-        "rfc":            $("#rfc").val(),
-        "descripcion":    $("#descripcion").val()
+        "cliente":          $('#select2-cliente-container').text(),
+        "tecnico":       $("#select2-tecnico-container").text(),
+        "motivo":         $("#motivo").val(),
+        "fecha":            $("#fecha").val()
       };
-
-      if( data["nombre"] == ""){
+     
+      if( data["cliente"] == "Busca un cliente..."){
         $(".datoVacio").removeClass("datoVacio");
         $(".border-danger").removeClass("border-danger");
-        $("#nombre").addClass("border-danger");
+        $("#cliente").addClass("border-danger");
         Swal.showValidationMessage(
-          `Establece un nombre`
+          `Elige un cliente.`
         )
-      }else if( data["telefono"] == ""){
+      }else if( data["tecnico"] == "Busca un usuario..."){
         $(".datoVacio").removeClass("datoVacio");
         $(".border-danger").removeClass("border-danger");
-        $("#telefono").addClass("border-danger");
+        $("#tecnico").addClass("border-danger");
         Swal.showValidationMessage(
-          `Establece un telefono`
+          `Establece un tecnico.`
+        )
+      }else if( data["motivo"] == ""){
+        $(".datoVacio").removeClass("datoVacio");
+        $(".border-danger").removeClass("border-danger");
+        $("#motivo").addClass("border-danger");
+        Swal.showValidationMessage(
+          `Establece un motivo.`
+        )
+      }else if( data["fecha"] == ""){
+        $(".datoVacio").removeClass("datoVacio");
+        $(".border-danger").removeClass("border-danger");
+        $("#fecha").addClass("border-danger");
+        Swal.showValidationMessage(
+          `Establece una fecha.`
+        )
+      }else if(! tabla_presalida.data().any() ){
+       
+        Swal.showValidationMessage(
+          `Elige por lo menos un producto para agregar en la remisión.`
         )
       }
     }
@@ -594,25 +621,26 @@ function generarRemision() {
   }).then((result) => {
 
    if(result.isConfirmed){
+      
+     let cliente =    data["cliente"];
+     let tecnico =    data["tecnico"];
+     let fecha =      data["fecha"];
+     let motivo =     data["motivo"];
+     datosPresalida = $('#pre-salida-productos').dataTable().fnGetData();
 
-     var form = $("#agregar-proveedor")[0];
-     var datos = new FormData(form);
-     //datos.append("clase", tabla);
-     descripcion = $("#direccion").val();
-     datos.append("direccion", descripcion);
-
-
-    $.ajax({
+    
+     $.ajax({
       type: "POST",
-      url: "../servidor/proveedores/agregar-proveedor.php",
-      data:datos,
-      processData: false,  // tell jQuery not to process the data
-      contentType: false,   // tell jQuery not to set contentType
+      url: "../servidor/movimiento_mercancia/insertar-remision.php",
+      data:{"cliente": cliente, "tecnico": tecnico, "motivo": motivo, "cliente": cliente, "fecha":fecha,"data": datosPresalida },
+    //  processData: false,  // tell jQuery not to process the data
+    //  contentType: false,   // tell jQuery not to set contentType
       success: function(response) {
-        if (response==1) {
+        console.log(response);
+         if (response==1) {
           Swal.fire(
             "¡Correcto!",
-            "Se agrego el producto",
+            "Remision generada correctamente.",
             "success"
             ).then((result) =>{
 
@@ -631,10 +659,7 @@ function generarRemision() {
             )
             console.log(response);
            table.ajax.reload(null, false);
-        }
-
-
-
+        } 
       },
       failure: function (response) {
           Swal.fire(
@@ -644,6 +669,15 @@ function generarRemision() {
           )
       }
   });
+/* 
+     var form = $("#agregar-proveedor")[0];
+     var datos = new FormData(form);
+     //datos.append("clase", tabla);
+     descripcion = $("#direccion").val();
+     datos.append("direccion", descripcion);
+
+
+     */
 
 
    }
