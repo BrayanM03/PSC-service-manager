@@ -51,7 +51,7 @@
 
              default:
                // code...
-               break;
+               break; 
            }
 
     $sql = "SELECT codigo FROM $tabla ORDER BY codigo DESC LIMIT 1";

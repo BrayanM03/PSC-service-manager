@@ -142,7 +142,7 @@
 
       if ($total_pv > 0) {
 
-          $traerPV="SELECT * FROM computadoras_inv inv WHERE inv.codigo LIKE '%$term%'
+          $traerPV="SELECT * FROM pv_inv inv WHERE inv.codigo LIKE '%$term%'
                                                                   OR inv.descripcion LIKE '%$term%'
                                                                   OR inv.modelo LIKE '%$term%'
                                                                   OR inv.marca LIKE '%$term%'

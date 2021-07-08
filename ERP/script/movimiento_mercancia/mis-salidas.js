@@ -39,7 +39,7 @@ $(document).ready(function() {
             'class="buttonEditar btn btn-info"><i class="fa fa-edit"></i>'+
             '</button><br><button type="button"  style="margin:4px"   onclick="borrarRemision('+row.id+');" class="buttonBorrar btn btn-warning">'+
             '<i class="fa fa-trash"></i><br></button>'+
-            '<button type="button"   onclick="borrarRemision('+row.id+');" style="margin: 4px " class="buttonBorrar btn btn-danger">'+
+            '<button type="button"   onclick="generarRemisionPDF('+row.id+');" style="margin: 4px " class="buttonBorrar btn btn-danger">'+
             '<i class="fa fa-file-pdf"></i><br></button>'
           },
         },
@@ -999,3 +999,7 @@ function agregarProdPreSalida(){
 
 
 };
+
+function generarRemisionPDF(id) {
+  window.open('../servidor/movimiento_mercancia/reporte-remision-salida.php?id='+ id, '_blank');
+  }
