@@ -275,16 +275,16 @@ function cuerpoTabla(){
             $modelo = $fila["modelo"];
             $caracteres = mb_strlen($descripcion);
 
-            if($caracteres > 90){
-                $pdf->Cell(14,18,$cantidad,0,0,'C',1);
-                $pdf->Cell(50,18, utf8_decode($codigo),0,0,'C',1);
+            if($caracteres >=75){
+                $pdf->Cell(14,24,$cantidad,0,0,'C',1);
+                $pdf->Cell(50,24, utf8_decode($codigo),0,0,'C',1);
                 $pdf->MultiCell(80,6, utf8_decode($descripcion),0,'L',1);
                 $pdf->SetY($ejeY);
                 $ejeY = $ejeY + 15;
                 $pdf->SetX(154);
-                $pdf->Cell(40,18, utf8_decode($modelo),0,0,'C',1);
-                $pdf->Ln(15);
-            }else if($caracteres > 40 && $caracteres < 90){
+                $pdf->Cell(40,24, utf8_decode($modelo),0,0,'C',1);
+                $pdf->Ln(24);
+            }else if($caracteres > 40 && $caracteres < 75){
                 $pdf->Cell(14,12,$cantidad,0,0,'C',1);
                 $pdf->Cell(50,12, utf8_decode($codigo),0,0,'C',1);
                 $pdf->MultiCell(80,6, utf8_decode($descripcion),0,'L',1);
@@ -364,7 +364,7 @@ function cuerpoTabla(){
     }
     $pdf->Ln(8);
     $pdf->SetFont('Courier','',12);
-    $pdf->Cell(140,60,$observacion,0,0,'L',1);
+    $pdf->MultiCell(140,6,utf8_decode($observacion),0,'L',1);
     $pdf->Ln(52);
 
   /*   $pdf->SetTextColor(0, 32, 77);

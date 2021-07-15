@@ -17,7 +17,7 @@ if (empty($_SESSION["userName"])) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="../../vistas/dist/img/icon.ico" />
 
-  <title>PSC | ERP manager</title>
+  <title>Nueva Venta - PSC | ERP manager</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -325,178 +325,69 @@ if (empty($_SESSION["userName"])) {
       </div>
       <!-- /.sidebar -->
     </aside>
-
-
     <div class="tab-content" >
-
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper" id="v-pills-comp" style="background-color: #E0E0E0;">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" id="v-pills-comp">
         <!-- Content Header (Page header) -->
 
 
 
-        <!-- Main content -->
-        <div class="content">
-
-
-
-
-          <!-- Contenido Nueva venta -->
-
-                <div class="card" style="margin-bottom: 7vh; padding-bottom: 5vh;">
-                    <div class="card-header bg-primary text-white">
-                        <span>Nueva venta</span>
+        <!-- Contenido principal -->
+        <div class="container-fluid" style="border: 1px solid black;">
+            <div class="row">
+              <div class="col-12 col-md-12 text-center mt-2" style="border: 1px solid black;"><h3>Punto de venta</h3></div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-4" style="border: 1px solid red;">
+                <div class="entrada-de-informacion">
+                    <div class="row">
+                      <div class="col-12 col-md-12 text-center">
+                        <div class="imagen-producto">
+                          <img src="../../vistas/dist/img/logo.jpg" id="img-producto" alt="">
+                          <img src="../../vistas/dist/img/logo.jpg" class="circulo" id="img-marca" alt="">
+                        </div>
+                      </div>
                     </div>
-                    <div class="card-body">
-                       <div class="row">
+                    <div class="row mt-3">
+                      <div class="col-12 col-md-12">
+                        <div class="form-group">
+                          <label for="">Buscar</label><br>
+                          <select name="" class="form-control" id="buscador-producto"></select>
+                        </div>
+                      </div>
 
-                       <div class="grupo-1" >
+                      <div class="col-12 col-md-12">
+                        <div class="form-group">
+                          <label for="">Cliente</label><br>
+                          <select name="" class="form-control" id="cliente"></select>
+                        </div>
+                      </div>
 
-                                           <div class="logo-marca-grande">
-
-                                           </div>
-
-                                           <!--Fila 1-->
-                                           <form id="form-punto-venta">
-                                           <div class="fila1">
-                                                   <label class="input-largo">
-                                                       <span for="search">Busqueda</span>
-                                                       <input type="text" id="search" name="search" class="input-group">
-                                                   </label>
-                                                   <div class="contenedor-tabla oculto">
-                                                           <table class="table">
-                                                           <thead class="table-info">
-                                                           <tr>
-                                                               <th>Codigo</th>
-                                                               <th>Descripción</th>
-                                                               <th>Marca</th>
-                                                               <th>Precio</th>
-                                                               <th>Stock</th>
-                                                               <th>Foto</th>
-                                                               <th>Subcategoria</th>
-                                                           </tr>
-                                                           </thead>
-                                                           <tbody class="tbody">
-                                                           </tbody>
-                                                           </table>
-                                                   </div>
-
-                                                   <label class="input-largo">
-                                                       <span for="description">Descripción</span>
-                                                       <input type="text" id="description" name="description" class="input-group" disabled>
-                                                   </label>
-                                           </div>
-
-                                           <!--Fila 1-->
-
-                                           <div class="fila2 row">
-
-                                               <label class="input-corto">
-                                                   <span for="modelo">Modelo</span>
-                                                   <input type="text" id="modelo" name="modelo" class="input-group" disabled>
-                                               </label>
-
-                                               <label class="input-corto">
-                                                    <span for="sucursal">Sucursal</span>
-                                                    <select  id="sucursal" name="sucursal" class="select-group form-select" disabled>
-                                                           <option disabled selected value></option>
-                                                           <option value="0">Pedro Cardenas</option>
-                                                           <option value="1">Sendero</option>
-                                                    </select>
-                                               </label>
-
-                                               <label class="input-corto">
-                                                   <span for="cantidad">Cantidad</span>
-                                                   <input type="number" id="cantidad" name="cantidad" class="input-group" required>
-                                               </label>
-
-                                               <label class="input-corto precio-pointer" id="precio-tok" onclick="generarToken();">
-                                                   <span for="precio" class="precio-pointer">$ Precio</span>
-                                                   <input type="number" id="precio" name="precio" class="input-group precio-pointer" disabled>
-                                               </label>
-
-                                               <label style="border-color: transparent;">
-                                                   <div class="btn btn-info" id="agregar-producto" onclick="agregarInfo()" >Agregar</div>
-                                               </label>
-
-                                           </div>
-
-                                           </form>
-
-                           </div>
-
-
-                       <div class="grupo-2">
-
-                           <div class="fila3">
-                                       <div class="folio-fecha">
-                                           <label>
-                                               <span for="folio">Folio:</span>
-                                               <input class="form-control" value="00" type="text" id="folio" name="folio" disabled>
-                                           </label>
-                                           <label>
-                                               <span for="fecha">Fecha</span>
-                                               <input class="form-control"  type="date" id="fecha" name="fecha" style="width: 150px;">
-                                           </label>
-                                       </div>
-                           </div>
-
-
-                               <div class="fila4 row">
-
-                                           <table id="pre-venta" class="table table-striped table-bordered table-hover">
-
-                                           </table>
-
-
-
-                                           <div class="row" style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top:25px">
-                                               <div class="form-group" style="display: flex; align-items: center; justify-content: space-around; width: 25%;" >
-                                                   <span for="total" >Total: $</span>
-                                                   <input type="number" value="0" class="form-control" id="total" name="total" style="width:120px; margin-left:5px; display:flex; justify-content:center;" disabled>
-
-                                               </div>
-                                               </div>
-                                           <div class="botones-de-venta">
-                                               <div class="btn btn-warning" onclick="limpiarTabla();" style="color: rgb(31, 28, 28); margin-right: 2vh;" id="limpiar-venta">Limpiar</div>
-                                               <div class="btn btn-success" onclick="realizarVenta();" id="realizar-venta">Realizar venta</div>
-                                           </div>
-
-
-                               </div>
-                           </div>
-
-                       </div>
-
-
-
-
+                      
+                      <div class="col-12 col-md-6">
+                        <div class="form-group">
+                          <label for="">Cantidad</label><br>
+                          <input type="number" class="form-control" id="cantidad" placeholder="0">
+                        </div>
+                      </div>
+                      
+                      
+                      <div class="col-12 col-md-6">
+                        <div class="form-group">
+                          <label for="">Precio</label><br>
+                          <input type="number" class="form-control" id="cantidad" placeholder="$ 0.00" disabled>
+                        </div>
+                      </div>
 
                     </div>
                 </div>
-
-
-
-
-              <!-- /Mantenimientos del mes -->
-
-
+              </div>
+              <div class="col-12 col-md-4">
+                hola2
+              </div>
             </div>
 
-
-
-          </div><!-- /.container-fluid  C/Contenido dinamico-->
         </div>
-        <!-- /.content -->
-
-
-      </div>
-      <!-- /.content-wrapper -->
-
-
-
-
-
     </div>
 
     <!-- Control Sidebar -->
@@ -511,9 +402,7 @@ if (empty($_SESSION["userName"])) {
 
     <!-- Main Footer -->
     <footer class="main-footer">
-
-
-      <strong>Copyright &copy; 2020 Ediciones e integracion por <a href="https://www.facebook.com/BrayanM03/" target="_blank"> Brayan Maldonado Morgado</a>.</strong><br>
+      <strong>Copyright &copy; <?php echo date("Y"); ?> Ediciones e integracion por <a href="https://www.facebook.com/BrayanM03/" target="_blank"> Brayan Maldonado Morgado</a>.</strong><br>
       <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io"> AdminLTE.io</a>.</strong> All rights reserved.
     </footer>
   </div>
